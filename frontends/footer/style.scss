@@ -1,0 +1,33 @@
+.footer{
+  background-color: var(--blue300);
+  padding: 5rem 0;
+  color: var(--white);
+  font-family: 'NotoSans-Regular';
+
+  &-inner{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &-socials{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &_phone{
+    font-size: 1.875rem;
+    color: var(--white);
+    font-family: 'TenorSans-Regular';
+  }
+
+  &_center{
+    align-items: center;
+  }
+
+  &_right{
+    align-items: end;
+  }
+}

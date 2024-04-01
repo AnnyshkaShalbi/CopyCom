@@ -1,0 +1,75 @@
+.main{
+  margin-top: 200px;
+}
+.home{
+  color: var(--dark);
+  font-family: 'TenorSans-Regular';
+
+  &-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+
+    &_title{
+      line-height: clamp(2.5rem, 3vw,3.75rem);
+      font-size: clamp(1.2rem, 3vw,2.875rem);
+      text-transform: uppercase;
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_text{
+      font-size: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    &_link{
+      color: var(--dark);
+      border-bottom: 2px solid var(--blue100);
+      cursor: pointer;
+    }
+  }
+
+  &-banner{
+    max-height: 20rem;
+    height: 20rem;
+    position: relative;
+    background-image: url('images/mainPage/banner.png');
+
+    &_btn{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  &-steps{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-subtitle{
+    font-size: clamp(1rem, 3vw, 1.875rem);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &-phone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--dark);
+
+    &_number{
+      font-size: clamp(1rem, 3vw, 1.8rem);
+    }
+  }
+}

@@ -1,0 +1,259 @@
+.order{
+  &-inner{
+    overflow: hidden;
+  }
+
+  // &-line{
+  //   display: flex;
+  //   width: 100%;
+
+  //   // &__item{
+  //   //   width: 75%;
+  //   //   transition: margin-left 0.35s ease-in-out;
+  //   // }
+  // }
+
+  &-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+
+    &_desc{
+      font-size: .75rem;
+
+    }
+  }
+
+  &-steps{
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+    margin-bottom: 2.5rem;
+
+    &__item{
+      min-width: 18rem;
+      display: flex;
+      gap: 1rem;
+      align-items: start;
+
+      &-desc{
+        span{
+          font-size: 1.1875rem;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-family: 'TenorSans-Regular';
+        }
+
+        p{
+          padding-top: 0.5rem;
+          font-size: .875rem;
+          color: var(--grey);
+          font-family: 'Inter';
+        }
+      }
+    }
+
+    &__circle{
+      width: 2.1875rem;
+      height: 2.1875rem;
+      background-color: var(--grey-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.1875rem;
+
+      &_active{
+        background-color: var(--blue200);
+      }
+
+      &_valid{
+        background-color: var(--green);
+      }
+
+      &_light{
+        background-color: var(--light);
+      }
+    }
+  }
+
+  &_text{
+    font-size: 1.125rem;
+    color: var(--grey);
+    max-width: 45rem;
+    font-family: 'Inter';
+    padding: 2.5rem 0;
+  }
+
+  &__subtitle{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    &-text{
+      text-transform: uppercase;
+      font-size: 1.1875rem;
+      font-family: 'TenorSans-Regular';
+    }
+  }
+
+  // first step
+  &-first{
+    &__first{
+      display: flex;
+      align-items: center;
+      gap: 3.75rem;
+    }
+
+    &-cover{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &__item{
+        width: 1.625rem;
+        height: 1.625rem;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        &-red{
+          background-color: var(--red-dark);
+        }
+
+        &-blue{
+          background-color: var(--blue200);
+        }
+
+        &_active{
+          position: relative;
+
+          &::before{
+            content: '';
+            width: .625rem;
+            height: .625rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--white);
+            animation: coverColor 0.15s;
+          }
+        }
+      }
+    }
+  }
+
+  &-covers{
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    &__item{
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      max-width: 220px;
+
+      &-img{
+        padding: 1.25rem;
+        background-color: var(--light);
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-logos{
+    display: flex;
+    gap: 30px;
+
+    &__item{
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      &-img{
+        height: 6.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        background-color: var(--light);
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-finish{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 5rem;
+
+    &__desc{
+      padding: 1.875rem 0 0 1.875rem;
+      border-left: 2px solid var(--blue200);
+      display: flex;
+      justify-content: flex-end;
+      align-items: start;
+
+      &_text{
+        text-transform: uppercase;
+        color: var(--grey);
+        font-size: 1.1875rem;
+        max-width: 19.6875rem;
+        font-family: 'TenorSans-Regular';
+      }
+    }
+  }
+}
+
+.updateFile{
+  display: grid;
+  grid-template-columns: 60% 35%;
+  gap: 3rem;
+
+  &-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed var(--grey-light);
+    padding: 2rem;
+
+    &__input{
+      display: none;
+    }
+
+    &__label{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;  
+      align-items: center;
+    }
+  }
+
+  &-options{
+    &__item{
+      border: 1px solid var(--grey-light); 
+    }
+  }
+}
+
+@keyframes coverColor{
+  0%{
+    width: .8rem;
+    height: .8rem;
+  }
+  100%{
+    width: .7rem;
+    height: .7rem;
+  }
+}

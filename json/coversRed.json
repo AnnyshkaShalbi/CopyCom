@@ -1,0 +1,27 @@
+[
+  {
+    "price": "480 ₽",
+    "title": "Без тиснения",
+    "image": "/contents/covers/red/withoutEmblems/empty.png"
+  },
+  {
+    "price": "560 ₽",
+    "title": "С тиснением ВКР",
+    "image": "/contents/covers/red/withoutEmblems/finalWork.png"
+  },
+  {
+    "price": "560 ₽",
+    "title": "С тиснением ДР",
+    "image": "/contents/covers/red/withoutEmblems/diplomWork.png"
+  },
+  {
+    "price": "560 ₽",
+    "title": "С тиснением ДП",
+    "image": "/contents/covers/red/withoutEmblems/diplomProject.png"
+  },
+  {
+    "price": "560 ₽",
+    "title": "С тиснением МД",
+    "image": "/contents/covers/red/withoutEmblems/masterThesis.png"
+  }
+]
