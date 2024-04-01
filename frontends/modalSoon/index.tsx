@@ -12,9 +12,11 @@ front.loader = () => {
 
 front.display = () => {
     return (
-        <footer class="footer">
-            <Navigation />
-        </footer>
+        <main class="thanks top">
+            <div class="wrapper">
+                <Navigation />
+            </div>
+        </main>
     )
 }
 

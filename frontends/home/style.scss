@@ -1,20 +1,21 @@
-.main{
+.main {
   margin-top: 200px;
 }
-.home{
+
+.home {
   color: var(--dark);
   font-family: 'TenorSans-Regular';
 
-  &-info{
+  &-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     justify-content: space-between;
 
-    &_title{
-      line-height: clamp(2.5rem, 3vw,3.75rem);
-      font-size: clamp(1.2rem, 3vw,2.875rem);
+    &_title {
+      line-height: clamp(2.5rem, 3vw, 3.75rem);
+      font-size: clamp(1.2rem, 3vw, 2.875rem);
       text-transform: uppercase;
       display: flex;
       font-weight: 500;
@@ -22,24 +23,24 @@
       justify-content: center;
     }
 
-    &_text{
+    &_text {
       font-size: clamp(1rem, 3vw, 2.5rem);
     }
 
-    &_link{
+    &_link {
       color: var(--dark);
       border-bottom: 2px solid var(--blue100);
       cursor: pointer;
     }
   }
 
-  &-banner{
+  &-banner {
     max-height: 20rem;
     height: 20rem;
     position: relative;
     background-image: url('images/mainPage/banner.png');
 
-    &_btn{
+    &_btn {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -48,28 +49,39 @@
     }
   }
 
-  &-steps{
+  &-steps {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+
+    &_text {
+      white-space: nowrap;
+    }
   }
 
-  &-subtitle{
+  &-subtitle {
     font-size: clamp(1rem, 3vw, 1.875rem);
     text-transform: uppercase;
     font-weight: 500;
     text-align: center;
   }
 
-  &-phone{
+  &-phone {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
     color: var(--dark);
 
-    &_number{
+    &_number {
       font-size: clamp(1rem, 3vw, 1.8rem);
     }
+  }
+}
+
+@media(max-width: 800px) {
+  .main {
+    margin-top: 115px;
   }
 }

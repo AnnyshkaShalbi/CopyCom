@@ -1,4 +1,4 @@
-.header{
+.header {
   position: fixed;
   background-color: var(--white);
   top: 0;
@@ -7,29 +7,25 @@
   border-bottom: 1px solid var(--blue200);
   z-index: 5;
 
-  &-burger{
-    display: none;  
-  }
-
-  &-inner{
+  &-inner {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--blue200);
     padding: 1.25rem 0;
   }
 
-  &-main{
-    display: flex; 
+  &-main {
+    display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &-logo{
+  &-logo {
     display: flex;
     align-items: center;
     gap: 4rem;
 
-    &__phone{
+    &__phone {
       font-size: 1.1875rem;
       margin: 1rem 0.5rem;
       font-weight: 500;
@@ -37,23 +33,23 @@
     }
   }
 
-  &-list{
+  &-list {
     display: flex;
     align-items: center;
     gap: 2.5rem;
 
-    &__item{
+    &__item {
       font-family: 'NotoSans-Regular';
       position: relative;
 
-      a{
+      a {
         display: flex;
         align-items: center;
         gap: 0.3rem;
 
       }
 
-      &_circle::before{
+      &_circle::before {
         content: '';
         // transform: translateX(-2.5rem);
         position: absolute;
@@ -68,38 +64,99 @@
       }
     }
   }
+
+  &-burger,
+  &-mobileMenu {
+    display: none;
+  }
 }
 
-@media (max-width: 600px){
-  .header{
-    &-burger{
-      width: 3rem;
-      height: 3rem;
-      display: inline-block;
-      margin: 0.5rem;
+@media(max-width: 800px) {
+  .header {
 
-      &__item{
-        width: 2.5rem;
-        height: 0.1rem;
-        background-color: var(--dark);
-        margin: 0.5em auto;
-        transition: all 0.4s;
-        display: block;
+    &_nav,
+    .headerPhone,
+    .headerContact,
+    .headerLocation,
+    .headerBottom {
+      display: none;
+    }
+
+    &-burger {
+      position: relative;
+      width: 45px;
+      height: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+
+
+      &__item {
+        height: 2px;
+        width: 45px;
+        background: var(--dark);
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
       }
 
-      &_active{
-        .header-burger__item_1{
-          -webkit-transform: rotate(45deg) translate(-8.5px, 5.5px) ;
-          transform: rotate(45deg) translate(10px, 10px);
+      &_active {
+        .header-burger__item:nth-child(1) {
+          -webkit-transform: translateY(13px) rotate(45deg);
+          -ms-transform: translateY(13px) rotate(45deg);
+          -o-transform: translateY(13px) rotate(45deg);
+          transform: translateY(13px) rotate(45deg);
         }
-        .header-burger__item_2{
+
+        .header-burger__item:nth-child(2) {
           opacity: 0;
         }
-        .header-burger__item_3{
-          -webkit-transform: rotate(-45deg) translate(-8.5px, -7.5px) ;
-          transform: rotate(-45deg) translate(8.5px, -7.5px);
+
+        .header-burger__item:nth-child(3) {
+          -webkit-transform: translateY(-13px) rotate(-45deg);
+          -ms-transform: translateY(-13px) rotate(-45deg);
+          -o-transform: translateY(-13px) rotate(-45deg);
+          transform: translateY(-13px) rotate(-45deg);
         }
       }
     }
+
+    &-mobileMenu {
+      position: fixed;
+      top: 6.45rem;
+      right: 100%;
+      bottom: 0;
+      z-index: 90;
+      width: 22rem;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--white);
+      transform: translateX(0);
+      transition-delay: 0.25s;
+      transition: transform 0.4s ease 0s;
+      padding: 1.25rem 1.5rem;
+
+      &__active {
+        transform: translateX(100%);
+        width: 100%;
+      }
+
+      &_title {
+        text-transform: uppercase;
+        color: #141D38;
+        border-bottom: 1px solid var(--blue200);
+        font-family: 'TenorSans-Regular';
+      }
+
+      &_item {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #141D38;
+      }
+    }
+
   }
 }

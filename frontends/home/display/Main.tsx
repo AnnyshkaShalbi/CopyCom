@@ -3,37 +3,39 @@ import arrSteps from '@svg/icons/arr-right-home.svg'
 import whatsupGreen from '@svg/icons/whatsupGreen.svg'
 
 const RenderHomeInfo = () => {
-    return(
+    return (
         <div class="home-info mb-25">
             <h1 class="home-info_title">ХЕЙ, СТУДЕНТ!</h1>
             <p class="home-info_text">Тебя уже все достало и ты хочешь поскорее сдать диплом?</p>
-            <a href="/order" class="home-info_text home-info_link" onclick={()=>{Fn.link}}>Не парься - закажи его печать у нас!</a>
+            {/* <a href="/order" class="home-info_text home-info_link" onclick={()=>{Fn.link}}>Не парься - закажи его печать у нас!</a> */}
+            <a href="/dev" class="home-info_text home-info_link" onclick={() => { Fn.link }}>Не парься - закажи его печать у нас!</a>
         </div>
     )
 }
 
 const RenderHomeBanner = () => {
-    return(
+    return (
         <div class="home-banner mb-25">
-            <a href="/order" onclick={()=>{Fn.link}} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a>
+            {/* <a href="/order" onclick={() => { Fn.link }} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a> */}
+            <a href="/dev" onclick={() => { Fn.link }} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a>
         </div>
     )
 }
 
 const RenderHomeSteps = () => {
-    return(
+    return (
         <div class="home-steps mb-25">
-            <span>Загружаешь диплом</span>
+            <span class="home-steps_text">Загружаешь диплом</span>
             <img src={arrSteps} all="Загружаешь диплом"></img>
-            <span>Выбираешь обложку и её цвет</span>
+            <span class="home-steps_text">Выбираешь обложку и её цвет</span>
             <img src={arrSteps} all="Выбираешь обложку и её цвет"></img>
-            <span>Просто забираешь свой диплом!</span>
+            <span class="home-steps_text">Просто забираешь свой диплом!</span>
         </div>
     )
 }
 
 const RenderHomeMap = () => {
-    return(
+    return (
         <div class="home-map">
             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A33e360ab2f735f85ee7213537d7ff886d1e927e4e5aead045fe67e730e69b03b&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
         </div>
