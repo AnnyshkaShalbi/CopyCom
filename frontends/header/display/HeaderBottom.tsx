@@ -5,12 +5,20 @@ export default function () {
     <div class="wrapper headerBottom" ref="headerBottom">
       <ul class="header-list pY-18">
         <li class="header-list__item">
-          <a href="">
+          <a
+            onclick={() => {
+              Fn.initOne("modalSoon", {})
+            }}
+          >
             Проектная документация
           </a>
         </li>
         <li class="header-list__item">
-          <a href="">
+          <a
+            onclick={() => {
+              Fn.initOne("modalSoon", {})
+            }}
+          >
             Копицентр
           </a>
         </li>

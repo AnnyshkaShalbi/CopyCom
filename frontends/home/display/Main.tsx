@@ -8,7 +8,14 @@ const RenderHomeInfo = () => {
             <h1 class="home-info_title">ХЕЙ, СТУДЕНТ!</h1>
             <p class="home-info_text">Тебя уже все достало и ты хочешь поскорее сдать диплом?</p>
             {/* <a href="/order" class="home-info_text home-info_link" onclick={()=>{Fn.link}}>Не парься - закажи его печать у нас!</a> */}
-            <a href="/dev" class="home-info_text home-info_link" onclick={() => { Fn.link }}>Не парься - закажи его печать у нас!</a>
+            <a
+                class="home-info_text home-info_link"
+                onclick={() => {
+                    Fn.initOne("modalSoon", {})
+                }}
+            >
+                Не парься - закажи его печать у нас!
+            </a>
         </div>
     )
 }
@@ -17,7 +24,14 @@ const RenderHomeBanner = () => {
     return (
         <div class="home-banner mb-25">
             {/* <a href="/order" onclick={() => { Fn.link }} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a> */}
-            <a href="/dev" onclick={() => { Fn.link }} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a>
+            <a
+                onclick={() => {
+                    Fn.initOne("modalSoon", {})
+                }}
+                class="btn btn_blue home-banner_btn"
+            >
+                Закажи переплёт диплома
+            </a>
         </div>
     )
 }
@@ -25,11 +39,19 @@ const RenderHomeBanner = () => {
 const RenderHomeSteps = () => {
     return (
         <div class="home-steps mb-25">
-            <span class="home-steps_text">Загружаешь диплом</span>
-            <img src={arrSteps} all="Загружаешь диплом"></img>
-            <span class="home-steps_text">Выбираешь обложку и её цвет</span>
-            <img src={arrSteps} all="Выбираешь обложку и её цвет"></img>
-            <span class="home-steps_text">Просто забираешь свой диплом!</span>
+            <div class="home-steps_item">
+                <span class="home-steps_text">Загружаешь диплом</span>
+                <img src={arrSteps} all="Загружаешь диплом"></img>
+            </div>
+
+            <div class="home-steps_item">
+                <span class="home-steps_text">Выбираешь обложку и её цвет</span>
+                <img src={arrSteps} all="Выбираешь обложку и её цвет"></img>
+            </div>
+
+            <div class="home-steps_item">
+                <span class="home-steps_text">Просто забираешь свой диплом!</span>
+            </div>
         </div>
     )
 }

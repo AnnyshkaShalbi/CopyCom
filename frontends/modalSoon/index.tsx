@@ -1,8 +1,12 @@
-import { Cemjsx, front, Func, Static, Fn } from "cemjs-all"
+import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
 
 front.listener.finish = () => {
+    return
+}
+
+front.func.test = () => {
     return
 }
 
@@ -12,11 +16,19 @@ front.loader = () => {
 
 front.display = () => {
     return (
-        <main class="thanks top">
-            <div class="wrapper">
+        <div
+            class="modal"
+            onclick={(e) => {
+                if (e.target === Ref.modalOutside) {
+                    setTimeout(() => {
+                        Fn.clearData()
+                    }, 5);
+                }
+            }}>
+            <div class="modal_wrap" ref="modalOutside">
                 <Navigation />
             </div>
-        </main>
+        </div>
     )
 }
 

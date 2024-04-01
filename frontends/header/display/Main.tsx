@@ -55,15 +55,77 @@ const HeaderMobileMenu = function () {
           </ul>
         </nav>
       </div>
-      <a href="/dev" class="header-mobileMenu_title mb-30 pb-5">твёрдый переплёт и печать дипломов</a>
-      <a href="/dev" class="header-mobileMenu_title mb-30 pb-5">проектная документация</a>
-      <a href="/dev" class="header-mobileMenu_title mb-30 pb-5">копицентр</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Печать документов</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Печать чертежей</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Печать презентаций</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Печать лекал и выкроек</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Сканирование документов</a>
-      <a href="/dev" class="header-mobileMenu_item pb-5">Брошюровка на пластиковую пружину</a>
+      <a
+        class="header-mobileMenu_title mb-30 pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}>
+        твёрдый переплёт и печать дипломов
+      </a>
+      <a
+        class="header-mobileMenu_title mb-30 pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        проектная документация
+      </a>
+      <a
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+        class="header-mobileMenu_title mb-30 pb-5"
+      >
+        копицентр
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Печать документов
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Печать чертежей
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Печать презентаций
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Печать лекал и выкроек
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Сканирование документов
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Брошюровка на пластиковую пружину
+      </a>
     </div>
   )
 }
