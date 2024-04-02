@@ -35,7 +35,7 @@ const HeaderMobileMenu = function () {
         front.Variable.openSidebar ? "header-mobileMenu__active" : null
       ]}
     >
-      <div class="flex align-items-center justify-content-between">
+      <div class="flex align-items-center justify-content-between flex-wrap pb-20">
         <span class="header-logo__phone">
           <a href="tel:+7 (915) 431-06-66">+ 7 (915) 431-06-66</a>
         </span>
