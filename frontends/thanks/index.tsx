@@ -13,9 +13,7 @@ front.loader = () => {
 front.display = () => {
     return (
         <main class="thanks top">
-            <div class="wrapper">
-                <Navigation />
-            </div>
+            <Navigation />
         </main>
     )
 }

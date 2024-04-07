@@ -31,6 +31,14 @@ section {
 
 .link {
   color: var(--blue200);
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+
+  &:hover{
+    transition: var(--tran03);
+    border-bottom: 1px solid var(--blue200);
+  }
 }
 
 .btn {
@@ -196,6 +204,8 @@ section {
 
 .top {
   padding-top: 12.5rem;
+
+  
 }
 
 .g-equal-2 {
