@@ -7,7 +7,7 @@ export default function () {
        <div class="thanks-pay-wrapper">
          <div class="thanks-pay"> 
             <h2 class="thanks-pay-title">Оплата онлайн</h2>
-            <p>Также ты можешь выбрать банковскую карту и оплатить заказ сейчас</p>
+            <p class="text-align-center">Также ты можешь выбрать банковскую карту и оплатить заказ сейчас</p>
             <div class="thanks-pay-banks">
               <img src={sberbank} alt="Сбербанк" />
               <img src={tinkoff} alt="Тинькофф" />

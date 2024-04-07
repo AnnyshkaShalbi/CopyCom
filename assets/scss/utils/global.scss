@@ -112,6 +112,12 @@ section {
   &_blue200 {
     color: var(--blue200);
   }
+
+  &-align{
+    &-center{
+      text-align: center;
+    }
+  }
 }
 
 .field {
@@ -205,7 +211,13 @@ section {
 .top {
   padding-top: 12.5rem;
 
-  
+  @media (max-width: 800px){
+    padding-top: 8rem;
+  }
+
+  @media (max-width: 600px){
+    padding-top: 6rem;
+  }
 }
 
 .g-equal-2 {
