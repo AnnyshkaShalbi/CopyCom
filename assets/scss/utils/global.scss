@@ -26,6 +26,7 @@ section {
     font-size: 1.875rem;
     font-weight: 400;
     text-transform: uppercase;
+    font-family: 'TenorSans-Regular';
   }
 }
 
@@ -117,6 +118,10 @@ section {
     &-center{
       text-align: center;
     }
+  }
+
+  &-wrap{
+    max-width: 45rem;
   }
 }
 
