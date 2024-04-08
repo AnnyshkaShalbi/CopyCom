@@ -1,8 +1,70 @@
 .copy{
-  &-content{
-    display: flex;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: center;
+  &-title{
+    color: var(--blue300);
+    font-size: clamp(.9375rem, 3vw, 1.1875rem);
+    font-weight: 400;
+    line-height: clamp(1.375rem, 3vw, 1.875rem);
+    text-transform: uppercase;
+    font-family: 'TenorSans-Regular';
   }
+
+  &-content{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 60% 35%;
+  }
+
+  &-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed var(--border-light);
+    padding: 3rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'NotoSans-Regular';
+
+  &-head{
+    border-bottom: 1px solid var(--blue200);
+    padding-bottom: 1rem;
+    text-align: left;
+  }
+
+  &-body{
+    &-row{
+      display: grid;
+      grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr;
+
+      &:not(:last-child){
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      &:first-child{
+        border-bottom: 1px solid var(--border-light);
+      }
+    }
+
+    &-cell{
+      padding: 1rem;
+      white-space: nowrap;
+      text-align: left;
+
+      &:not(:last-child){
+        border-right: 1px solid var(--border-light);
+      }
+    }
+
+  }
+}
+
+.tabs{
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
