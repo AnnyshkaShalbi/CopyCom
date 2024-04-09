@@ -12,7 +12,12 @@ const RenderTitle = () => {
 
 const RenderTable = () => {
     return(
-        <table class="table">
+        <table
+            class={[
+                "table",
+                window.matchMedia("(max-width: 992px)") && Static.tabsActive ? null : "hidden"
+            ]}
+        >
             <caption class="table-head copy-title">прайс-лист</caption>
             <thead>
                 <tr class="table-body-row">
@@ -73,7 +78,12 @@ const RenderTable = () => {
 
 const RenderFile = () => {
     return(
-        <div>
+        <div 
+            class={[
+                "copy-application",
+                window.matchMedia("(max-width: 992px)") && Static.tabsActive ? "hidden" : null
+            ]}
+        >
             <h3 class="copy-title pb-15">оставь заявку</h3>
             <div class="copy-file">
                 <img src={filePdf} alt="Загрузите файл в pdf формате" />
@@ -108,10 +118,20 @@ const RenderFile = () => {
 const RenderTabs = () => {
     return(
         <div class="tabs">
-            <div class="tabs-item tabs-item_active">
+            <div 
+                onclick={()=> {
+                    Static.tabsActive = !Static.tabsActive
+                }}
+                class={["tabs-item", Static.tabsActive ? "tabs-item_active" : null]}
+            >
                 <h3 class="copy-title">прайс-лист</h3>
             </div>
-            <div class="tabs-item">
+            <div
+                onclick={()=> {
+                    Static.tabsActive = !Static.tabsActive
+                }}
+                class={["tabs-item", Static.tabsActive ? null : "tabs-item_active"]}
+            >
                 <h3 class="copy-title">оставь заявку</h3>
             </div>
         </div>
@@ -122,8 +142,11 @@ export default function () {
     return (
         <div class="pb-25"> 
             <RenderTitle />
+            {/* <RenderTabs /> */}
             <div class="copy-content mt-25">
-                {/* <RenderTabs /> */}
+                {
+                    window.matchMedia("(max-width: 992px)") ? <RenderTabs /> : null
+                }
                 <RenderTable />
                 <RenderFile />
             </div>

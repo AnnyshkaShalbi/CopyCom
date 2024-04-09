@@ -1,4 +1,9 @@
 .copy{
+
+  .tabs{
+    display: none;
+  }
+
   &-title{
     color: var(--blue300);
     font-size: clamp(.9375rem, 3vw, 1.1875rem);
@@ -25,6 +30,33 @@
   }
 }
 
+
+@media (max-width: 992px){
+  .copy{
+    .tabs{
+      display: flex;
+    }
+
+    &-content{
+      grid-template-columns: 1fr;
+    }
+
+    .table-head{
+      display: none;
+    }
+
+    &-application{
+      .copy-title{
+        display: none;
+      }
+    }
+    
+  }
+}
+
+
+
+// вынеси в глобальные стили
 .table{
   width: 100%;
   border-collapse: collapse;
@@ -67,4 +99,22 @@
   display: flex;
   justify-content: start;
   align-items: center;
+
+  &-item{
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    
+    .copy-title{
+      color: var(--grey);
+    }
+
+    &_active{
+      border-bottom: 1px solid var(--blue200);
+
+      .copy-title{
+        color: var(--blue200);
+      }
+    }
+  }
 }
