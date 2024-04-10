@@ -148,7 +148,7 @@ export default function () {
         </div>
 
         <div class="header-logo">
-          <a href="/" onclick={() => { Fn.link }}>
+          <a href="/" onclick={Fn.link}>
             <img src={logo} alt="Copycom logo" />
           </a>
           <span class="header-logo__phone headerPhone">

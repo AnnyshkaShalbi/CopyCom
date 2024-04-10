@@ -6,18 +6,22 @@ export default function () {
       <ul class="header-list pY-18">
         <li class="header-list__item">
           <a
-            onclick={() => {
-              Fn.initOne("modalSoon", {})
-            }}
+            href="/projectdoc"
+            onclick={Fn.link}
+          // onclick={() => {
+          //   Fn.initOne("modalSoon", {})
+          // }}
           >
             Проектная документация
           </a>
         </li>
         <li class="header-list__item">
           <a
-            onclick={() => {
-              Fn.initOne("modalSoon", {})
-            }}
+            href="/copydoc"
+            onclick={Fn.link}
+          // onclick={() => {
+          //   Fn.initOne("modalSoon", {})
+          // }}
           >
             Копицентр
           </a>

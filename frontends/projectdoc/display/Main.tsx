@@ -4,7 +4,7 @@ import filePdf from '@svg/icons/filePdf.svg'
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">Копирование документов</h1>
+            <h1 class="title_secondary pb-15">Проектная документация</h1>
             <p class="text-wrap text-grey">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
         </div>
     )
