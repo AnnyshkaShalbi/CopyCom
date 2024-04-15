@@ -11,7 +11,9 @@ const RenderMain = () => {
             <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" />
             <img class="home-main-img home-main-img__mobile" src={diplomMobile} alt="Заказать печать диплома | Копиком" />
 
-            <a href="/order" class="home-circle" onclick={Fn.link}>
+            <a class="home-circle" onclick={() => {
+                Fn.initOne("modalSoon", {})
+            }}>
                 <div class="home-circle_inner">
                     <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
                     <span class="home-circle-text">закажи</span>
@@ -47,7 +49,9 @@ const RenderMain = () => {
                 <div class="home-main-ps">
                     <p class="home-main-ps_text">P.S. Только у нас ты можешь сделать обложку с фирменной эмблемой своего ВУЗа!</p>
                 </div>
-                <a href="/order" class="home-circle home-circle__mobile" onclick={Fn.link}>
+                <a class="home-circle home-circle__mobile" onclick={() => {
+                    Fn.initOne("modalSoon", {})
+                }}>
                     <div class="home-circle_inner">
                         <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
                         <span class="home-circle-text">закажи</span>
