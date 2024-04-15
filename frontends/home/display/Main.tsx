@@ -1,56 +1,46 @@
 import { Cemjsx, Fn } from "cemjs-all"
-import arrSteps from '@svg/icons/arr-right-home.svg'
 import whatsupGreen from '@svg/icons/whatsupGreen.svg'
+import doneWhite from '@svg/icons/doneWhite.svg'
+import diploms from '@images/mainPage/diploms.png'
+import arrowTopRight from '@svg/icons/arrowTopRight.svg'
 
-const RenderHomeInfo = () => {
-    return (
-        <div class="home-info mb-25">
-            <h1 class="home-info_title">ХЕЙ, СТУДЕНТ!</h1>
-            <p class="home-info_text">Тебя уже все достало и ты хочешь поскорее сдать диплом?</p>
-            {/* <a href="/order" class="home-info_text home-info_link" onclick={()=>{Fn.link}}>Не парься - закажи его печать у нас!</a> */}
-            <a
-                class="home-info_text home-info_link"
-                onclick={() => {
-                    Fn.initOne("modalSoon", {})
-                }}
-            >
-                Не парься - закажи его печать у нас!
+const RenderMain = () => {
+    return(
+        <div class="home-main">
+            <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" />
+            <a href="/order" class="home-circle" onclick={Fn.link}>
+                <div class="home-circle_inner">
+                    <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
+                    <span class="home-circle-text">закажи</span>
+                    <span class="home-circle-text">печать</span>
+                    <span class="home-circle-text">диплома</span>
+                </div>
             </a>
-        </div>
-    )
-}
-
-const RenderHomeBanner = () => {
-    return (
-        <div class="home-banner mb-25">
-            {/* <a href="/order" onclick={() => { Fn.link }} class="btn btn_blue home-banner_btn">Закажи переплёт диплома</a> */}
-            <a
-                onclick={() => {
-                    Fn.initOne("modalSoon", {})
-                }}
-                class="btn btn_blue home-banner_btn"
-            >
-                Закажи переплёт диплома
-            </a>
-        </div>
-    )
-}
-
-const RenderHomeSteps = () => {
-    return (
-        <div class="home-steps mb-25">
-            <div class="home-steps_item">
-                <span class="home-steps_text">Загружаешь диплом</span>
-                <img src={arrSteps} all="Загружаешь диплом"></img>
-            </div>
-
-            <div class="home-steps_item">
-                <span class="home-steps_text">Выбираешь обложку и её цвет</span>
-                <img src={arrSteps} all="Выбираешь обложку и её цвет"></img>
-            </div>
-
-            <div class="home-steps_item">
-                <span class="home-steps_text">Просто забираешь свой диплом!</span>
+            <div class="wrapper">
+                <div class="home-text-wrap">
+                    <p class="home-text">Хей, студент! Тебя уже всё достало и ты хочешь поскорее сдать диплом?</p>
+                    <p class="home-text">Не парься —</p>
+                </div>
+                <h1 class="home-main-title">закажи <span class="home-main-title_blue">печать диплома</span> у нас</h1>
+                <div class="home-main-steps">
+                    <div class="home-main-steps_item">
+                        <span class="home-main-steps_item__circle">1</span>
+                        <p>Загружаешь диплом</p>
+                    </div>
+                    <div class="home-main-steps_item">
+                        <span class="home-main-steps_item__circle">2</span>
+                        <p>Выбираешь цвет и обложку</p>
+                    </div>
+                    <div class="home-main-steps_item">
+                        <span class="home-main-steps_item__circle home-main-steps_item__circle-done">
+                            <img src={doneWhite} alt="Забираешь свой диплом" />
+                        </span>
+                        <p>Забираешь свой диплом</p>
+                    </div>
+                </div>
+                <div class="home-main-ps">
+                    <p class="home-main-ps_text">P.S. Только у нас ты можешь сделать обложку с фирменной эмблемой своего ВУЗа!</p>
+                </div>
             </div>
         </div>
     )
@@ -67,17 +57,19 @@ const RenderHomeMap = () => {
 export default function () {
     return (
         <section class="home">
-            <RenderHomeInfo />
-            <RenderHomeBanner />
-            <RenderHomeSteps />
-            <h2 class="home-subtitle mY-65">P.S. только у нас ты можешь сделать обложку с фирменной эмблемой твоего вуза! </h2>
-
-            <h2 class="home-info_title mb-25">Наши к<span class="circle"></span>пицентры</h2>
-            <a class="home-phone mb-25" href="https://api.whatsapp.com/send/?phone=79154310666">
-                <span class="home-phone_number">+7 (915) 431-06-66</span>
-                <img src={whatsupGreen} alt="Телефон для связи Whats'up " />
-            </a>
-            <RenderHomeMap />
+           
+            <RenderMain />
+            
+            <div class="wrapper">
+                <h2 class="home-info_title mb-25">Наши к<span class="circle"></span>пицентры</h2>
+                <a class="home-phone mb-25" href="https://api.whatsapp.com/send/?phone=79154310666">
+                    <span class="home-phone_number">+7 (915) 431-06-66</span>
+                    <img src={whatsupGreen} alt="Телефон для связи Whats'up " />
+                </a>
+                <RenderHomeMap />
+            </div>
+            
+            
         </section>
     )
 }

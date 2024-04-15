@@ -37,7 +37,7 @@ const HeaderMobileMenu = function () {
     >
       <div class="flex align-items-center justify-content-between flex-wrap pb-20">
         <span class="header-logo__phone">
-          <a href="tel:+7 (915) 431-06-66">+ 7 (915) 431-06-66</a>
+          <a href="https://api.whatsapp.com/send/?phone=79154310666">+ 7 (915) 431-06-66</a>
         </span>
         <nav class="header-menu">
           <ul class="header-list">
@@ -152,7 +152,7 @@ export default function () {
             <img src={logo} alt="Copycom logo" />
           </a>
           <span class="header-logo__phone headerPhone">
-            <a href="tel:+7 (915) 431-06-66">+ 7 (915) 431-06-66</a>
+            <a href="https://api.whatsapp.com/send/?phone=79154310666">+ 7 (915) 431-06-66</a>
           </span>
         </div>
 
