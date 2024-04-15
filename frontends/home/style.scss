@@ -1,15 +1,12 @@
 .main {
-  margin-top: 200px;
-
-
-
+  margin-top: 12.5rem;
 }
 
 .home {
   color: var(--dark);
   font-family: 'TenorSans-Regular';
 
-  &-circle{
+  &-circle {
     background: var(--blue200);
     color: var(--white);
     display: flex;
@@ -22,20 +19,25 @@
     top: 20%;
     right: 15%;
     border-radius: 50%;
+    font-family: 'Inter';
 
-    &_inner{
+    &_inner {
       display: flex;
       flex-direction: column;
     }
 
-    img{
+    img {
       width: 20px;
     }
 
-    &-text{
-      font-size: 1.5rem;
+    &-text {
+      font-size: clamp(1rem, 3vw, 1.5rem);
       line-height: 1.875rem;
       text-transform: uppercase;
+    }
+
+    &__mobile {
+      display: none;
     }
   }
 
@@ -67,12 +69,13 @@
     }
   }
 
-  &-text{
+  &-text {
     font-size: 1rem;
     font-style: italic;
     color: var(--grey);
+    font-family: 'Inter';
 
-    &-wrap{
+    &-wrap {
       display: flex;
       flex-direction: column;
       gap: 1.5625rem;
@@ -93,13 +96,14 @@
     }
   }
 
-  &-main{
+  &-main {
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
     position: relative;
     margin-bottom: 5rem;
+    border-bottom: 1px solid var(--blue200);
 
-    &-img{
+    &-img {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -107,33 +111,39 @@
       height: 100%;
       object-fit: contain;
       z-index: -1;
+
+      &__mobile {
+        opacity: 0;
+      }
     }
 
-    &-title{
+    &-title {
       font-weight: 400;
       text-transform: uppercase;
       font-family: 'TenorSans-Regular';
-      font-size: 4.75rem;
-      line-height: 5.625rem;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.0625rem, 5vw, 4.75rem);
+      line-height: clamp(3rem, 7vw, 5.5rem);
+      margin-bottom: 2rem;
 
-      &_blue{
+      &_blue {
         color: var(--blue200);
       }
     }
 
-    &-steps{
+    &-steps {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-bottom: 2.5rem;
 
-      &_item{
+      &_item {
         display: flex;
         align-items: center;
         gap: 0.8rem;
+        color: var(--blue300);
+        font-family: 'Inter';
 
-        &__circle{
+        &__circle {
           background: var(--light);
           width: 1.875rem;
           height: 1.875rem;
@@ -145,36 +155,129 @@
           line-height: 1.5rem;
           color: var(--dark);
 
-          &-done{
+          &-done {
             background-color: var(--blue200);
           }
         }
       }
     }
 
-    &-ps{
+    &-ps {
       padding: 1.25rem 3.125rem;
       background-color: #E6ECFF;
-      max-width: 400px;
+      max-width: 410px;
 
-      &_text{
+      &_text {
         color: var(--blue200);
+        font-family: 'Inter';
+        font-size: clamp(0.9rem, 3vw, 1.25rem);
       }
     }
 
   }
 }
 
-@media(max-width: 1200px){
-  .home{
-    &-circle{
-      
+@media(max-width: 1100px) {
+  .home {
+    &-main {
+      padding-bottom: 20rem;
+
+      &-img {
+        height: auto;
+        top: auto;
+        width: 100%;
+      }
     }
+  }
+}
+
+@media(max-width: 900px) {
+  .home {
+    &-main {
+      padding-top: 1rem;
+      padding-bottom: 15rem;
+    }
+
   }
 }
 
 @media(max-width: 800px) {
   .main {
     margin-top: 115px;
+  }
+
+  .home {
+    &-circle {
+      width: 10rem;
+      height: 10rem;
+      top: 30%;
+      right: 10%;
+
+      &-text {
+        font-size: 1rem;
+        line-height: 1.2rem;
+      }
+    }
+
+    &-main {
+      &-ps {
+        padding: 1rem 1.125rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 550px) {
+  .home {
+
+    &-text {
+      &-wrap {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-circle {
+      display: none;
+
+      &__mobile {
+        display: flex;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        margin: 0 auto;
+      }
+    }
+
+    &-main {
+      &-title {
+        margin-bottom: 1rem;
+      }
+
+      &-img {
+        opacity: 0;
+
+        &__mobile {
+          opacity: 1;
+        }
+      }
+
+      &-steps {
+        margin-bottom: 1rem;
+      }
+
+      &-ps {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  .home {
+    &-main {
+      padding-bottom: 12rem;
+    }
   }
 }

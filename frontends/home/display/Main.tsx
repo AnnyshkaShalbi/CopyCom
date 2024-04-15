@@ -2,12 +2,15 @@ import { Cemjsx, Fn } from "cemjs-all"
 import whatsupGreen from '@svg/icons/whatsupGreen.svg'
 import doneWhite from '@svg/icons/doneWhite.svg'
 import diploms from '@images/mainPage/diploms.png'
+import diplomMobile from '@images/mainPage/diplomsMobile.png'
 import arrowTopRight from '@svg/icons/arrowTopRight.svg'
 
 const RenderMain = () => {
-    return(
+    return (
         <div class="home-main">
             <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" />
+            <img class="home-main-img home-main-img__mobile" src={diplomMobile} alt="Заказать печать диплома | Копиком" />
+
             <a href="/order" class="home-circle" onclick={Fn.link}>
                 <div class="home-circle_inner">
                     <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
@@ -21,7 +24,10 @@ const RenderMain = () => {
                     <p class="home-text">Хей, студент! Тебя уже всё достало и ты хочешь поскорее сдать диплом?</p>
                     <p class="home-text">Не парься —</p>
                 </div>
-                <h1 class="home-main-title">закажи <span class="home-main-title_blue">печать диплома</span> у нас</h1>
+                <h1 class="home-main-title">
+                    <p>закажи <span class="home-main-title_blue">печать</span></p>
+                    <p><span class="home-main-title_blue">диплома</span> у нас</p>
+                </h1>
                 <div class="home-main-steps">
                     <div class="home-main-steps_item">
                         <span class="home-main-steps_item__circle">1</span>
@@ -41,6 +47,14 @@ const RenderMain = () => {
                 <div class="home-main-ps">
                     <p class="home-main-ps_text">P.S. Только у нас ты можешь сделать обложку с фирменной эмблемой своего ВУЗа!</p>
                 </div>
+                <a href="/order" class="home-circle home-circle__mobile" onclick={Fn.link}>
+                    <div class="home-circle_inner">
+                        <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
+                        <span class="home-circle-text">закажи</span>
+                        <span class="home-circle-text">печать</span>
+                        <span class="home-circle-text">диплома</span>
+                    </div>
+                </a>
             </div>
         </div>
     )
@@ -57,9 +71,9 @@ const RenderHomeMap = () => {
 export default function () {
     return (
         <section class="home">
-           
+
             <RenderMain />
-            
+
             <div class="wrapper">
                 <h2 class="home-info_title mb-25">Наши к<span class="circle"></span>пицентры</h2>
                 <a class="home-phone mb-25" href="https://api.whatsapp.com/send/?phone=79154310666">
@@ -68,8 +82,8 @@ export default function () {
                 </a>
                 <RenderHomeMap />
             </div>
-            
-            
+
+
         </section>
     )
 }
