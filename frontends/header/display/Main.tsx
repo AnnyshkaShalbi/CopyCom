@@ -1,5 +1,5 @@
 import { Cemjsx, Func, Static, Fn, front } from "cemjs-all"
-import logo from '@svg/logo.svg'
+import logo from '@images/logoBlack.png'
 
 const HeaderMenu = function () {
   return (
@@ -137,7 +137,7 @@ export default function () {
         <div
           class="header-burger"
           onclick={(e) => {
-            e.currentTarget.classList.toggle('header-burger_active')
+            // e.currentTarget.classList.toggle('header-burger_active')
             front.Variable.openSidebar = !front.Variable.openSidebar;
             Fn.initAll();
           }}
@@ -149,7 +149,7 @@ export default function () {
 
         <div class="header-logo">
           <a href="/" onclick={Fn.link}>
-            <img src={logo} alt="Copycom logo" />
+            <img src={logo} alt="Копиком копицентр для студентов" />
           </a>
           <span class="header-logo__phone headerPhone">
             <a href="https://api.whatsapp.com/send/?phone=79154310666">+ 7 (915) 431-06-66</a>
