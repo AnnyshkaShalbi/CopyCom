@@ -38,7 +38,7 @@ const RenderMain = () => {
                 </h1>
 
                 <div class="home-main-info">
-                    <div>
+                    <div class="home-main-info_content">
                         <div class="home-main-steps">
                             <div class="home-main-steps_item">
                                 <span class="home-main-steps_item__circle">1</span>
