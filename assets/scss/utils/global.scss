@@ -12,13 +12,13 @@ section {
   margin-bottom: 9.375rem;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
 .circle {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.6rem;
+  height: 2.6rem;
   border-radius: 50%;
   background-color: var(--blue200);
 }
@@ -40,7 +40,7 @@ section {
   z-index: 100;
   border-bottom: 1px solid transparent;
 
-  &:hover{
+  &:hover {
     transition: var(--tran03);
     border-bottom: 1px solid var(--blue200);
   }
@@ -118,24 +118,24 @@ section {
     color: var(--blue200);
   }
 
-  &-align{
-    &-center{
+  &-align {
+    &-center {
       text-align: center;
     }
   }
 
-  &-wrap{
+  &-wrap {
     max-width: 45rem;
   }
 }
 
-.font{
-  &-weight{
-    &-500{
+.font {
+  &-weight {
+    &-500 {
       font-weight: 500;
     }
 
-    &-600{
+    &-600 {
       font-weight: 600;
     }
   }
@@ -232,11 +232,11 @@ section {
 .top {
   padding-top: 12.5rem;
 
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     padding-top: 8rem;
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     padding-top: 6rem;
   }
 }
@@ -277,4 +277,3 @@ section {
 .flex-wrap {
   flex-wrap: wrap;
 }
-

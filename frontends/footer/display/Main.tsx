@@ -20,7 +20,7 @@ export default function () {
           </a>
         </div>
         <a href="tel:+7 (915) 431-06-66" class="footer_phone">+ 7 (915) 431-06-66</a>
-        <span class="footer-company">© 2015–2024 Копиком</span>
+        <span class="footer-company">{`© 2015–${Static.currentYear} Копиком`}</span>
         <span class="footer-policy">Политика конфиденциальности</span>
       </div>
     </div>

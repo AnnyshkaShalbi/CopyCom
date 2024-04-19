@@ -7,6 +7,7 @@ front.listener.finish = () => {
 }
 
 front.loader = () => {
+    Static.currentYear = new Date().getFullYear();
     return
 }
 
