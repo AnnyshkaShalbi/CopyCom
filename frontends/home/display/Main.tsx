@@ -81,7 +81,7 @@ const RenderMain = () => {
 const RenderHomeMap = () => {
     return (
         <div class="home-map">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A33e360ab2f735f85ee7213537d7ff886d1e927e4e5aead045fe67e730e69b03b&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab8083df1b3091544fa582203d1bc98d46fbc2d03dcebb92311d5ab3fe0072652&amp;source=constructor" width="100%" height="345" frameborder="0"></iframe>
         </div>
     )
 }
