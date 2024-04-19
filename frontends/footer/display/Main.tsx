@@ -12,10 +12,10 @@ export default function () {
           <a href="#" class="socials socials_pink">
             <i class="i i-inst"></i>
           </a>
-          <a href="#" class="socials socials_blue">
+          <a href="https://vk.com/copykom" class="socials socials_blue" target="_blank">
             <i class="i i-vk"></i>
           </a>
-          <a href="#" class="socials socials_green">
+          <a href="https://api.whatsapp.com/send/?phone=79154310666" class="socials socials_green">
             <i class="i i-whatsup"></i>
           </a>
         </div>
