@@ -1,5 +1,5 @@
 import { Cemjsx, Func, Static, Fn, front } from "cemjs-all"
-import logo from '@images/logoBlack.png'
+import logo from '@svg/logoNewBlack.svg'
 
 const HeaderMenu = function () {
   return (
@@ -148,7 +148,7 @@ export default function () {
         </div>
 
         <div class="header-logo">
-          <a href="/" onclick={Fn.link}>
+          <a href="/" onclick={Fn.link} class="flex align-items-center">
             <img src={logo} alt="Копиком копицентр для студентов" />
           </a>
           <span class="header-logo__phone headerPhone">

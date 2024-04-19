@@ -1,5 +1,5 @@
 import { Cemjsx, Func, Static, Fn } from "cemjs-all"
-import logoWhite from '@images/logoWhite.png'
+import logoWhite from '@svg/logoNewWhite.svg'
 
 export default function () {
   return (
