@@ -114,9 +114,9 @@
       object-fit: contain;
       z-index: -1;
 
-      &__mobile {
-        opacity: 0;
-      }
+      // &__mobile {
+      //   opacity: 0;
+      // }
     }
 
     &-title {
@@ -377,13 +377,13 @@
         }
       }
 
-      &-img {
-        opacity: 0;
+      // &-img {
+      //   opacity: 0;
 
-        &__mobile {
-          opacity: 1;
-        }
-      }
+      //   &__mobile {
+      //     opacity: 1;
+      //   }
+      // }
 
       &-steps {
         margin-bottom: 1rem;

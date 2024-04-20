@@ -6,13 +6,23 @@ import doneWhite from '@svg/icons/doneWhite.svg'
 import diploms from '@images/mainPage/diploms.png'
 import diplomMobile from '@images/mainPage/diplomsMobile.png'
 import arrowTopRight from '@svg/icons/arrowTopRight.svg'
+import diplom1920 from '@images/diplomsMain/img-1920х1080.png'
+import diplom980 from '@images/diplomsMain/img-980x700.png'
+import diplom600 from '@images/diplomsMain/img-600x900.png'
+import diplom360 from '@images/diplomsMain/img-360x840.png'
+
 
 const RenderMain = () => {
     return (
         <div class="home-main">
-            <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" />
-            <img class="home-main-img home-main-img__mobile" src={diplomMobile} alt="Заказать печать диплома | Копиком" />
-
+            <picture>
+                <source media="(min-width: 1200px)" srcset={diplom1920} alt="Заказать печать диплома | Копиком" class="home-main-img" />
+                <source media="(min-width: 980px)" srcset={diplom980} alt="Заказать печать диплома | Копиком" class="home-main-img" />
+                <source media="(min-width: 600px)" srcset={diplom600} alt="Заказать печать диплома | Копиком" class="home-main-img" />
+                <source media="(min-width: 360px)" srcset={diplom360} alt="Заказать печать диплома | Копиком" class="home-main-img" />
+                <img class="home-main-img" src={diplom1920} alt="Заказать печать диплома | Копиком - копицентр для студентов" />
+                {/* <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" /> */}
+            </picture>
 
             <div class="wrapper">
                 <div class="home-text-wrap">
