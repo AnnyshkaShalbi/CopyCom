@@ -16,7 +16,7 @@ front.loader = () => {
 
 front.display = () => {
     return (
-        <main class="error">
+        <main class="error main">
             <Navigation />
         </main>
     )

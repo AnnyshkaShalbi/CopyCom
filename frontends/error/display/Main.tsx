@@ -3,13 +3,10 @@ import printer from '@svg/printer.svg'
 
 export default function () {
     return (
-        <div class="error_wrap">
-            <h1 class="title">Страница не найдена</h1>
-            <div class="error_image">
-                <img src={printer} alt="Копиком копировальный центр" />
-            </div>
-            <p class="error_notFound">Вернуться на главную страницу</p>
-            <a href="/" onclick={this.Fn.link} class="btn">Главная</a>
+        <div class="thanks-wrap"> 
+            <h1 class="thanks-title">Страница не найдена</h1>
+            <p class="thanks-text">Error 404</p>
+            <a href="/" class="link" onclick={Fn.link}>Вернуться на главную</a>
         </div>
     )
 }
