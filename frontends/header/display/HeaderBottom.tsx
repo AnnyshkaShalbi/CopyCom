@@ -1,4 +1,4 @@
-import { Cemjsx, Func, Static, Fn } from "cemjs-all"
+import { Cemjsx, Func, Static, Fn, Ref } from "cemjs-all"
 import arrowDownBlue from '@svg/icons/arrowDownBlue.svg'
 
 export default function () {
@@ -12,13 +12,37 @@ export default function () {
         </li>
         <li class="header-list__item">
           <div class="dropdown">
-            <div class="dropdown-head flex align-items-center">
-              <a href="/copydoc" onclick={Fn.link}> Копицентр</a>
+            <div 
+              class="dropdown-head flex align-items-center"
+              onclick={(e)=>{
+                Ref.dropdownList.classList.toggle('dropdown-body__active')
+              }}
+            >
+              {/* <a href="/copydoc" onclick={Fn.link}> Копицентр</a> */}
+              <span>Копицентр</span>
               <img src={arrowDownBlue} alt="КОПИКОМ | копировальный центр для студентов" />
             </div>
-            <ul>
+            <ul class="dropdown-body" ref="dropdownList">
               <li>
-                <a href=""></a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый переплёт</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Чертежи</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Сканирование</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Лекала</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Презентации</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Печать документов</a>
               </li>
             </ul>
           </div>
