@@ -17,17 +17,17 @@ const RenderMain = () => {
         <div class="home-main">
             <picture>
                 <source media="(min-width: 1200px)" srcset={diplom1920} alt="Заказать печать диплома | Копиком" class="home-main-img" />
-                <source media="(min-width: 980px)" srcset={diplom980} alt="Заказать печать диплома | Копиком" class="home-main-img" />
+                <source media="(min-width: 980px)" srcset={diplom1920} alt="Заказать печать диплома | Копиком" class="home-main-img" />
                 <source media="(min-width: 600px)" srcset={diplom600} alt="Заказать печать диплома | Копиком" class="home-main-img" />
                 <source media="(min-width: 360px)" srcset={diplom360} alt="Заказать печать диплома | Копиком" class="home-main-img" />
-                <img class="home-main-img" src={diplom1920} alt="Заказать печать диплома | Копиком - копицентр для студентов" />
+                <img class="home-main-img" src={diplom360} alt="Заказать печать диплома | Копиком - копицентр для студентов" />
                 {/* <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" /> */}
             </picture>
 
             <div class="wrapper">
                 <div class="home-text-wrap">
-                    <p class="home-text">Хей, студент! Тебя уже всё достало и ты хочешь поскорее сдать диплом?</p>
-                    <p class="home-text">Не парься —</p>
+                    <p class="home-text" ref="hey">Хей, студент! Тебя уже всё достало и ты хочешь поскорее сдать диплом?</p>
+                    <p class="home-text" ref="dontWorry">Не парься —</p>
                 </div>
 
                 <h1 class="home-main-title">

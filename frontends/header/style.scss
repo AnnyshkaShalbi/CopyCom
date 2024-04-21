@@ -78,6 +78,12 @@
     //   padding: 0.8rem 0;
     // }
 
+    &-logo{
+      img{
+        height: 40px;
+      }
+    }
+
     &_nav,
     .headerPhone,
     .headerContact,
@@ -130,7 +136,7 @@
 
     &-mobileMenu {
       position: fixed;
-      top: 5.2rem;
+      top: 4.2rem;
       right: 100%;
       bottom: 0;
       z-index: 90;

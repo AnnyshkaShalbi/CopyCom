@@ -9,13 +9,13 @@ export default function () {
           <img src={logoWhite} alt="Copycom" />
         </a>
         <div class="footer-socials">
-          <a href="#" class="socials socials_pink">
+          <a href="https://www.instagram.com/copy.kom?igsh=dHI1b21uMm5udm5v" class="socials socials_pink" target="_blank">
             <i class="i i-inst"></i>
           </a>
           <a href="https://vk.com/copykom" class="socials socials_blue" target="_blank">
             <i class="i i-vk"></i>
           </a>
-          <a href="https://api.whatsapp.com/send/?phone=79154310666" class="socials socials_green">
+          <a href="https://api.whatsapp.com/send/?phone=79154310666" class="socials socials_green" target="_blank">
             <i class="i i-whatsup"></i>
           </a>
         </div>
