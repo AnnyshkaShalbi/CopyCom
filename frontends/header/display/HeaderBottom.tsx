@@ -6,21 +6,36 @@ export default function () {
     <div class="wrapper headerBottom" ref="headerBottom">
       <ul class="header-list pY-18">
         <li class="header-list__item">
+          <a 
+            // href="/projectdoc" 
+            // onclick={Fn.link}
+            onclick={() => {
+              Fn.initOne("modalSoon", {})
+            }}
+          >
+            Печать диплома
+          </a>
+        </li>
+        <li class="header-list__item">
           <a href="/projectdoc" onclick={Fn.link}>
             Проектная документация
           </a>
         </li>
         <li class="header-list__item">
-          <div class="dropdown">
+          <div 
+            ref="dropdown"
+            class="dropdown"
+            onclick={(e)=>{
+              Ref.dropdownList.classList.toggle('dropdown-body__active')
+              Ref.dropdownArrow.classList.toggle('dropdown-head-arrow__active')
+            }}
+          >
             <div 
-              class="dropdown-head flex align-items-center"
-              onclick={(e)=>{
-                Ref.dropdownList.classList.toggle('dropdown-body__active')
-              }}
-            >
+              ref="dropdownHead"
+              class="dropdown-head flex align-items-center">
               {/* <a href="/copydoc" onclick={Fn.link}> Копицентр</a> */}
-              <span>Копицентр</span>
-              <img src={arrowDownBlue} alt="КОПИКОМ | копировальный центр для студентов" />
+              <span>Другие услуги</span>
+              <img src={arrowDownBlue} alt="КОПИКОМ | копировальный центр для студентов" class="dropdown-head-arrow" ref="dropdownArrow" />
             </div>
             <ul class="dropdown-body" ref="dropdownList">
               <li>

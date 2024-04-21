@@ -3,18 +3,17 @@ import Navigation from "./navigation"
 import HeaderBottom from "./display/HeaderBottom"
 
 front.listener.finish = () => {
-
     return
 }
 
-// front.listener.clickAny = function (e) {
-//     if (Ref.mobileMenu && !Ref.mobileMenu.contains(e.target) && !Ref.burger.contains(e.target) && front.Variable.openSidebar) {
-//         front.Variable.$el.body.classList.remove('lock')
-//         front.Variable.openSidebar = false;
-//         Fn.init()
-//     }
-//     return
-// }
+front.listener.clickAny = function (e) {
+    if (Ref.dropdown && !Ref.dropdownList.contains(e.target) && !Ref.dropdownHead.contains(e.target)) {
+        Ref.dropdownList.classList.remove('dropdown-body__active')
+        Ref.dropdownArrow.classList.remove('dropdown-head-arrow__active')
+    }
+    return
+}
+
 
 front.loader = () => {
     front.Variable.openSidebar = false;

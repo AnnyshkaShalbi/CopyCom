@@ -35,26 +35,7 @@ const HeaderMobileMenu = function () {
         front.Variable.openSidebar ? "header-mobileMenu__active" : null
       ]}
     >
-      <div class="flex align-items-center justify-content-between flex-wrap pb-20">
-        <span class="header-logo__phone">
-          <a href="https://api.whatsapp.com/send/?phone=79154310666">+ 7 (915) 431-06-66</a>
-        </span>
-        <nav class="header-menu">
-          <ul class="header-list">
-            <li class="header-list__item">
-              <a href="#map">
-                <i class="i i-map text-gray"></i>
-                Москва
-              </a>
-            </li>
-            <li class="header-list__item header-list__item_circle">
-              <a href="#map">
-                Контакты
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      
       <a
         class="header-mobileMenu_title mb-30 pb-5"
         onclick={() => {
@@ -71,12 +52,12 @@ const HeaderMobileMenu = function () {
         проектная документация
       </a>
       <a
-        onclick={() => {
-          Fn.initOne("modalSoon", {})
-        }}
+        // onclick={() => {
+        //   Fn.initOne("modalSoon", {})
+        // }}
         class="header-mobileMenu_title mb-30 pb-5"
       >
-        копицентр
+        другие услуги
       </a>
       <a
         class="header-mobileMenu_item pb-5"
@@ -126,6 +107,26 @@ const HeaderMobileMenu = function () {
       >
         Брошюровка на пластиковую пружину
       </a>
+      <div class="flex align-items-center justify-content-between flex-wrap pb-20">
+        <span class="header-logo__phone">
+          <a href="https://api.whatsapp.com/send/?phone=79154310666">+ 7 (915) 431-06-66</a>
+        </span>
+        <nav class="header-menu">
+          <ul class="header-list">
+            <li class="header-list__item">
+              <a href="#map">
+                <i class="i i-map text-gray"></i>
+                Москва
+              </a>
+            </li>
+            <li class="header-list__item header-list__item_circle">
+              <a href="#map">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   )
 }

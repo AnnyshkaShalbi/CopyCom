@@ -247,6 +247,14 @@ section {
   &-head{
     gap: 1.5rem;
     cursor: pointer;
+
+    &-arrow{
+      transition: var(--tran02);
+
+      &__active{
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &-body{
