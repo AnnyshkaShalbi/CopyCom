@@ -5,14 +5,33 @@ const HeaderMenu = function () {
   return (
     <nav class="header-menu">
       <ul class="header-list">
-        <li class="header-list__item headerLocation">
-          <a href="#map">
+        <li 
+          class="header-list__item headerLocation"
+        >
+          <a 
+            href="#map"
+            onclick={(e)=>{
+              e.preventDefault();
+              window.scrollTo({
+                top: document.querySelector(e.currentTarget.getAttribute('href')).offsetTop - 155,
+                behavior: "smooth"
+              })
+            }}
+          >
             <i class="i i-map text-gray"></i>
             Москва
           </a>
         </li>
         <li class="header-list__item headerContact header-list__item_circle">
-          <a href="#map">
+          <a 
+            href="#metro"
+            onclick={(e)=>{
+              e.preventDefault();
+              document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+            }}
+          >
             Контакты
           </a>
         </li>
@@ -122,13 +141,35 @@ const HeaderMobileMenu = function () {
         <nav class="header-menu">
           <ul class="header-list">
             <li class="header-list__item">
-              <a href="#map">
+              <a 
+                href="#map"
+                onclick={(e)=>{
+                  front.Variable.openSidebar = !front.Variable.openSidebar
+                  Fn.initAll()
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: document.querySelector(e.currentTarget.getAttribute('href')).offsetTop - 155,
+                    behavior: "smooth"
+                  })
+                }}
+              >
                 <i class="i i-map text-gray"></i>
                 Москва
               </a>
             </li>
             <li class="header-list__item header-list__item_circle">
-              <a href="#map">
+              <a 
+                href="#metro"
+                onclick={(e)=>{
+                  front.Variable.openSidebar = !front.Variable.openSidebar
+                  Fn.initAll()
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: document.querySelector(e.currentTarget.getAttribute('href')).offsetTop - 100,
+                    behavior: "smooth"
+                  })
+                }}
+              >
                 Контакты
               </a>
             </li>

@@ -95,7 +95,7 @@ const RenderHomeMap = () => {
 
 const RenderMetro = ({ items }) => {
     return (
-        <div class="home-metro">
+        <div class="home-metro" id="metro">
             {
                 items.map((item) => {
                     return (
@@ -121,8 +121,7 @@ export default function () {
         <section class="home">
 
             <RenderMain />
-
-            <div class="wrapper">
+            <div class="wrapper" id="map">
                 <h2 class="home-info_title">Наши к<span class="circle"></span>пицентры</h2>
                 <a class="home-phone mb-25" href="https://api.whatsapp.com/send/?phone=79154310666">
                     <span class="home-phone_number">+7 (915) 431-06-66</span>
