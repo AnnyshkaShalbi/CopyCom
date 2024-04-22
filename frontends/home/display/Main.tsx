@@ -3,8 +3,6 @@ import metro from '@json/metro'
 import metroLogo from '@svg/icons/metro.svg'
 import whatsupGreen from '@svg/icons/whatsupGreen.svg'
 import doneWhite from '@svg/icons/doneWhite.svg'
-import diploms from '@images/mainPage/diploms.png'
-import diplomMobile from '@images/mainPage/diplomsMobile.png'
 import arrowTopRight from '@svg/icons/arrowTopRight.svg'
 import diplom1920 from '@images/diplomsMain/img-1920х1080.png'
 import diplom980 from '@images/diplomsMain/img-980x700.png'
@@ -21,7 +19,6 @@ const RenderMain = () => {
                 <source media="(min-width: 600px)" srcset={diplom600} alt="Заказать печать диплома | Копиком" class="home-main-img" />
                 <source media="(min-width: 360px)" srcset={diplom360} alt="Заказать печать диплома | Копиком" class="home-main-img" />
                 <img class="home-main-img" src={diplom360} alt="Заказать печать диплома | Копиком - копицентр для студентов" />
-                {/* <img class="home-main-img" src={diploms} alt="Заказать печать диплома | Копиком" /> */}
             </picture>
 
             <div class="wrapper">
@@ -97,8 +94,6 @@ const RenderHomeMap = () => {
 }
 
 const RenderMetro = ({ items }) => {
-    console.log('=items=', items)
-
     return (
         <div class="home-metro">
             {
@@ -128,7 +123,7 @@ export default function () {
             <RenderMain />
 
             <div class="wrapper">
-                <h2 class="home-info_title mb-25">Наши к<span class="circle"></span>пицентры</h2>
+                <h2 class="home-info_title">Наши к<span class="circle"></span>пицентры</h2>
                 <a class="home-phone mb-25" href="https://api.whatsapp.com/send/?phone=79154310666">
                     <span class="home-phone_number">+7 (915) 431-06-66</span>
                     <img src={whatsupGreen} alt="Телефон для связи Whats'up " />

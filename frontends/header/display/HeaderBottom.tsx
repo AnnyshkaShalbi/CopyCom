@@ -39,25 +39,25 @@ export default function () {
             </div>
             <ul class="dropdown-body" ref="dropdownList">
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый переплёт</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Печать документов</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Чертежи</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Печать чертежей</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Печать презентаций</a>
+              </li>
+              <li>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Печать лекал</a>
               </li>
               <li>
                 <a href="/" onclick={Fn.link} class="dropdown-item">Сканирование</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Лекала</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Твердый переплет</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Презентации</a>
-              </li>
-              <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Печать документов</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
               </li>
             </ul>
           </div>

@@ -41,7 +41,7 @@ const HeaderMobileMenu = function () {
         onclick={() => {
           Fn.initOne("modalSoon", {})
         }}>
-        твёрдый переплёт и печать дипломов
+        печать диплома
       </a>
       <a
         class="header-mobileMenu_title mb-30 pb-5"
@@ -89,7 +89,7 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Печать лекал и выкроек
+        Печать лекал
       </a>
       <a
         class="header-mobileMenu_item pb-5"
@@ -97,7 +97,7 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Сканирование документов
+        Сканирование 
       </a>
       <a
         class="header-mobileMenu_item pb-5"
@@ -105,7 +105,15 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Брошюровка на пластиковую пружину
+        Твердый переплет
+      </a>
+      <a
+        class="header-mobileMenu_item pb-5"
+        onclick={() => {
+          Fn.initOne("modalSoon", {})
+        }}
+      >
+        Брошюровка
       </a>
       <div class="flex align-items-center justify-content-between flex-wrap pb-20">
         <span class="header-logo__phone">
