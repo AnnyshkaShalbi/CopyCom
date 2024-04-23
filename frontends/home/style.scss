@@ -280,15 +280,15 @@
 
   .home {
     &-circle {
-      width: 10rem;
-      height: 10rem;
-      top: 26%;
+      width: 8.5rem;
+      height: 8.5rem;
+      top: 23%;
       right: 10%;
       position: absolute;
 
       &-text {
-        font-size: 1rem;
-        line-height: 1.2rem;
+        font-size: 0.8rem;
+        line-height: 1rem;
       }
     }
 
@@ -327,7 +327,15 @@
 @media(max-width: 680px) {
   .home {
     &-circle {
-      top: 28%;
+      top: 24%;
+    }
+  }
+}
+
+@media(max-width: 620px) {
+  .home {
+    &-circle {
+      top: 27%;
     }
   }
 }
