@@ -38,7 +38,7 @@ const RenderMain = () => {
                         <div class="home-circle_inner">
                             <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
                             <span class="home-circle-text">закажи</span>
-                            <span class="home-circle-text">переплет</span>
+                            <span class="home-circle-text">переплёт</span>
                             <span class="home-circle-text">диплома</span>
                         </div>
                     </a>

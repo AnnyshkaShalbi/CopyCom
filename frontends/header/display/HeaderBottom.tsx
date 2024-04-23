@@ -54,7 +54,7 @@ export default function () {
                 <a href="/" onclick={Fn.link} class="dropdown-item">Сканирование</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый переплет</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый перёплет</a>
               </li>
               <li>
                 <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
