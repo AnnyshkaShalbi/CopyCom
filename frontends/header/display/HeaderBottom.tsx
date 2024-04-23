@@ -6,7 +6,7 @@ export default function () {
     <div class="wrapper headerBottom" ref="headerBottom">
       <ul class="header-list pY-18">
         <li class="header-list__item">
-          <a 
+          <a
             // href="/projectdoc" 
             // onclick={Fn.link}
             onclick={() => {
@@ -22,15 +22,15 @@ export default function () {
           </a>
         </li>
         <li class="header-list__item">
-          <div 
+          <div
             ref="dropdown"
             class="dropdown"
-            onclick={(e)=>{
+            onclick={(e) => {
               Ref.dropdownList.classList.toggle('dropdown-body__active')
               Ref.dropdownArrow.classList.toggle('dropdown-head-arrow__active')
             }}
           >
-            <div 
+            <div
               ref="dropdownHead"
               class="dropdown-head flex align-items-center">
               {/* <a href="/copydoc" onclick={Fn.link}> Копицентр</a> */}
@@ -54,14 +54,14 @@ export default function () {
                 <a href="/" onclick={Fn.link} class="dropdown-item">Сканирование</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Твердый переплет</a>
+                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый переплет</a>
               </li>
               <li>
                 <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
               </li>
             </ul>
           </div>
-          
+
         </li>
       </ul>
     </div>
