@@ -5,12 +5,12 @@ const HeaderMenu = function () {
   return (
     <nav class="header-menu">
       <ul class="header-list">
-        <li 
+        <li
           class="header-list__item headerLocation"
         >
-          <a 
+          <a
             href="#map"
-            onclick={(e)=>{
+            onclick={(e) => {
               e.preventDefault();
               window.scrollTo({
                 top: document.querySelector(e.currentTarget.getAttribute('href')).offsetTop - 155,
@@ -23,12 +23,12 @@ const HeaderMenu = function () {
           </a>
         </li>
         <li class="header-list__item headerContact header-list__item_circle">
-          <a 
+          <a
             href="#metro"
-            onclick={(e)=>{
+            onclick={(e) => {
               e.preventDefault();
               document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
-                  behavior: 'smooth'
+                behavior: 'smooth'
               });
             }}
           >
@@ -54,7 +54,7 @@ const HeaderMobileMenu = function () {
         front.Variable.openSidebar ? "header-mobileMenu__active" : null
       ]}
     >
-      
+
       <a
         class="header-mobileMenu_title mb-30 pb-5"
         onclick={() => {
@@ -108,7 +108,7 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Печать лекал
+        Печать лекал и выкроек
       </a>
       <a
         class="header-mobileMenu_item pb-5"
@@ -116,7 +116,7 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Сканирование 
+        Сканирование документов
       </a>
       <a
         class="header-mobileMenu_item pb-5"
@@ -124,15 +124,7 @@ const HeaderMobileMenu = function () {
           Fn.initOne("modalSoon", {})
         }}
       >
-        Твердый переплет
-      </a>
-      <a
-        class="header-mobileMenu_item pb-5"
-        onclick={() => {
-          Fn.initOne("modalSoon", {})
-        }}
-      >
-        Брошюровка
+        Брошюровка на пластиковую пружину
       </a>
       <div class="flex align-items-center justify-content-between flex-wrap pb-20">
         <span class="header-logo__phone">
@@ -141,9 +133,9 @@ const HeaderMobileMenu = function () {
         <nav class="header-menu">
           <ul class="header-list">
             <li class="header-list__item">
-              <a 
+              <a
                 href="#map"
-                onclick={(e)=>{
+                onclick={(e) => {
                   front.Variable.openSidebar = !front.Variable.openSidebar
                   Fn.initAll()
                   e.preventDefault();
@@ -158,9 +150,9 @@ const HeaderMobileMenu = function () {
               </a>
             </li>
             <li class="header-list__item header-list__item_circle">
-              <a 
+              <a
                 href="#metro"
-                onclick={(e)=>{
+                onclick={(e) => {
                   front.Variable.openSidebar = !front.Variable.openSidebar
                   Fn.initAll()
                   e.preventDefault();
