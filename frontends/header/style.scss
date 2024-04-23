@@ -41,6 +41,7 @@
     &__item {
       font-family: 'NotoSans-Regular';
       position: relative;
+      cursor: pointer;
 
       a {
         display: flex;
@@ -72,8 +73,8 @@
 
 @media(max-width: 800px) {
   .header {
-    &-logo{
-      img{
+    &-logo {
+      img {
         height: 40px;
       }
     }

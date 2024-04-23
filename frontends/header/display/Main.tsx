@@ -36,7 +36,7 @@ const HeaderMenu = function () {
           </a>
         </li>
         <li class="header-list__item">
-          <a href="#" class="socials socials_green">
+          <a href="https://api.whatsapp.com/send/?phone=79154310666" class="socials socials_green" target="_blank">
             <i class="i i-whatsup"></i>
           </a>
         </li>
@@ -178,8 +178,7 @@ export default function () {
       <div class="header-main">
         <div
           class="header-burger"
-          onclick={(e) => {
-            // e.currentTarget.classList.toggle('header-burger_active')
+          onclick={() => {
             front.Variable.openSidebar = !front.Variable.openSidebar;
             Fn.initAll();
           }}
