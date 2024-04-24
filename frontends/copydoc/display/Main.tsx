@@ -1,5 +1,6 @@
-import { Cemjsx, Static, Func, front } from "cemjs-all"
+import { Cemjsx, Static, Func, front, Ref } from "cemjs-all"
 import filePdf from '@svg/icons/filePdf.svg'
+import question from '@svg/icons/question.svg'
 
 const RenderTitle = () => {
     return (
@@ -17,16 +18,16 @@ const RenderTable = () => {
             <thead>
                 <tr class="table-body-row">
                     <th class="font-weight-600 table-body-cell">Черно-белое копирование</th>
-                    <th class="table-body-cell">A4</th>
-                    <th class="table-body-cell">A3</th>
-                    <th class="table-body-cell">A2</th>
-                    <th class="table-body-cell">A1</th>
-                    <th class="table-body-cell">A0</th>
+                    <th class="table-body-cell text-gray font-weight-400">A4</th>
+                    <th class="table-body-cell text-gray font-weight-400">A3</th>
+                    <th class="table-body-cell text-gray font-weight-400">A2</th>
+                    <th class="table-body-cell text-gray font-weight-400">A1</th>
+                    <th class="table-body-cell text-gray font-weight-400">A0</th>
                 </tr>
             </thead>
             <tbody class="table-body">
                 <tr class="table-body-row">
-                    <td class="table-body-cell">1-100 страниц</td>
+                    <td class="table-body-cell text-gray font-weight-400">1-100 страниц</td>
                     <td class="table-body-cell">10 ₽</td>
                     <td class="table-body-cell">22 ₽</td>
                     <td class="table-body-cell">60 ₽</td>
@@ -34,12 +35,12 @@ const RenderTable = () => {
                     <td class="table-body-cell">130 ₽</td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell">101-300 страниц</td>
+                    <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
                     <td class="table-body-cell">8 ₽</td>
-                    <td class="table-body-cell">18 ₽</td>
-                    <td class="table-body-cell"></td>
-                    <td class="table-body-cell"></td>
-                    <td class="table-body-cell"></td>
+                    <td class="border-right-none table-body-cell ">18 ₽</td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
                 </tr>
                 <tr class="table-body-row">
                     <td class="table-body-cell"> </td>
@@ -50,15 +51,38 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-500">Цветное копирование</td>
-                    <td class="table-body-cell">A4</td>
-                    <td class="table-body-cell">A3</td>
-                    <td class="table-body-cell">A2</td>
-                    <td class="table-body-cell">A1</td>
-                    <td class="table-body-cell">A0</td>
+                    <td class="table-body-cell font-weight-600">Цветное копирование</td>
+                    <td class="table-body-cell text-gray font-weight-400">A4</td>
+                    <td class="table-body-cell text-gray font-weight-400">A3</td>
+                    <td class="table-body-cell text-gray font-weight-400">A2</td>
+                    <td class="table-body-cell text-gray font-weight-400">A1</td>
+                    <td class="table-body-cell text-gray font-weight-400">A0</td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-500">1-100 страниц</td>
+                    <td class="table-body-cell text-gray font-weight-400 flex align-items-center justify-content-between">
+                        1-100 страниц
+                        <div class="flex align-items-center">
+                        {`( < 50 %)`}
+                            <div
+                                class="tooltip"
+                                onmouseover={() => {
+                                    Ref.tooltipContent.classList.add("tooltip-content__active");
+                                }}
+                                onmouseleave={() => {
+                                    Ref.tooltipContent.classList.remove(
+                                    "tooltip-content__active",
+                                    );
+                                }}
+                                >
+                                <div class="tooltip-content" ref="tooltipContent">
+                                    <p class="tooltip-content_text">
+                                    Логин не должен начинаться с цифр и спецсимволов
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </td>
                     <td class="table-body-cell">30 ₽</td>
                     <td class="table-body-cell">55 ₽</td>
                     <td class="table-body-cell">85 ₽</td>
