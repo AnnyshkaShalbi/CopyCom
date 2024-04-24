@@ -1,6 +1,14 @@
 import { Cemjsx, Static, Func, front, Ref } from "cemjs-all"
 import filePdf from '@svg/icons/filePdf.svg'
 
+const RenderMessage = () => {
+    return (
+        <div class="message-timer">
+            <p>Прокрутите вправо, чтобы увидеть больше цен</p>
+        </div>
+    )
+}
+
 const RenderTitle = () => {
     return (
         <div>
