@@ -1,10 +1,10 @@
-:root{
+:root {
   --blue50: #0077FF;
   --blue100: #2E57D3;
   --blue200: #1E3A8F;
   --blue300: #141D38;
   --blue400: #2A344A;
-  
+
   --blue-light: #F0F6FB;
   --white: #FFFFFF;
   --green: #48C95F;
@@ -12,12 +12,13 @@
   --red-dark: #AD0019;
   --dark: #0B0B0C;
 
-  
+
   --light: #F1F4F7;
   --grey: #464F6A;
+  --grey50: #A3BCDD;
   --grey-light: #BEC7E2;
   --border-light: #EDEFF5;
-  
+
   --tran015: all 0.15s ease-in-out;
   --tran02: all 0.2s ease-in-out;
   --tran03: all 0.3s ease-in-out;
@@ -25,11 +26,11 @@
 
   // burger variables
   --burger-lines-c: 3;
-	--burger-margins-c: calc(var(--burger-lines-c) - 1);
-	--burger-width: 100px;
-	--burger-lines-h: 8px;
-	--burger-line-mb: 15px;
-	--burger-h: calc((var(--burger-lines-h) * var(--burger-lines-c)) + (var(--burger-line-mb) * var(--burger-margins-c)) - var(--burger-lines-h));
-	--burger-animation-top: calc(var(--burger-h) / 2);
+  --burger-margins-c: calc(var(--burger-lines-c) - 1);
+  --burger-width: 100px;
+  --burger-lines-h: 8px;
+  --burger-line-mb: 15px;
+  --burger-h: calc((var(--burger-lines-h) * var(--burger-lines-c)) + (var(--burger-line-mb) * var(--burger-margins-c)) - var(--burger-lines-h));
+  --burger-animation-top: calc(var(--burger-h) / 2);
 
 }

@@ -1,6 +1,5 @@
 import { Cemjsx, Static, Func, front, Ref } from "cemjs-all"
 import filePdf from '@svg/icons/filePdf.svg'
-import question from '@svg/icons/question.svg'
 
 const RenderTitle = () => {
     return (
@@ -59,29 +58,29 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400">A0</td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell text-gray font-weight-400 flex align-items-center justify-content-between">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                         1-100 страниц
                         <div class="flex align-items-center">
-                        {`( < 50 %)`}
+                            {`( < 50 %)`}
                             <div
-                                class="tooltip"
+                                class="tooltip ml-10"
                                 onmouseover={() => {
                                     Ref.tooltipContent.classList.add("tooltip-content__active");
                                 }}
                                 onmouseleave={() => {
                                     Ref.tooltipContent.classList.remove(
-                                    "tooltip-content__active",
+                                        "tooltip-content__active",
                                     );
                                 }}
-                                >
+                            >
                                 <div class="tooltip-content" ref="tooltipContent">
                                     <p class="tooltip-content_text">
-                                    Логин не должен начинаться с цифр и спецсимволов
+                                        Процент заливки цвета в документе (площадь цветных плашек) — в документе присутствуют цветные элементы, плашки со сплошной заливкой. От размера и их количества зависит цена, чем больше процент заливки, тем выше стоимость.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </td>
                     <td class="table-body-cell">30 ₽</td>
                     <td class="table-body-cell">55 ₽</td>
@@ -89,7 +88,39 @@ const RenderTable = () => {
                     <td class="table-body-cell">110 ₽</td>
                     <td class="table-body-cell">130 ₽</td>
                 </tr>
-
+                <tr class="table-body-row">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
+                        {`( > 50 %)`}
+                    </td>
+                    <td class="table-body-cell">36 ₽</td>
+                    <td class="table-body-cell">60 ₽</td>
+                    <td class="table-body-cell">150 ₽</td>
+                    <td class="table-body-cell">190 ₽</td>
+                    <td class="table-body-cell">280 ₽</td>
+                </tr>
+                <tr class="table-body-row">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
+                        1-300 страниц
+                        <span class="flex align-items-center">
+                            {`( < 50 %)`}
+                        </span>
+                    </td>
+                    <td class="table-body-cell">25 ₽</td>
+                    <td class="table-body-cell border-right-none">50 ₽</td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
+                </tr>
+                <tr class="table-body-row">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
+                        {`( > 50 %)`}
+                    </td>
+                    <td class="table-body-cell">30 ₽</td>
+                    <td class="table-body-cell border-right-none">55 ₽</td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
+                    <td class="table-body-cell border-right-none"></td>
+                </tr>
             </tbody>
         </table>
     )
@@ -169,67 +200,126 @@ const RenderFileMobile = () => {
 
 const RenderTableMobile = () => {
     return (
-        <table
-            class={[
-                "table",
-                Static.tabsActive ? null : "hidden"
-            ]}
-        >
-            <caption class="table-head copy-title">прайс-лист</caption>
-            <thead>
-                <tr class="table-body-row">
-                    <th class="font-weight-600 table-body-cell">Черно-белое копирование</th>
-                    <th class="table-body-cell">A4</th>
-                    <th class="table-body-cell">A3</th>
-                    <th class="table-body-cell">A2</th>
-                    <th class="table-body-cell">A1</th>
-                    <th class="table-body-cell">A0</th>
-                </tr>
-            </thead>
-            <tbody class="table-body">
-                <tr class="table-body-row">
-                    <td class="table-body-cell">1-100 страниц</td>
-                    <td class="table-body-cell">10 ₽</td>
-                    <td class="table-body-cell">22 ₽</td>
-                    <td class="table-body-cell">60 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell">101-300 страниц</td>
-                    <td class="table-body-cell">8 ₽</td>
-                    <td class="table-body-cell">18 ₽</td>
-                    <td class="table-body-cell"></td>
-                    <td class="table-body-cell"></td>
-                    <td class="table-body-cell"></td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-500">Цветное копирование</td>
-                    <td class="table-body-cell">A4</td>
-                    <td class="table-body-cell">A3</td>
-                    <td class="table-body-cell">A2</td>
-                    <td class="table-body-cell">A1</td>
-                    <td class="table-body-cell">A0</td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-500">1-100 страниц</td>
-                    <td class="table-body-cell">30 ₽</td>
-                    <td class="table-body-cell">55 ₽</td>
-                    <td class="table-body-cell">85 ₽</td>
-                    <td class="table-body-cell">110 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
-                </tr>
+        <div class="table-wrap">
+            <table
+                class={[
+                    "table",
+                    Static.tabsActive ? null : "hidden"
+                ]}
+            >
+                <caption class="table-head copy-title">прайс-лист</caption>
+                <thead>
+                    <tr class="table-body-row">
+                        <th class="table-body-cell">
+                            <p class="font-weight-600">Черно-белое копирование</p>
+                        </th>
+                        <th class="table-body-cell text-gray font-weight-400">A4</th>
+                        <th class="table-body-cell text-gray font-weight-400">A3</th>
+                        <th class="table-body-cell text-gray font-weight-400">A2</th>
+                        <th class="table-body-cell text-gray font-weight-400">A1</th>
+                        <th class="table-body-cell text-gray font-weight-400">A0</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400">1-100 страниц</td>
+                        <td class="table-body-cell">10 ₽</td>
+                        <td class="table-body-cell">22 ₽</td>
+                        <td class="table-body-cell">60 ₽</td>
+                        <td class="table-body-cell">80 ₽</td>
+                        <td class="table-body-cell">130 ₽</td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
+                        <td class="table-body-cell">8 ₽</td>
+                        <td class="border-right-none table-body-cell ">18 ₽</td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell"> </td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell font-weight-600">Цветное копирование</td>
+                        <td class="table-body-cell text-gray font-weight-400">A4</td>
+                        <td class="table-body-cell text-gray font-weight-400">A3</td>
+                        <td class="table-body-cell text-gray font-weight-400">A2</td>
+                        <td class="table-body-cell text-gray font-weight-400">A1</td>
+                        <td class="table-body-cell text-gray font-weight-400">A0</td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
+                            1-100 страниц
+                            <div class="flex align-items-center">
+                                {`( < 50 %)`}
+                                <div
+                                    class="tooltip ml-10"
+                                    onmouseover={() => {
+                                        Ref.tooltipContent.classList.add("tooltip-content__active");
+                                    }}
+                                    onmouseleave={() => {
+                                        Ref.tooltipContent.classList.remove(
+                                            "tooltip-content__active",
+                                        );
+                                    }}
+                                >
+                                    <div class="tooltip-content" ref="tooltipContent">
+                                        <p class="tooltip-content_text">
+                                            Процент заливки цвета в документе (площадь цветных плашек) — в документе присутствуют цветные элементы, плашки со сплошной заливкой. От размера и их количества зависит цена, чем больше процент заливки, тем выше стоимость.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-            </tbody>
-        </table>
+                        </td>
+                        <td class="table-body-cell">30 ₽</td>
+                        <td class="table-body-cell">55 ₽</td>
+                        <td class="table-body-cell">85 ₽</td>
+                        <td class="table-body-cell">110 ₽</td>
+                        <td class="table-body-cell">130 ₽</td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
+                            {`( > 50 %)`}
+                        </td>
+                        <td class="table-body-cell">36 ₽</td>
+                        <td class="table-body-cell">60 ₽</td>
+                        <td class="table-body-cell">150 ₽</td>
+                        <td class="table-body-cell">190 ₽</td>
+                        <td class="table-body-cell">280 ₽</td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
+                            1-300 страниц
+                            <span class="flex align-items-center">
+                                {`( < 50 %)`}
+                            </span>
+                        </td>
+                        <td class="table-body-cell">25 ₽</td>
+                        <td class="table-body-cell border-right-none">50 ₽</td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                    </tr>
+                    <tr class="table-body-row">
+                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
+                            {`( > 50 %)`}
+                        </td>
+                        <td class="table-body-cell">30 ₽</td>
+                        <td class="table-body-cell border-right-none">55 ₽</td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell border-right-none"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     )
 }
 
