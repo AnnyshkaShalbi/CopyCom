@@ -80,9 +80,7 @@ const HeaderMobileMenu = function () {
       </a>
       <a
         class="header-mobileMenu_item pb-5"
-        onclick={() => {
-          Fn.initOne("modalSoon", {})
-        }}
+        href="/copydoc" onclick={Fn.link}
       >
         Печать документов
       </a>

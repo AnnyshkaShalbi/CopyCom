@@ -39,7 +39,7 @@ export default function () {
             </div>
             <ul class="dropdown-body" ref="dropdownList">
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Печать документов</a>
+                <a href="/copydoc" onclick={Fn.link} class="dropdown-item">Печать документов</a>
               </li>
               <li>
                 <a href="/" onclick={Fn.link} class="dropdown-item">Печать чертежей</a>

@@ -6,6 +6,5 @@ export default function () {
     <div class="wrapper">
       <Main />
     </div>
-  
   ) 
 }

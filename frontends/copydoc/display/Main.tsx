@@ -12,8 +12,8 @@ const RenderMessage = () => {
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">Копирование документов</h1>
-            <p class="text-wrap text-grey">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <h1 class="title_secondary pb-15">печать документов</h1>
+            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
         </div>
     )
 }
@@ -73,17 +73,15 @@ const RenderTable = () => {
                             <div
                                 class="tooltip ml-10"
                                 onmouseover={() => {
-                                    Ref.tooltipContent.classList.add("tooltip-content__active");
+                                    Ref.tooltipContentPc.classList.add("tooltip-content__active");
                                 }}
                                 onmouseleave={() => {
-                                    Ref.tooltipContent.classList.remove(
-                                        "tooltip-content__active",
-                                    );
+                                    Ref.tooltipContentPc.classList.remove("tooltip-content__active");
                                 }}
                             >
-                                <div class="tooltip-content" ref="tooltipContent">
+                                <div class="tooltip-content" ref="tooltipContentPc">
                                     <p class="tooltip-content_text">
-                                        Процент заливки цвета в документе (площадь цветных плашек) — в документе присутствуют цветные элементы, плашки со сплошной заливкой. От размера и их количества зависит цена, чем больше процент заливки, тем выше стоимость.
+                                    Процент заполнения цвета в документе
                                     </p>
                                 </div>
                             </div>
@@ -97,7 +95,7 @@ const RenderTable = () => {
                     <td class="table-body-cell">130 ₽</td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent flex justify-content-end">
                         {`( > 50 %)`}
                     </td>
                     <td class="table-body-cell">36 ₽</td>
@@ -120,7 +118,7 @@ const RenderTable = () => {
                     <td class="table-body-cell border-right-none"></td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
+                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent flex justify-content-end">
                         {`( > 50 %)`}
                     </td>
                     <td class="table-body-cell">30 ₽</td>
@@ -218,8 +216,9 @@ const RenderTableMobile = () => {
                 <caption class="table-head copy-title">прайс-лист</caption>
                 <thead>
                     <tr class="table-body-row">
-                        <th class="table-body-cell">
-                            <p class="font-weight-600">Черно-белое копирование</p>
+                        <th class="table-body-cell flex flex-col">
+                            <p class="font-weight-600">Черно-белое</p>
+                            <p class="font-weight-600">копирование</p>
                         </th>
                         <th class="table-body-cell text-gray font-weight-400">A4</th>
                         <th class="table-body-cell text-gray font-weight-400">A3</th>
@@ -254,7 +253,10 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                     </tr>
                     <tr class="table-body-row">
-                        <td class="table-body-cell font-weight-600">Цветное копирование</td>
+                        <td class="table-body-cell flex flex-col">
+                            <p class="font-weight-600">Цветное</p>
+                            <p class="font-weight-600">копирование</p>
+                        </td>
                         <td class="table-body-cell text-gray font-weight-400">A4</td>
                         <td class="table-body-cell text-gray font-weight-400">A3</td>
                         <td class="table-body-cell text-gray font-weight-400">A2</td>
@@ -272,14 +274,12 @@ const RenderTableMobile = () => {
                                         Ref.tooltipContent.classList.add("tooltip-content__active");
                                     }}
                                     onmouseleave={() => {
-                                        Ref.tooltipContent.classList.remove(
-                                            "tooltip-content__active",
-                                        );
+                                        Ref.tooltipContent.classList.remove("tooltip-content__active");
                                     }}
                                 >
                                     <div class="tooltip-content" ref="tooltipContent">
                                         <p class="tooltip-content_text">
-                                            Процент заливки цвета в документе (площадь цветных плашек) — в документе присутствуют цветные элементы, плашки со сплошной заливкой. От размера и их количества зависит цена, чем больше процент заливки, тем выше стоимость.
+                                        Процент заполнения цвета в документе
                                         </p>
                                     </div>
                                 </div>
@@ -303,7 +303,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell">280 ₽</td>
                     </tr>
                     <tr class="table-body-row">
-                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
+                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
                             1-300 страниц
                             <span class="flex align-items-center">
                                 {`( < 50 %)`}
