@@ -270,10 +270,10 @@ const RenderTableMobile = () => {
                                 {`( < 50 %)`}
                                 <div
                                     ref="tooltip"
-                                    class="tooltip ml-10"
-                                    onclick={(e) => {
-                                        Ref.tooltipContent.classList.toggle("tooltip-content__active");
-                                    }}
+                                    class="tooltip tooltip-mobile ml-10"
+                                // onclick={(e) => {
+                                //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
+                                // }}
                                 >
                                     <div class="tooltip-content" ref="tooltipContent">
                                         <p class="tooltip-content_text">

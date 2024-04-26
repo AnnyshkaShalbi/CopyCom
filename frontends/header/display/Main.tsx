@@ -78,12 +78,17 @@ const HeaderMobileMenu = function () {
       >
         другие услуги
       </a>
-      <a
+      <span
         class="header-mobileMenu_item pb-5"
-        href="/copydoc" onclick={Fn.link}
+        // href="/copydoc"
+        onclick={() => {
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.initAll()
+          Fn.linkChange("/copydoc")
+        }}
       >
         Печать документов
-      </a>
+      </span>
       <a
         class="header-mobileMenu_item pb-5"
         onclick={() => {
@@ -187,7 +192,14 @@ export default function () {
         </div>
 
         <div class="header-logo">
-          <a href="/" onclick={Fn.link} class="flex align-items-center">
+          <a
+            href="/"
+            onclick={() => {
+              front.Variable.openSidebar = false
+              Fn.initAll()
+            }}
+            class="flex align-items-center"
+          >
             <img src={logo} alt="Копиком копицентр для студентов" />
           </a>
           <span class="header-logo__phone headerPhone">

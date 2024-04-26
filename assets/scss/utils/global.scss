@@ -339,6 +339,13 @@ section {
     transition: color 0.3s ease-in-out;
   }
 
+  &.tooltip-mobile {
+    &:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   &-content {
     width: 250px;
     box-shadow:

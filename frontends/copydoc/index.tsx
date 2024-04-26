@@ -9,12 +9,13 @@ front.listener.finish = () => {
     return
 }
 
-front.listener.clickAny = function (e) {
-    if (Ref.tooltip && !Ref.tooltipContent.contains(e.target) && !Ref.tooltip.contains(e.target)) {
-        Ref.tooltipContent.classList.remove('tooltip-content__active');
-    }
-    return
-}
+// front.listener.clickAny = function (e) {
+//     if (Ref.tooltip && !Ref.tooltipContent.contains(e.target) && !Ref.tooltip.contains(e.target)) {
+//         Ref.tooltipContent.classList.remove('tooltip-content__active');
+//         console.log('=b406c4=', "other place")
+//     }
+//     return
+// }
 
 front.loader = () => {
     Static.tabsActive = true
