@@ -81,7 +81,7 @@ const RenderTable = () => {
                             >
                                 <div class="tooltip-content" ref="tooltipContentPc">
                                     <p class="tooltip-content_text">
-                                    Процент заполнения цвета в документе
+                                        Процент заполнения цвета в документе
                                     </p>
                                 </div>
                             </div>
@@ -269,17 +269,15 @@ const RenderTableMobile = () => {
                             <div class="flex align-items-center">
                                 {`( < 50 %)`}
                                 <div
+                                    ref="tooltip"
                                     class="tooltip ml-10"
-                                    onmouseover={() => {
-                                        Ref.tooltipContent.classList.add("tooltip-content__active");
-                                    }}
-                                    onmouseleave={() => {
-                                        Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                    onclick={(e) => {
+                                        Ref.tooltipContent.classList.toggle("tooltip-content__active");
                                     }}
                                 >
                                     <div class="tooltip-content" ref="tooltipContent">
                                         <p class="tooltip-content_text">
-                                        Процент заполнения цвета в документе
+                                            Процент заполнения цвета в документе
                                         </p>
                                     </div>
                                 </div>
@@ -327,7 +325,7 @@ const RenderTableMobile = () => {
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div >
     )
 }
 

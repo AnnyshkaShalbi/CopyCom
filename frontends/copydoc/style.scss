@@ -148,10 +148,10 @@
 }
 
 @media (min-width: 993px) and (max-width: 1054px) {
-  .table{
-    &-body{
-      &-cell{
-        &__percent{
+  .table {
+    &-body {
+      &-cell {
+        &__percent {
           justify-content: start;
         }
       }
@@ -159,13 +159,13 @@
   }
 }
 
-@media (max-width: 992px){
-  .table{
+@media (max-width: 992px) {
+  .table {
     margin-top: 1rem;
     border-top: 1px solid #BEC7E2;
 
-    &-body{
-      &-row{
+    &-body {
+      &-row {
         grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
       }
     }
@@ -173,8 +173,8 @@
 }
 
 @media (max-width: 650px) {
-  .tabs{
-    &-item{
+  .tabs {
+    &-item {
       padding: 0.7rem;
     }
   }
@@ -184,7 +184,7 @@
     width: 650px;
 
     &-wrap {
-      overflow: scroll;
+      overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 1rem;
 
@@ -202,9 +202,9 @@
       }
     }
 
-    &-body{
-      &-cell{
-        &.table-body-cell__wrap{
+    &-body {
+      &-cell {
+        &.table-body-cell__wrap {
           flex-direction: column;
           align-items: start;
           gap: 0;
@@ -217,5 +217,5 @@
 // всплывашка таймер
 .message-timer {
   position: fixed;
-  
+
 }

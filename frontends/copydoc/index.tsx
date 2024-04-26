@@ -1,4 +1,4 @@
-import { Cemjsx, front, Func, Static, Fn } from "cemjs-all"
+import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
 
@@ -9,6 +9,13 @@ front.listener.finish = () => {
     return
 }
 
+front.listener.clickAny = function (e) {
+    if (Ref.tooltip && !Ref.tooltipContent.contains(e.target) && !Ref.tooltip.contains(e.target)) {
+        Ref.tooltipContent.classList.remove('tooltip-content__active');
+    }
+    return
+}
+
 front.loader = () => {
     Static.tabsActive = true
     return
@@ -16,7 +23,7 @@ front.loader = () => {
 
 front.display = () => {
     return (
-        <main class="copy top">
+        <main class="copy top overflow-hidden">
             <Navigation />
         </main>
     )
