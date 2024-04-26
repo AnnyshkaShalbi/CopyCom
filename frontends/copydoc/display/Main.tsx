@@ -271,28 +271,22 @@ const RenderTableMobile = () => {
                                 <div
                                     ref="tooltip"
                                     class="tooltip tooltip-mobile ml-10"
-                                // onclick={(e) => {
-                                //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
-                                // }}
                                 >
                                     <div
                                         class="tooltip-head"
                                         ref="tooltipHead"
                                         onmouseover={() => {
                                             Ref.tooltipContent.classList.add("tooltip-content__active");
-                                        }}
-                                        onmouseleave={() => {
-                                            Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                            setTimeout(() => {
+                                                Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                            }, 3000)
                                         }}
                                         ontouchstart={() => {
                                             Ref.tooltipContent.classList.add("tooltip-content__active");
+                                            setTimeout(() => {
+                                                Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                            }, 3000)
                                         }}
-                                        ontouchend={() => {
-                                            Ref.tooltipContent.classList.remove("tooltip-content__active");
-                                        }}
-                                    // onclick={(e) => {
-                                    //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
-                                    // }}
                                     >
                                         ?
                                     </div>
