@@ -278,9 +278,9 @@ const RenderTableMobile = () => {
                                     <div
                                         class="tooltip-head"
                                         ref="tooltipHead"
-                                        onclick={(e) => {
-                                            Ref.tooltipContent.classList.toggle("tooltip-content__active");
-                                        }}
+                                    // onclick={(e) => {
+                                    //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
+                                    // }}
                                     >
                                         ?
                                     </div>

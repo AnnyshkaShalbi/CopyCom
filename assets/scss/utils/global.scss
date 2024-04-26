@@ -361,6 +361,7 @@ section {
     // }
   }
 
+
   &.tooltip-mobile {
     border: none;
 
@@ -427,6 +428,11 @@ section {
 
     &::before {
       color: var(--white);
+    }
+
+    .tooltip-content {
+      visibility: visible;
+      opacity: 1;
     }
   }
 
