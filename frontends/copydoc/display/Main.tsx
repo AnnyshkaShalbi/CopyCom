@@ -18,6 +18,78 @@ const RenderTitle = () => {
     )
 }
 
+const RenderFile = () => {
+    return (
+        <div
+            class="copy-application">
+            <h3 class="copy-title pb-15">оставь заявку</h3>
+            <div class="copy-file">
+                <img src={filePdf} alt="Загрузите файл в pdf формате" />
+                <p class="text-align-center">Загрузите файл в формате PDF</p>
+                <p class="text-align-center">Макс. размером 100 мб</p>
+                <button class="btn btn_blue mt-15">Загрузить файл</button>
+            </div>
+            <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
+            <div class="field mt-25">
+                <label for="phone" class="field__label field__label_required">Номер телефона</label>
+                <input
+                    type="text"
+                    id="phone"
+                    autocomplete="off"
+                    placeholder="+7 (980) 324 - 12 - 32"
+                    class={[
+                        "field__input",
+                        // Static.form.phone.error ? "field__input_error" : null
+                    ]}
+                    oninput={(e) => {
+                        // Static.form.phone.value = e.currentTarget.value
+                        // front.Services.functions.formPhone(Static.form.phone)
+                        // Func.checkForm()
+                    }}
+                />
+            </div>
+            <button class="btn btn_blue mt-25 w100">Оставить завку</button>
+        </div>
+    )
+}
+
+const RenderFileMobile = () => {
+    return (
+        <div
+            class={[
+                "copy-application",
+                Static.tabsActive ? "hidden" : null,
+            ]}
+        >
+            <h3 class="copy-title pb-15">оставь заявку</h3>
+            <div class="copy-file">
+                <img src={filePdf} alt="Загрузите файл в pdf формате" />
+                <p class="text-align-center">Загрузите файл в формате PDF</p>
+                <p class="text-align-center">Макс. размером 100 мб</p>
+                <button class="btn btn_blue mt-15">Загрузить файл</button>
+            </div>
+            <div class="copy-form">
+                <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
+                <div class="field mt-25">
+                    <label for="phone" class="field__label field__label_required">Номер телефона</label>
+                    <input
+                        type="text"
+                        id="phone"
+                        autocomplete="off"
+                        placeholder="+7 (980) 324 - 12 - 32"
+                        class={[
+                            "field__input",
+                        ]}
+                        oninput={(e) => {
+                        }}
+                    />
+                </div>
+                <button class="btn btn_blue mt-25 w100">Оставить завку</button>
+            </div>
+        </div>
+    )
+}
+
 const RenderTable = () => {
     return (
         <table class="table">
@@ -132,78 +204,6 @@ const RenderTable = () => {
     )
 }
 
-const RenderFile = () => {
-    return (
-        <div
-            class="copy-application">
-            <h3 class="copy-title pb-15">оставь заявку</h3>
-            <div class="copy-file">
-                <img src={filePdf} alt="Загрузите файл в pdf формате" />
-                <p class="text-align-center">Загрузите файл в формате PDF</p>
-                <p class="text-align-center">Макс. размером 100 мб</p>
-                <button class="btn btn_blue mt-15">Загрузить файл</button>
-            </div>
-            <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
-            <div class="field mt-25">
-                <label for="phone" class="field__label field__label_required">Номер телефона</label>
-                <input
-                    type="text"
-                    id="phone"
-                    autocomplete="off"
-                    placeholder="+7 (980) 324 - 12 - 32"
-                    class={[
-                        "field__input",
-                        // Static.form.phone.error ? "field__input_error" : null
-                    ]}
-                    oninput={(e) => {
-                        // Static.form.phone.value = e.currentTarget.value
-                        // front.Services.functions.formPhone(Static.form.phone)
-                        // Func.checkForm()
-                    }}
-                />
-            </div>
-            <button class="btn btn_blue mt-25 w100">Оставить завку</button>
-        </div>
-    )
-}
-
-const RenderFileMobile = () => {
-    return (
-        <div
-            class={[
-                "copy-application",
-                Static.tabsActive ? "hidden" : null,
-            ]}
-        >
-            <h3 class="copy-title pb-15">оставь заявку</h3>
-            <div class="copy-file">
-                <img src={filePdf} alt="Загрузите файл в pdf формате" />
-                <p class="text-align-center">Загрузите файл в формате PDF</p>
-                <p class="text-align-center">Макс. размером 100 мб</p>
-                <button class="btn btn_blue mt-15">Загрузить файл</button>
-            </div>
-            <div class="copy-form">
-                <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
-                <div class="field mt-25">
-                    <label for="phone" class="field__label field__label_required">Номер телефона</label>
-                    <input
-                        type="text"
-                        id="phone"
-                        autocomplete="off"
-                        placeholder="+7 (980) 324 - 12 - 32"
-                        class={[
-                            "field__input",
-                        ]}
-                        oninput={(e) => {
-                        }}
-                    />
-                </div>
-                <button class="btn btn_blue mt-25 w100">Оставить завку</button>
-            </div>
-        </div>
-    )
-}
-
 const RenderTableMobile = () => {
     return (
         <div class="table-wrap">
@@ -278,6 +278,18 @@ const RenderTableMobile = () => {
                                     <div
                                         class="tooltip-head"
                                         ref="tooltipHead"
+                                        onmouseover={() => {
+                                            Ref.tooltipContent.classList.add("tooltip-content__active");
+                                        }}
+                                        onmouseleave={() => {
+                                            Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                        }}
+                                        ontouchstart={() => {
+                                            Ref.tooltipContent.classList.add("tooltip-content__active");
+                                        }}
+                                        ontouchend={() => {
+                                            Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                        }}
                                     // onclick={(e) => {
                                     //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
                                     // }}
