@@ -275,6 +275,16 @@ const RenderTableMobile = () => {
                                 //     Ref.tooltipContent.classList.toggle("tooltip-content__active");
                                 // }}
                                 >
+                                    <div
+                                        class="tooltip-head"
+                                        ref="tooltipHead"
+                                        onclick={(e) => {
+                                            Ref.tooltipContent.classList.toggle("tooltip-content__active");
+                                        }}
+                                    >
+                                        ?
+                                    </div>
+
                                     <div class="tooltip-content" ref="tooltipContent">
                                         <p class="tooltip-content_text">
                                             Процент заполнения цвета в документе

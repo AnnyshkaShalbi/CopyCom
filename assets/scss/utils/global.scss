@@ -322,7 +322,6 @@ section {
   cursor: pointer;
   border-radius: 50%;
   position: relative;
-  border-radius: 50%;
   background-color: transparent;
   border: 1px solid var(--grey50);
   transition: background-color 0.3s ease-in-out;
@@ -339,11 +338,41 @@ section {
     transition: color 0.3s ease-in-out;
   }
 
-  &.tooltip-mobile {
-    &:hover .tooltip-content {
-      visibility: visible;
-      opacity: 1;
+  &-head {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--grey50);
+    transition: all 0.3s ease-in-out;
+    color: var(--grey50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: var(--white);
+      background: var(--blue200);
     }
+
+    // &:hover .tooltip-content {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
+  }
+
+  &.tooltip-mobile {
+    border: none;
+
+    &::before {
+      content: '';
+      display: none;
+    }
+
+    // &:hover .tooltip-content {
+    //   visibility: visible;
+    //   opacity: 1;
+    // }
   }
 
   &-content {
