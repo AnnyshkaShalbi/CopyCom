@@ -12,8 +12,8 @@ const RenderMessage = () => {
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">брошюровка</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <h1 class="title_secondary pb-15">сканирование документов</h1>
+            <p class="text-wrap text-gray">Любые документы могут быть отсканированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
         </div>
     )
 }
@@ -92,22 +92,22 @@ const RenderTable = () => {
             <caption class="table-head copy-title">прайс-лист</caption>
             <thead>
                 <tr class="table-body-row__brochure table-border-bottom">
-                    <th class="font-weight-600 table-body-cell">Брошюровка документов</th>
-                    <th class="table-body-cell text-gray font-weight-400 font-size-base">До 50 стр.</th>
-                    <th class="table-body-cell text-gray font-weight-400 font-size-base">До 100 стр.</th>
-                    <th class="table-body-cell text-gray font-weight-400 font-size-base">До 150 стр.</th>
-                    <th class="table-body-cell text-gray font-weight-400 font-size-base">До 220 стр.</th>
-                    <th class="table-body-cell text-gray font-weight-400 font-size-base">До 320 стр.</th>
+                    <th class="font-weight-600 table-body-cell">Сканирование документов</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А4</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А3</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А2</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А1</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А0</th>
                 </tr>
             </thead>
             <tbody class="table-body">
                 <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell text-gray font-weight-400">Цена одного переплёта</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">100 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">150 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">200 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">250 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">300 ₽</td>
+                    <td class="table-body-cell text-gray font-weight-400"> </td>
+                    <td class="table-body-cell flex justify-content-center align-items-center">10 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center">22 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center">60 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                 </tr>
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
@@ -118,34 +118,10 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                 </tr>
                 <tr class="table-body-row__both table-border-bottom">
-                    <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">20 ₽</td>
+                    <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
+                    <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
                 </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
-                <tr class="table-body-row__both table-border-bottom">
-                    <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">30 ₽</td>
-                </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
-                <tr class="table-body-row__both table-border-bottom">
-                    <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">10 ₽</td>
-                </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
+                <tr class="table-body-row__brochure">
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
@@ -164,23 +140,23 @@ const RenderTableMobile = () => {
             <table class={[ "table", Static.tabsActive ? null : "hidden" ]}>
                 <caption class="table-head copy-title">прайс-лист</caption>
                 <thead>
-                    <tr class="table-body-row__brochure table-border-bottom">
-                        <th class="font-weight-600 table-body-cell">Брошюровка документов</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base">До 50 стр.</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base">До 100 стр.</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base">До 150 стр.</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base">До 220 стр.</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base">До 320 стр.</th>
-                    </tr>
+                <tr class="table-body-row__brochure table-border-bottom">
+                    <th class="font-weight-600 table-body-cell">Сканирование документов</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А4</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А3</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А2</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А1</th>
+                    <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А0</th>
+                </tr>
                 </thead>
                 <tbody class="table-body">
                     <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">Цена одного переплёта</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">100 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">150 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">200 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">250 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">300 ₽</td>
+                        <td class="table-body-cell text-gray font-weight-400"> </td>
+                        <td class="table-body-cell flex justify-content-center align-items-center">10 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center">22 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center">60 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                     </tr>
                     <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell"> </td>
@@ -191,32 +167,8 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                     </tr>
                     <tr class="table-body-row__both table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
-                        <td class="table-body-cell text-gray font-weight-400">20 ₽</td>
-                    </tr>
-                    <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr>
-                    <tr class="table-body-row__both table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
-                        <td class="table-body-cell text-gray font-weight-400">30 ₽</td>
-                    </tr>
-                    <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr>
-                    <tr class="table-body-row__both table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
-                        <td class="table-body-cell text-gray font-weight-400">10 ₽</td>
+                        <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
+                        <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
                     </tr>
                     <tr class="table-body-row__brochure">
                         <td class="table-body-cell"> </td>
@@ -262,7 +214,7 @@ export default function () {
             <RenderTitle />
             <div class="copy-content mt-25">
                 {window.matchMedia("(max-width: 992px)") ? <RenderTabs /> : null}
-                <div class="copy-content-pc__brochure">
+                <div class="copy-content-pc">
                     <RenderTable />
                     <RenderFile />
                 </div>
