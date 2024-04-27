@@ -156,6 +156,16 @@ section {
       font-weight: 600;
     }
   }
+
+  &-size{
+    &-base{
+      font-size: 0.99rem;
+    }
+
+    &-sm{
+      font-size: 0.8rem;
+    }
+  }
 }
 
 .field {

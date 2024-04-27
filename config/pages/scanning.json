@@ -1,0 +1,8 @@
+{
+  "url": "/scanning",
+  "front": [
+      "header",
+      "scanning",
+      "footer"
+  ]
+}

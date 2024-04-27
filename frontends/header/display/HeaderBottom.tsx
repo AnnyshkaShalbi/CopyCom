@@ -42,7 +42,7 @@ export default function () {
                 <a href="/copydoc" onclick={Fn.link} class="dropdown-item">Печать документов</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Печать чертежей</a>
+                <a href="/drawings" onclick={Fn.link} class="dropdown-item">Печать чертежей</a>
               </li>
               <li>
                 <a href="/" onclick={Fn.link} class="dropdown-item">Печать презентаций</a>
@@ -57,7 +57,7 @@ export default function () {
                 <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый перёплет</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
+                <a href="/brochure" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
               </li>
             </ul>
           </div>

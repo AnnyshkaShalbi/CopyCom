@@ -1,8 +1,8 @@
 {
-    "url": "/projectdoc",
+    "url": "/drawings",
     "front": [
         "header",
-        "projectdoc",
+        "drawings",
         "footer"
     ]
 }

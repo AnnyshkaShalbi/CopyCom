@@ -78,27 +78,30 @@ const HeaderMobileMenu = function () {
       >
         другие услуги
       </a>
-      <span
-        class="header-mobileMenu_item pb-5"
-        // href="/copydoc"
+      <a
+        class="header-mobileMenu_item pb-10"
         onclick={() => {
           front.Variable.openSidebar = !front.Variable.openSidebar
           Fn.initAll()
-          Fn.linkChange("/copydoc")
+          // Fn.linkChange("/copydoc")
+          Fn.link
         }}
       >
         Печать документов
-      </span>
+      </a>
       <a
-        class="header-mobileMenu_item pb-5"
+        class="header-mobileMenu_item pb-10"
+        href="/drawings"
         onclick={() => {
-          Fn.initOne("modalSoon", {})
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.initAll()
+          Fn.link
         }}
       >
         Печать чертежей
       </a>
       <a
-        class="header-mobileMenu_item pb-5"
+        class="header-mobileMenu_item pb-10"
         onclick={() => {
           Fn.initOne("modalSoon", {})
         }}
@@ -106,7 +109,7 @@ const HeaderMobileMenu = function () {
         Печать презентаций
       </a>
       <a
-        class="header-mobileMenu_item pb-5"
+        class="header-mobileMenu_item pb-10"
         onclick={() => {
           Fn.initOne("modalSoon", {})
         }}
@@ -114,7 +117,7 @@ const HeaderMobileMenu = function () {
         Печать лекал и выкроек
       </a>
       <a
-        class="header-mobileMenu_item pb-5"
+        class="header-mobileMenu_item pb-10"
         onclick={() => {
           Fn.initOne("modalSoon", {})
         }}
@@ -122,9 +125,13 @@ const HeaderMobileMenu = function () {
         Сканирование документов
       </a>
       <a
-        class="header-mobileMenu_item pb-5"
+        class="header-mobileMenu_item pb-10"
+        href="/brochure"
         onclick={() => {
-          Fn.initOne("modalSoon", {})
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.initAll()
+          // Fn.linkChange("/brochure")
+          Fn.link
         }}
       >
         Брошюровка на пластиковую пружину
