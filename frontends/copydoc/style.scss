@@ -217,5 +217,21 @@
 // всплывашка таймер
 .message-timer {
   position: fixed;
+  top: 15%;
+  right: -100%;
+  transition: var(--tran05);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background-color: var(--blue200);
+  color: var(--white);
+  width: 200px;
+  padding: 1rem;
+  z-index: 100;
 
+  &__active{
+    right: 5%;
+    visibility: visible;
+    opacity: 1;
+  }
 }

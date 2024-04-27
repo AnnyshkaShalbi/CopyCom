@@ -6,6 +6,14 @@ front.listener.finish = () => {
     //1. с помощью matchMedia проверяем что это мобильное устройство
     //2. если всё ок, то вызываем таймайт, на 3сек появление блока
     //3. смотри пример с академии
+    if(window.matchMedia("(max-width: 992px)")){
+        setTimeout(()=>{
+            Ref.messageTimer.classList.add("message-timer__active");
+        }, 3000)
+        setTimeout(()=>{
+            Ref.messageTimer.classList.remove("message-timer__active");
+        }, 6000)
+    }
     return
 }
 

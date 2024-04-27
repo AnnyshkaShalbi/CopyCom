@@ -3,8 +3,8 @@ import filePdf from '@svg/icons/filePdf.svg'
 
 const RenderMessage = () => {
     return (
-        <div class="message-timer">
-            <p>Прокрутите вправо, чтобы увидеть больше цен</p>
+        <div class="message-timer" ref="messageTimer">
+            <p>Прокрутите таблицу вправо, чтобы увидеть больше цен</p>
         </div>
     )
 }
@@ -371,6 +371,7 @@ const RenderTabs = () => {
 export default function () {
     return (
         <div class="pb-25">
+            <RenderMessage />
             <RenderTitle />
             <div class="copy-content mt-25">
                 {window.matchMedia("(max-width: 992px)") ? <RenderTabs /> : null}
