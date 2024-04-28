@@ -107,16 +107,16 @@ const RenderTable = () => {
             <tbody class="table-body">
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400">1-100 страниц</td>
-                    <td class="table-body-cell">10 ₽</td>
-                    <td class="table-body-cell">22 ₽</td>
-                    <td class="table-body-cell">60 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
+                    <td class="table-body-cell text-nowrap">10 ₽</td>
+                    <td class="table-body-cell text-nowrap">22 ₽</td>
+                    <td class="table-body-cell text-nowrap">60 ₽</td>
+                    <td class="table-body-cell text-nowrap">80 ₽</td>
+                    <td class="table-body-cell text-nowrap">130 ₽</td>
                 </tr>
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
-                    <td class="table-body-cell">8 ₽</td>
-                    <td class="border-right-none table-body-cell ">18 ₽</td>
+                    <td class="table-body-cell text-nowrap">8 ₽</td>
+                    <td class="border-right-none table-body-cell text-nowrap">18 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -160,21 +160,21 @@ const RenderTable = () => {
                         </div>
 
                     </td>
-                    <td class="table-body-cell">30 ₽</td>
-                    <td class="table-body-cell">55 ₽</td>
-                    <td class="table-body-cell">85 ₽</td>
-                    <td class="table-body-cell">110 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
+                    <td class="table-body-cell text-nowrap">30 ₽</td>
+                    <td class="table-body-cell text-nowrap">55 ₽</td>
+                    <td class="table-body-cell text-nowrap">85 ₽</td>
+                    <td class="table-body-cell text-nowrap">110 ₽</td>
+                    <td class="table-body-cell text-nowrap">130 ₽</td>
                 </tr>
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent flex justify-content-end">
                         {`( > 50 %)`}
                     </td>
-                    <td class="table-body-cell">36 ₽</td>
-                    <td class="table-body-cell">60 ₽</td>
-                    <td class="table-body-cell">150 ₽</td>
-                    <td class="table-body-cell">190 ₽</td>
-                    <td class="table-body-cell">280 ₽</td>
+                    <td class="table-body-cell text-nowrap">36 ₽</td>
+                    <td class="table-body-cell text-nowrap">60 ₽</td>
+                    <td class="table-body-cell text-nowrap">150 ₽</td>
+                    <td class="table-body-cell text-nowrap">190 ₽</td>
+                    <td class="table-body-cell text-nowrap">280 ₽</td>
                 </tr>
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
@@ -183,8 +183,8 @@ const RenderTable = () => {
                             {`( < 50 %)`}
                         </span>
                     </td>
-                    <td class="table-body-cell">25 ₽</td>
-                    <td class="table-body-cell border-right-none">50 ₽</td>
+                    <td class="table-body-cell text-nowrap">25 ₽</td>
+                    <td class="table-body-cell border-right-none text-nowrap">50 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -193,8 +193,8 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent flex justify-content-end">
                         {`( > 50 %)`}
                     </td>
-                    <td class="table-body-cell">30 ₽</td>
-                    <td class="table-body-cell border-right-none">55 ₽</td>
+                    <td class="table-body-cell text-nowrap">30 ₽</td>
+                    <td class="table-body-cell border-right-none text-nowrap">55 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -230,16 +230,16 @@ const RenderTableMobile = () => {
                 <tbody class="table-body">
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400">1-100 страниц</td>
-                        <td class="table-body-cell">10 ₽</td>
-                        <td class="table-body-cell">22 ₽</td>
-                        <td class="table-body-cell">60 ₽</td>
-                        <td class="table-body-cell">80 ₽</td>
-                        <td class="table-body-cell">130 ₽</td>
+                        <td class="table-body-cell text-nowrap">10 ₽</td>
+                        <td class="table-body-cell text-nowrap">22 ₽</td>
+                        <td class="table-body-cell text-nowrap">60 ₽</td>
+                        <td class="table-body-cell text-nowrap">80 ₽</td>
+                        <td class="table-body-cell text-nowrap">130 ₽</td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
-                        <td class="table-body-cell">8 ₽</td>
-                        <td class="border-right-none table-body-cell ">18 ₽</td>
+                        <td class="table-body-cell text-nowrap">8 ₽</td>
+                        <td class="border-right-none table-body-cell text-nowrap">18 ₽</td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
@@ -300,21 +300,21 @@ const RenderTableMobile = () => {
                             </div>
 
                         </td>
-                        <td class="table-body-cell">30 ₽</td>
-                        <td class="table-body-cell">55 ₽</td>
-                        <td class="table-body-cell">85 ₽</td>
-                        <td class="table-body-cell">110 ₽</td>
-                        <td class="table-body-cell">130 ₽</td>
+                        <td class="table-body-cell text-nowrap">30 ₽</td>
+                        <td class="table-body-cell text-nowrap">55 ₽</td>
+                        <td class="table-body-cell text-nowrap">85 ₽</td>
+                        <td class="table-body-cell text-nowrap">110 ₽</td>
+                        <td class="table-body-cell text-nowrap">130 ₽</td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
                             {`( > 50 %)`}
                         </td>
-                        <td class="table-body-cell">36 ₽</td>
-                        <td class="table-body-cell">60 ₽</td>
-                        <td class="table-body-cell">150 ₽</td>
-                        <td class="table-body-cell">190 ₽</td>
-                        <td class="table-body-cell">280 ₽</td>
+                        <td class="table-body-cell text-nowrap">36 ₽</td>
+                        <td class="table-body-cell text-nowrap">60 ₽</td>
+                        <td class="table-body-cell text-nowrap">150 ₽</td>
+                        <td class="table-body-cell text-nowrap">190 ₽</td>
+                        <td class="table-body-cell text-nowrap">280 ₽</td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
@@ -323,18 +323,18 @@ const RenderTableMobile = () => {
                                 {`( < 50 %)`}
                             </span>
                         </td>
-                        <td class="table-body-cell">25 ₽</td>
-                        <td class="table-body-cell border-right-none">50 ₽</td>
-                        <td class="table-body-cell border-right-none"></td>
-                        <td class="table-body-cell border-right-none"></td>
-                        <td class="table-body-cell border-right-none"></td>
+                        <td class="table-body-cell text-nowrap">25 ₽</td>
+                        <td class="table-body-cell border-right-none text-nowrap">50 ₽</td>
+                        <td class="table-body-cell border-right-none text-nowrap"></td>
+                        <td class="table-body-cell border-right-none text-nowrap"></td>
+                        <td class="table-body-cell border-right-none text-nowrap"></td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
                             {`( > 50 %)`}
                         </td>
-                        <td class="table-body-cell">30 ₽</td>
-                        <td class="table-body-cell border-right-none">55 ₽</td>
+                        <td class="table-body-cell text-nowrap">30 ₽</td>
+                        <td class="table-body-cell border-right-none text-nowrap">55 ₽</td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>

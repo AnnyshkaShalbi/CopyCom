@@ -107,11 +107,11 @@ const RenderTable = () => {
             <tbody class="table-body">
                 <tr class="table-body-row__drawings">
                     <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
-                    <td class="table-body-cell">10 ₽</td>
-                    <td class="table-body-cell">22 ₽</td>
-                    <td class="table-body-cell">60 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
+                    <td class="table-body-cell text-nowrap">10 ₽</td>
+                    <td class="table-body-cell text-nowrap">22 ₽</td>
+                    <td class="table-body-cell text-nowrap">60 ₽</td>
+                    <td class="table-body-cell text-nowrap">80 ₽</td>
+                    <td class="table-body-cell text-nowrap">130 ₽</td>
                 </tr>
                 <tr class="table-body-row__drawings">
                     <td class="table-body-cell"> </td>
@@ -158,27 +158,27 @@ const RenderTable = () => {
                         </div>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span >30 ₽</span>
-                        <span >36 ₽</span>
+                        <span class="text-nowrap">30 ₽</span>
+                        <span class="text-nowrap">36 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>55 ₽</span>
-                        <span>60 ₽</span>
+                        <span class="text-nowrap">55 ₽</span>
+                        <span class="text-nowrap">60 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>95 ₽</span>
-                        <span>140 ₽</span>
-                        <span>210 ₽</span>
+                        <span class="text-nowrap">95 ₽</span>
+                        <span class="text-nowrap">140 ₽</span>
+                        <span class="text-nowrap">210 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>150 ₽</span>
-                        <span>200 ₽</span>
-                        <span>330 ₽</span>
+                        <span class="text-nowrap">150 ₽</span>
+                        <span class="text-nowrap">200 ₽</span>
+                        <span class="text-nowrap">330 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2 border-right-none">
-                        <span>190 ₽</span>
-                        <span>280 ₽</span>
-                        <span>500 ₽</span>
+                        <span class="text-nowrap">190 ₽</span>
+                        <span class="text-nowrap">280 ₽</span>
+                        <span class="text-nowrap">500 ₽</span>
                     </td>
                 </tr>
                 <tr class="table-body-row__drawings">
@@ -201,11 +201,11 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                         на обычной бумаге (80 г.)
                     </td>
-                    <td class="table-body-cell">45 ₽</td>
-                    <td class="table-body-cell">55 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">170 ₽</td>
-                    <td class="table-body-cell">280 ₽</td>
+                    <td class="table-body-cell text-nowrap">45 ₽</td>
+                    <td class="table-body-cell text-nowrap">55 ₽</td>
+                    <td class="table-body-cell text-nowrap">80 ₽</td>
+                    <td class="table-body-cell text-nowrap">170 ₽</td>
+                    <td class="table-body-cell text-nowrap">280 ₽</td>
                 </tr>
                 <tr class="table-body-row__drawings">
                     <td class="table-body-cell"> </td>
@@ -233,29 +233,29 @@ const RenderTable = () => {
                         </div>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>75 ₽</span>
-                        <span>105 ₽</span>
-                        <span>160 ₽</span>
+                        <span class="text-nowrap">75 ₽</span>
+                        <span class="text-nowrap">105 ₽</span>
+                        <span class="text-nowrap">160 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>100 ₽</span>
-                        <span>160 ₽</span>
-                        <span>260 ₽</span>
+                        <span class="text-nowrap">100 ₽</span>
+                        <span class="text-nowrap">160 ₽</span>
+                        <span class="text-nowrap">260 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>130 ₽</span>
-                        <span>190 ₽</span>
-                        <span>360 ₽</span>
+                        <span class="text-nowrap">130 ₽</span>
+                        <span class="text-nowrap">190 ₽</span>
+                        <span class="text-nowrap">360 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
-                        <span>220 ₽</span>
-                        <span>350 ₽</span>
-                        <span>560 ₽</span>
+                        <span class="text-nowrap">220 ₽</span>
+                        <span class="text-nowrap">350 ₽</span>
+                        <span class="text-nowrap">560 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2 border-right-none">
-                        <span>380 ₽</span>
-                        <span>490 ₽</span>
-                        <span>910 ₽</span>
+                        <span class="text-nowrap">380 ₽</span>
+                        <span class="text-nowrap">490 ₽</span>
+                        <span class="text-nowrap">910 ₽</span>
                     </td>
                 </tr>
             </tbody>
@@ -286,11 +286,11 @@ const RenderTableMobile = () => {
                 <tbody class="table-body">
                     <tr class="table-body-row__drawings">
                         <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
-                        <td class="table-body-cell">10 ₽</td>
-                        <td class="table-body-cell">22 ₽</td>
-                        <td class="table-body-cell">60 ₽</td>
-                        <td class="table-body-cell">80 ₽</td>
-                        <td class="table-body-cell">130 ₽</td>
+                        <td class="table-body-cell text-nowrap">10 ₽</td>
+                        <td class="table-body-cell text-nowrap">22 ₽</td>
+                        <td class="table-body-cell text-nowrap">60 ₽</td>
+                        <td class="table-body-cell text-nowrap">80 ₽</td>
+                        <td class="table-body-cell text-nowrap">130 ₽</td>
                     </tr>
                     <tr class="table-body-row__drawings">
                         <td class="table-body-cell"> </td>
@@ -351,27 +351,27 @@ const RenderTableMobile = () => {
                             </div>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span >30 ₽</span>
-                            <span >36 ₽</span>
+                            <span class="text-nowrap">30 ₽</span>
+                            <span class="text-nowrap">36 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>55 ₽</span>
-                            <span>60 ₽</span>
+                            <span class="text-nowrap">55 ₽</span>
+                            <span class="text-nowrap">60 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>95 ₽</span>
-                            <span>140 ₽</span>
-                            <span>210 ₽</span>
+                            <span class="text-nowrap">95 ₽</span>
+                            <span class="text-nowrap">140 ₽</span>
+                            <span class="text-nowrap">210 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>150 ₽</span>
-                            <span>200 ₽</span>
-                            <span>330 ₽</span>
+                            <span class="text-nowrap">150 ₽</span>
+                            <span class="text-nowrap">200 ₽</span>
+                            <span class="text-nowrap">330 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2 border-right-none">
-                            <span>190 ₽</span>
-                            <span>280 ₽</span>
-                            <span>500 ₽</span>
+                            <span class="text-nowrap">190 ₽</span>
+                            <span class="text-nowrap">280 ₽</span>
+                            <span class="text-nowrap">500 ₽</span>
                         </td>
                     </tr>
                     <tr class="table-body-row__drawings">
@@ -394,11 +394,11 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                             на обычной бумаге (80 г.)
                         </td>
-                        <td class="table-body-cell">45 ₽</td>
-                        <td class="table-body-cell">55 ₽</td>
-                        <td class="table-body-cell">80 ₽</td>
-                        <td class="table-body-cell">170 ₽</td>
-                        <td class="table-body-cell">280 ₽</td>
+                        <td class="table-body-cell text-nowrap">45 ₽</td>
+                        <td class="table-body-cell text-nowrap">55 ₽</td>
+                        <td class="table-body-cell text-nowrap">80 ₽</td>
+                        <td class="table-body-cell text-nowrap">170 ₽</td>
+                        <td class="table-body-cell text-nowrap">280 ₽</td>
                     </tr>
                     <tr class="table-body-row__drawings">
                         <td class="table-body-cell"> </td>
@@ -426,29 +426,29 @@ const RenderTableMobile = () => {
                             </div>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>75 ₽</span>
-                            <span>105 ₽</span>
-                            <span>160 ₽</span>
+                            <span class="text-nowrap">75 ₽</span>
+                            <span class="text-nowrap">105 ₽</span>
+                            <span class="text-nowrap">160 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>100 ₽</span>
-                            <span>160 ₽</span>
-                            <span>260 ₽</span>
+                            <span class="text-nowrap">100 ₽</span>
+                            <span class="text-nowrap">160 ₽</span>
+                            <span class="text-nowrap">260 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>130 ₽</span>
-                            <span>190 ₽</span>
-                            <span>360 ₽</span>
+                            <span class="text-nowrap">130 ₽</span>
+                            <span class="text-nowrap">190 ₽</span>
+                            <span class="text-nowrap">360 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
-                            <span>220 ₽</span>
-                            <span>350 ₽</span>
-                            <span>560 ₽</span>
+                            <span class="text-nowrap">220 ₽</span>
+                            <span class="text-nowrap">350 ₽</span>
+                            <span class="text-nowrap">560 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2 border-right-none">
-                            <span>380 ₽</span>
-                            <span>490 ₽</span>
-                            <span>910 ₽</span>
+                            <span class="text-nowrap">380 ₽</span>
+                            <span class="text-nowrap">490 ₽</span>
+                            <span class="text-nowrap">910 ₽</span>
                         </td>
                     </tr>
                 </tbody>

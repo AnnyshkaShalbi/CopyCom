@@ -103,11 +103,11 @@ const RenderTable = () => {
             <tbody class="table-body">
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Цена одного переплёта</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">100 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">150 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">200 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">250 ₽</td>
-                    <td class="table-body-cell flex justify-content-center align-items-center">300 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">100 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">150 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">200 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">250 ₽</td>
+                    <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">300 ₽</td>
                 </tr>
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
@@ -119,7 +119,7 @@ const RenderTable = () => {
                 </tr>
                 <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">20 ₽</td>
+                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">20 ₽</td>
                 </tr>
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
@@ -131,7 +131,7 @@ const RenderTable = () => {
                 </tr>
                 <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">30 ₽</td>
+                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">30 ₽</td>
                 </tr>
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
@@ -143,7 +143,7 @@ const RenderTable = () => {
                 </tr>
                 <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
-                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center">10 ₽</td>
+                    <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">10 ₽</td>
                 </tr>
                 <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
@@ -176,11 +176,11 @@ const RenderTableMobile = () => {
                 <tbody class="table-body">
                     <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Цена одного переплёта</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">100 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">150 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">200 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">250 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">300 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">100 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">150 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">200 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">250 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center text-nowrap">300 ₽</td>
                     </tr>
                     <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell"> </td>
@@ -192,7 +192,7 @@ const RenderTableMobile = () => {
                     </tr>
                     <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
-                        <td class="table-body-cell text-gray font-weight-400">20 ₽</td>
+                        <td class="table-body-cell text-gray font-weight-400 text-nowrap">20 ₽</td>
                     </tr>
                     <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell"> </td>
@@ -204,7 +204,7 @@ const RenderTableMobile = () => {
                     </tr>
                     <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
-                        <td class="table-body-cell text-gray font-weight-400">30 ₽</td>
+                        <td class="table-body-cell text-gray font-weight-400 text-nowrap">30 ₽</td>
                     </tr>
                     <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell"> </td>
@@ -216,7 +216,7 @@ const RenderTableMobile = () => {
                     </tr>
                     <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
-                        <td class="table-body-cell text-gray font-weight-400">10 ₽</td>
+                        <td class="table-body-cell text-gray font-weight-400 text-nowrap">10 ₽</td>
                     </tr>
                     <tr class="table-body-row__brochure">
                         <td class="table-body-cell"> </td>
