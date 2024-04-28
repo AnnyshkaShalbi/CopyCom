@@ -12,7 +12,7 @@ const RenderMessage = () => {
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">чертежи</h1>
+            <h1 class="title_secondary pb-15">Печать проектной документации</h1>
             <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
         </div>
     )
@@ -39,12 +39,8 @@ const RenderFile = () => {
                     placeholder="+7 (980) 324 - 12 - 32"
                     class={[
                         "field__input",
-                        // Static.form.phone.error ? "field__input_error" : null
                     ]}
                     oninput={(e) => {
-                        // Static.form.phone.value = e.currentTarget.value
-                        // front.Services.functions.formPhone(Static.form.phone)
-                        // Func.checkForm()
                     }}
                 />
             </div>
@@ -96,7 +92,7 @@ const RenderTable = () => {
             <caption class="table-head copy-title">прайс-лист</caption>
             <thead>
                 <tr class="table-body-row">
-                    <th class="font-weight-600 table-body-cell">Черно-белая печать чертежей</th>
+                    <th class="font-weight-600 table-body-cell">Черно-белая печать</th>
                     <th class="table-body-cell text-gray font-weight-400">A4</th>
                     <th class="table-body-cell text-gray font-weight-400">A3</th>
                     <th class="table-body-cell text-gray font-weight-400">A2</th>
@@ -107,11 +103,11 @@ const RenderTable = () => {
             <tbody class="table-body">
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
-                    <td class="table-body-cell">10 ₽</td>
+                    <td class="table-body-cell">8 ₽</td>
                     <td class="table-body-cell">22 ₽</td>
+                    <td class="table-body-cell">45 ₽</td>
                     <td class="table-body-cell">60 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">130 ₽</td>
+                    <td class="table-body-cell">100 ₽</td>
                 </tr>
                 <tr class="table-body-row">
                     <td class="table-body-cell"> </td>
@@ -122,20 +118,20 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
-                    <td class="table-body-cell text-gray font-weight-400">A4</td>
-                    <td class="table-body-cell text-gray font-weight-400">A3</td>
-                    <td class="table-body-cell text-gray font-weight-400">A2</td>
-                    <td class="table-body-cell text-gray font-weight-400">A1</td>
-                    <td class="table-body-cell text-gray font-weight-400">A0</td>
+                    <td class="table-body-cell font-weight-600">Цветная печать</td>
+                    <td class="table-body-cell text-gray font-weight-400">А4</td>
+                    <td class="table-body-cell text-gray font-weight-400">А3</td>
+                    <td class="table-body-cell text-gray font-weight-400">А2</td>
+                    <td class="table-body-cell text-gray font-weight-400">А1</td>
+                    <td class="table-body-cell text-gray font-weight-400">А0</td>
                 </tr>
                 <tr class="table-body-row">
-                    <td class="table-body-cell__unick text-gray font-weight-400 ">
-                        <div class="w100 flex ">
-                            <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
+                    <td class="table-body-cell__unick text-gray font-weight-400">
+                        <div class="w100 flex justify-content-between">
+                            <span class="table-body-cell__unick-center font-size-sm">на обычной бумаге (80 г.)</span>
                             <div class="h100 flex align-items-center">
                                 <div
-                                    class="tooltip ml-10"
+                                    class="tooltip mX-10"
                                     onmouseover={() => {
                                         Ref.tooltipContentPc.classList.add("tooltip-content__active");
                                     }}
@@ -189,74 +185,9 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                 </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
-                    <td class="table-body-cell text-gray font-weight-400">А4*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А1*3</td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
-                        на обычной бумаге (80 г.)
-                    </td>
-                    <td class="table-body-cell">45 ₽</td>
-                    <td class="table-body-cell">55 ₽</td>
-                    <td class="table-body-cell">80 ₽</td>
-                    <td class="table-body-cell">170 ₽</td>
-                    <td class="table-body-cell">280 ₽</td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
-                    <td class="table-body-cell text-gray font-weight-400">А4*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                    <td class="table-body-cell text-gray font-weight-400">А1*3</td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-cell__unick text-gray font-weight-400 ">
-                        <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
-                        <div class="table-body-cell__add3">
-                            <span class="table-body-cell__add3-item">{`( < 25 %)`}</span>
-                            <span class="table-body-cell__add3-item">{`( < 50 %)`}</span>
-                            <span class="table-body-cell__add3-item">{`( > 50 %)`}</span>
-                        </div>
-                    </td>
-                    <td class="table-body-cell__col-2">
-                        <span>75 ₽</span>
-                        <span>105 ₽</span>
-                        <span>160 ₽</span>
-                    </td>
-                    <td class="table-body-cell__col-2">
-                        <span>100 ₽</span>
-                        <span>160 ₽</span>
-                        <span>260 ₽</span>
-                    </td>
-                    <td class="table-body-cell__col-2">
-                        <span>130 ₽</span>
-                        <span>190 ₽</span>
-                        <span>360 ₽</span>
-                    </td>
-                    <td class="table-body-cell__col-2">
-                        <span>220 ₽</span>
-                        <span>350 ₽</span>
-                        <span>560 ₽</span>
-                    </td>
-                    <td class="table-body-cell__col-2 border-right-none">
-                        <span>380 ₽</span>
-                        <span>490 ₽</span>
-                        <span>910 ₽</span>
-                    </td>
+                <tr class="table-body-row_both">
+                    <td class="table-body-cell">Фальцовка (за 1 лист)</td>
+                    <td class="table-body-cell">10 ₽</td>
                 </tr>
             </tbody>
         </table>
@@ -275,7 +206,7 @@ const RenderTableMobile = () => {
                 <caption class="table-head copy-title">прайс-лист</caption>
                 <thead>
                     <tr class="table-body-row">
-                        <th class="font-weight-600 table-body-cell">Черно-белая печать чертежей</th>
+                        <th class="font-weight-600 table-body-cell">Черно-белая печать</th>
                         <th class="table-body-cell text-gray font-weight-400">A4</th>
                         <th class="table-body-cell text-gray font-weight-400">A3</th>
                         <th class="table-body-cell text-gray font-weight-400">A2</th>
@@ -286,11 +217,11 @@ const RenderTableMobile = () => {
                 <tbody class="table-body">
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
-                        <td class="table-body-cell">10 ₽</td>
+                        <td class="table-body-cell">8 ₽</td>
                         <td class="table-body-cell">22 ₽</td>
+                        <td class="table-body-cell">45 ₽</td>
                         <td class="table-body-cell">60 ₽</td>
-                        <td class="table-body-cell">80 ₽</td>
-                        <td class="table-body-cell">130 ₽</td>
+                        <td class="table-body-cell">100 ₽</td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell"> </td>
@@ -301,42 +232,28 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                     </tr>
                     <tr class="table-body-row">
-                        <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
-                        <td class="table-body-cell text-gray font-weight-400">A4</td>
-                        <td class="table-body-cell text-gray font-weight-400">A3</td>
-                        <td class="table-body-cell text-gray font-weight-400">A2</td>
-                        <td class="table-body-cell text-gray font-weight-400">A1</td>
-                        <td class="table-body-cell text-gray font-weight-400">A0</td>
+                        <td class="table-body-cell font-weight-600">Цветная печать</td>
+                        <td class="table-body-cell text-gray font-weight-400">А4</td>
+                        <td class="table-body-cell text-gray font-weight-400">А3</td>
+                        <td class="table-body-cell text-gray font-weight-400">А2</td>
+                        <td class="table-body-cell text-gray font-weight-400">А1</td>
+                        <td class="table-body-cell text-gray font-weight-400">А0</td>
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell__unick text-gray font-weight-400 ">
-                            <div class="w100 flex ">
-                                <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
+                            <div class="w100 flex justify-content-between">
+                                <span class="table-body-cell__unick-center font-size-sm">на обычной бумаге (80 г.)</span>
                                 <div class="h100 flex align-items-center">
                                     <div
-                                        ref="tooltip"
-                                        class="tooltip tooltip-mobile ml-10"
+                                        class="tooltip mX-10"
+                                        onmouseover={() => {
+                                            Ref.tooltipContentPc.classList.add("tooltip-content__active");
+                                        }}
+                                        onmouseleave={() => {
+                                            Ref.tooltipContentPc.classList.remove("tooltip-content__active");
+                                        }}
                                     >
-                                        <div
-                                            class="tooltip-head"
-                                            ref="tooltipHead"
-                                            onmouseover={() => {
-                                                Ref.tooltipContent.classList.add("tooltip-content__active");
-                                                setTimeout(() => {
-                                                    Ref.tooltipContent.classList.remove("tooltip-content__active");
-                                                }, 3000)
-                                            }}
-                                            ontouchstart={() => {
-                                                Ref.tooltipContent.classList.add("tooltip-content__active");
-                                                setTimeout(() => {
-                                                    Ref.tooltipContent.classList.remove("tooltip-content__active");
-                                                }, 3000)
-                                            }}
-                                        >
-                                            ?
-                                        </div>
-
-                                        <div class="tooltip-content" ref="tooltipContent">
+                                        <div class="tooltip-content" ref="tooltipContentPc">
                                             <p class="tooltip-content_text">
                                                 Процент заполнения цвета в документе
                                             </p>
@@ -382,74 +299,9 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                     </tr>
-                    <tr class="table-body-row">
-                        <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
-                        <td class="table-body-cell text-gray font-weight-400">А4*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А1*3</td>
-                    </tr>
-                    <tr class="table-body-row">
-                        <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
-                            на обычной бумаге (80 г.)
-                        </td>
-                        <td class="table-body-cell">45 ₽</td>
-                        <td class="table-body-cell">55 ₽</td>
-                        <td class="table-body-cell">80 ₽</td>
-                        <td class="table-body-cell">170 ₽</td>
-                        <td class="table-body-cell">280 ₽</td>
-                    </tr>
-                    <tr class="table-body-row">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr>
-                    <tr class="table-body-row">
-                        <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
-                        <td class="table-body-cell text-gray font-weight-400">А4*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
-                        <td class="table-body-cell text-gray font-weight-400">А1*3</td>
-                    </tr>
-                    <tr class="table-body-row">
-                        <td class="table-body-cell__unick text-gray font-weight-400 ">
-                            <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
-                            <div class="table-body-cell__add3">
-                                <span class="table-body-cell__add3-item">{`( < 25 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( < 50 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( > 50 %)`}</span>
-                            </div>
-                        </td>
-                        <td class="table-body-cell__col-2">
-                            <span>75 ₽</span>
-                            <span>105 ₽</span>
-                            <span>160 ₽</span>
-                        </td>
-                        <td class="table-body-cell__col-2">
-                            <span>100 ₽</span>
-                            <span>160 ₽</span>
-                            <span>260 ₽</span>
-                        </td>
-                        <td class="table-body-cell__col-2">
-                            <span>130 ₽</span>
-                            <span>190 ₽</span>
-                            <span>360 ₽</span>
-                        </td>
-                        <td class="table-body-cell__col-2">
-                            <span>220 ₽</span>
-                            <span>350 ₽</span>
-                            <span>560 ₽</span>
-                        </td>
-                        <td class="table-body-cell__col-2 border-right-none">
-                            <span>380 ₽</span>
-                            <span>490 ₽</span>
-                            <span>910 ₽</span>
-                        </td>
+                    <tr class="table-body-row_both">
+                        <td class="table-body-cell">Фальцовка (за 1 лист)</td>
+                        <td class="table-body-cell">10 ₽</td>
                     </tr>
                 </tbody>
             </table>

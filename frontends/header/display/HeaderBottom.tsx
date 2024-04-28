@@ -6,15 +6,13 @@ export default function () {
     <div class="wrapper headerBottom" ref="headerBottom">
       <ul class="header-list pY-18">
         <li class="header-list__item">
-          <a
-            // href="/projectdoc" 
-            // onclick={Fn.link}
+          <span
             onclick={() => {
               Fn.initOne("modalSoon", {})
             }}
           >
             Печать диплома
-          </a>
+          </span>
         </li>
         <li class="header-list__item">
           <a href="/projectdoc" onclick={Fn.link}>
@@ -33,7 +31,6 @@ export default function () {
             <div
               ref="dropdownHead"
               class="dropdown-head flex align-items-center">
-              {/* <a href="/copydoc" onclick={Fn.link}> Копицентр</a> */}
               <span>Другие услуги</span>
               <img src={arrowDownBlue} alt="КОПИКОМ | копировальный центр для студентов" class="dropdown-head-arrow" ref="dropdownArrow" />
             </div>
@@ -45,16 +42,16 @@ export default function () {
                 <a href="/drawings" onclick={Fn.link} class="dropdown-item">Печать чертежей</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Печать презентаций</a>
+                <a href="/presentations" onclick={Fn.link} class="dropdown-item">Печать презентаций</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Печать лекал</a>
+                <a href="/patterns" onclick={Fn.link} class="dropdown-item">Печать лекал</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Сканирование</a>
+                <a href="/scanning" onclick={Fn.link} class="dropdown-item">Сканирование</a>
               </li>
               <li>
-                <a href="/" onclick={Fn.link} class="dropdown-item">Твёрдый перёплет</a>
+                <a href="/hardcover" onclick={Fn.link} class="dropdown-item">Твёрдый перёплет</a>
               </li>
               <li>
                 <a href="/brochure" onclick={Fn.link} class="dropdown-item">Брошюровка</a>
