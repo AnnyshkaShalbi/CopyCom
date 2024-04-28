@@ -64,38 +64,33 @@ const HeaderMobileMenu = function () {
       </a>
       <a
         class="header-mobileMenu_title mb-30 pb-5"
-        onclick={() => {
-          Fn.initOne("modalSoon", {})
+        onclick={function() {
+          front.Variable.openSidebar = false
+          Fn.linkChange("/projectdoc")
+          Fn.initAll()
         }}
       >
         проектная документация
       </a>
-      <a
-        // onclick={() => {
-        //   Fn.initOne("modalSoon", {})
-        // }}
-        class="header-mobileMenu_title mb-30 pb-5"
-      >
+      <span class="header-mobileMenu_title mb-30 pb-5">
         другие услуги
-      </a>
+      </span>
       <a
         class="header-mobileMenu_item pb-10"
         onclick={() => {
           front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/copydoc")
           Fn.initAll()
-          // Fn.linkChange("/copydoc")
-          Fn.link
         }}
       >
         Печать документов
       </a>
       <a
         class="header-mobileMenu_item pb-10"
-        href="/drawings"
         onclick={() => {
           front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/drawings")
           Fn.initAll()
-          Fn.link
         }}
       >
         Печать чертежей
@@ -103,7 +98,9 @@ const HeaderMobileMenu = function () {
       <a
         class="header-mobileMenu_item pb-10"
         onclick={() => {
-          Fn.initOne("modalSoon", {})
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/presentations")
+          Fn.initAll()
         }}
       >
         Печать презентаций
@@ -111,7 +108,9 @@ const HeaderMobileMenu = function () {
       <a
         class="header-mobileMenu_item pb-10"
         onclick={() => {
-          Fn.initOne("modalSoon", {})
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/patterns")
+          Fn.initAll()
         }}
       >
         Печать лекал и выкроек
@@ -119,19 +118,19 @@ const HeaderMobileMenu = function () {
       <a
         class="header-mobileMenu_item pb-10"
         onclick={() => {
-          Fn.initOne("modalSoon", {})
+          front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/scanning")
+          Fn.initAll()
         }}
       >
         Сканирование документов
       </a>
       <a
         class="header-mobileMenu_item pb-10"
-        href="/brochure"
         onclick={() => {
           front.Variable.openSidebar = !front.Variable.openSidebar
+          Fn.linkChange("/brochure")
           Fn.initAll()
-          // Fn.linkChange("/brochure")
-          Fn.link
         }}
       >
         Брошюровка на пластиковую пружину
@@ -200,9 +199,9 @@ export default function () {
 
         <div class="header-logo">
           <a
-            href="/"
             onclick={() => {
               front.Variable.openSidebar = false
+              Fn.linkChange("/")
               Fn.initAll()
             }}
             class="flex align-items-center"

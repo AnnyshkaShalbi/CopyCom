@@ -35,3 +35,19 @@
     }
   }
 }
+
+@media (max-width: 992px){
+  .table{
+    &-body{
+      &-row{
+        &__hardcover{
+          grid-template-columns: 13rem 8rem 8rem 8rem 8rem;
+
+          &-both{
+            grid-template-columns: 13rem 8fr;;
+          }
+        }
+      }
+    }
+  }
+}

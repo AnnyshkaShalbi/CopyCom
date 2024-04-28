@@ -92,7 +92,7 @@ const RenderTable = () => {
             <caption class="table-head copy-title">прайс-лист</caption>
             <thead>
                 <tr class="table-body-row__presa table-border-bottom">
-                    <th class="font-weight-600 table-body-cell">Печать презентация</th>
+                    <th class="font-weight-600 table-body-cell">Печать презентаций</th>
                     <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А4</th>
                     <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А3</th>
                 </tr>

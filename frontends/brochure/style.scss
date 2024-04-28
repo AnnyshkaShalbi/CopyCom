@@ -61,3 +61,19 @@
     }
   }
 }
+
+@media (max-width: 450px){
+  .table{
+    &-body{
+      &-row{
+        &__brochure{
+          grid-template-columns: 10rem 8rem 8rem 8rem 8rem 8rem;
+        }
+
+        &__both{
+          grid-template-columns: 10rem 10fr;
+        }
+      }
+    }
+  }
+}

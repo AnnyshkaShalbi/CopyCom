@@ -61,6 +61,10 @@ $indents: (
 
 // padding, margin
 @each $index, $indent in $indents {
+  .p-#{$index} {
+    padding: $indent;
+  }
+
   .pt-#{$index} {
     padding-top: $indent;
   }

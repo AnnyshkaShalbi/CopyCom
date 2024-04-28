@@ -1,0 +1,45 @@
+.table{
+  &-body{
+    &-row{
+      &__projectdoc{
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--border-light);
+        }
+  
+        &:first-child {
+          border-bottom: 1px solid var(--border-light);
+        }
+  
+        &-both{
+          display: grid;
+          grid-template-columns: 4fr 5fr;
+  
+          td:last-child{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .table{
+    &-body{
+      &-row{
+        &__projectdoc{
+          grid-template-columns: 16rem 1fr 1fr 1fr 1fr 1fr;
+    
+          &-both{
+            grid-template-columns: 16rem 5fr;
+          }
+        }
+      }
+    }
+  }
+}

@@ -95,7 +95,7 @@ const RenderTable = () => {
         <table class="table">
             <caption class="table-head copy-title">прайс-лист</caption>
             <thead>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <th class="font-weight-600 table-body-cell">Черно-белая печать чертежей</th>
                     <th class="table-body-cell text-gray font-weight-400">A4</th>
                     <th class="table-body-cell text-gray font-weight-400">A3</th>
@@ -105,7 +105,7 @@ const RenderTable = () => {
                 </tr>
             </thead>
             <tbody class="table-body">
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
                     <td class="table-body-cell">10 ₽</td>
                     <td class="table-body-cell">22 ₽</td>
@@ -113,7 +113,7 @@ const RenderTable = () => {
                     <td class="table-body-cell">80 ₽</td>
                     <td class="table-body-cell">130 ₽</td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
@@ -121,7 +121,7 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                     <td class="table-body-cell text-gray font-weight-400">A4</td>
                     <td class="table-body-cell text-gray font-weight-400">A3</td>
@@ -129,13 +129,13 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400">A1</td>
                     <td class="table-body-cell text-gray font-weight-400">A0</td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell__unick text-gray font-weight-400 ">
                         <div class="w100 flex ">
                             <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
                             <div class="h100 flex align-items-center">
                                 <div
-                                    class="tooltip ml-10"
+                                    class="tooltip ml-10 mr-10"
                                     onmouseover={() => {
                                         Ref.tooltipContentPc.classList.add("tooltip-content__active");
                                     }}
@@ -181,7 +181,7 @@ const RenderTable = () => {
                         <span>500 ₽</span>
                     </td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
@@ -189,7 +189,7 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*4</td>
@@ -197,7 +197,7 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                         на обычной бумаге (80 г.)
                     </td>
@@ -207,7 +207,7 @@ const RenderTable = () => {
                     <td class="table-body-cell">170 ₽</td>
                     <td class="table-body-cell">280 ₽</td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
@@ -215,7 +215,7 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*4</td>
@@ -223,7 +223,7 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                 </tr>
-                <tr class="table-body-row">
+                <tr class="table-body-row__drawings">
                     <td class="table-body-cell__unick text-gray font-weight-400 ">
                         <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
                         <div class="table-body-cell__add3">
@@ -274,7 +274,7 @@ const RenderTableMobile = () => {
             >
                 <caption class="table-head copy-title">прайс-лист</caption>
                 <thead>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <th class="font-weight-600 table-body-cell">Черно-белая печать чертежей</th>
                         <th class="table-body-cell text-gray font-weight-400">A4</th>
                         <th class="table-body-cell text-gray font-weight-400">A3</th>
@@ -284,7 +284,7 @@ const RenderTableMobile = () => {
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (80 г.)</td>
                         <td class="table-body-cell">10 ₽</td>
                         <td class="table-body-cell">22 ₽</td>
@@ -292,7 +292,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell">80 ₽</td>
                         <td class="table-body-cell">130 ₽</td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
@@ -300,7 +300,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                         <td class="table-body-cell text-gray font-weight-400">A4</td>
                         <td class="table-body-cell text-gray font-weight-400">A3</td>
@@ -308,14 +308,14 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-gray font-weight-400">A1</td>
                         <td class="table-body-cell text-gray font-weight-400">A0</td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell__unick text-gray font-weight-400 ">
                             <div class="w100 flex ">
                                 <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
                                 <div class="h100 flex align-items-center">
                                     <div
                                         ref="tooltip"
-                                        class="tooltip tooltip-mobile ml-10"
+                                        class="tooltip tooltip-mobile ml-10 mr-10"
                                     >
                                         <div
                                             class="tooltip-head"
@@ -345,9 +345,9 @@ const RenderTableMobile = () => {
                                 </div>
                             </div>
                             <div class="table-body-cell__add3">
-                                <span class="table-body-cell__add3-item">{`( < 25 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( < 50 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( > 50 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( < 25 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( < 50 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( > 50 %)`}</span>
                             </div>
                         </td>
                         <td class="table-body-cell__col-2">
@@ -374,7 +374,7 @@ const RenderTableMobile = () => {
                             <span>500 ₽</span>
                         </td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
@@ -382,7 +382,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*4</td>
@@ -390,7 +390,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                             на обычной бумаге (80 г.)
                         </td>
@@ -400,7 +400,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell">170 ₽</td>
                         <td class="table-body-cell">280 ₽</td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
@@ -408,7 +408,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*4</td>
@@ -416,13 +416,13 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                     </tr>
-                    <tr class="table-body-row">
+                    <tr class="table-body-row__drawings">
                         <td class="table-body-cell__unick text-gray font-weight-400 ">
-                            <span class="table-body-cell__unick-center">на обычной бумаге (80 г.)</span>
+                            <span class="table-body-cell__unick-center p-10">на обычной бумаге (80 г.)</span>
                             <div class="table-body-cell__add3">
-                                <span class="table-body-cell__add3-item">{`( < 25 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( < 50 %)`}</span>
-                                <span class="table-body-cell__add3-item">{`( > 50 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( < 25 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( < 50 %)`}</span>
+                                <span class="table-body-cell__add3-item flex justify-content-center align-items-center">{`( > 50 %)`}</span>
                             </div>
                         </td>
                         <td class="table-body-cell__col-2">
