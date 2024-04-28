@@ -7,7 +7,7 @@ const FirstStep = function(){
     return(
         <div class="order-first__first">
             <div class="order__subtitle">
-                <span class="order-steps__circle order-steps__circle_light">1</span>
+                <span class="order-steps__circle order-steps__circle_light text-dark">1</span>
                 <span 
                     class="order__subtitle-text"
                     onclick={Func.clickNext}
@@ -43,9 +43,9 @@ const FirstStep = function(){
 
 const SecondStep = function({ covers }){
     return(
-        <div class="mt-25">
+        <div class="">
             <div class="order__subtitle">
-                <span class="order-steps__circle order-steps__circle_light">2</span>
+                <span class="order-steps__circle order-steps__circle_light text-dark">2</span>
                 <span 
                     class="order__subtitle-text"
                 
@@ -56,10 +56,10 @@ const SecondStep = function({ covers }){
                     covers.map((item) => {
                         return(
                             <div 
-                                class="order-covers__item"
-                                // onclick={()=>{
-
-                                // }}
+                                class={["order-covers__item", Static.activeCover == item.id ? "order-covers__item-active" : null]}
+                                onclick={()=>{
+                                    Static.activeCover = item.id
+                                }}
                             >
                                 <div class="order-covers__item-img">
                                     <img src={item.image} alt="Обложка диплома" />
@@ -77,9 +77,9 @@ const SecondStep = function({ covers }){
 
 const ThreeStep = function(){
     return(
-        <div class="mt-25">
+        <div class="">
             <div class="order__subtitle">
-                <span class="order-steps__circle order-steps__circle_light">3</span>
+                <span class="order-steps__circle order-steps__circle_light text-dark">3</span>
                 <span 
                     class="order__subtitle-text"
                 
@@ -89,7 +89,13 @@ const ThreeStep = function(){
                 {
                     logos.map((item) => {
                         return(
-                            <div class="order-logos__item">
+                            <div 
+                                class={["order-logos__item", 
+                                Static.activeLogo == item.id ? "order-logos__item-active" : null]}
+                                onclick={()=>{
+                                    Static.activeLogo = item.id
+                                }}
+                            >
                                 <div class="order-logos__item-img">
                                     {
                                         item.image ? <img src={item.image} alt="Обложка диплома" /> : null
@@ -111,24 +117,26 @@ const ThreeStep = function(){
 
 const FinishStep = function(){
     return(
-        <div></div>
+        <div>показываем обложку</div>
     )
 }
 
 
 export default function () {
     return (
-        <div class="order-line__item">
+        <div class="order-item">
             <FirstStep />
             <SecondStep covers={ Static.coverColor ? redCovers : blueCovers } />
             <ThreeStep />
-            <button 
+
+            { Static.activeColor && Static.activeLogo ? <FinishStep /> : null }
+            {/* <button 
                 class="btn btn_blue"
                 onclick={()=>{ 
                   Static.currentStep++
                   console.log('=6f526a=', Static.currentStep)
                 }}
-            >Продолжить</button>
+            >Продолжить</button> */}
         </div>
     )
 }

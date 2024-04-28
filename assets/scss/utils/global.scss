@@ -131,6 +131,10 @@ section {
     color: var(--blue200);
   }
 
+  &-dark{
+    color: var(--dark)!important;
+  }
+
   &-align {
     &-center {
       text-align: center;

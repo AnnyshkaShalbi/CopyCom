@@ -68,6 +68,9 @@ front.loader = () => {
     Static.stepSecondValue = ""
     Static.stepThreeValue = ""
 
+    Static.activeCover 
+    Static.activeLogo 
+
     Static.steps = [
         {
             title: "выбери обложку",

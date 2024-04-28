@@ -1,30 +1,36 @@
 [
   {
+    "id": 0,
     "price": false,
     "title": "Без эмблемы",
     "image": false
   },
   {
+    "id": 1,
     "price": "1000 ₽",
     "title": "МАДИ",
     "image": "/contents/logos/madi.png"
   },
   {
+    "id": 2,
     "price": "1000 ₽",
     "title": "Финашка",
     "image": "/contents/logos/fin.png"
   },
   {
+    "id": 3,
     "price": "1000 ₽",
     "title": "Бауманка",
     "image": "/contents/logos/baumanka.png"
   },
   {
+    "id": 4,
     "price": "1000 ₽",
     "title": "МАИ",
     "image": "/contents/logos/mai.png"
   },
   {
+    "id": 5,
     "price": "1000 ₽",
     "title": "МЭИ",
     "image": "/contents/logos/mei.png"
