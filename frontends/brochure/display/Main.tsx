@@ -12,8 +12,8 @@ const RenderMessage = () => {
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">брошюровка</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <h1 class="title_secondary pb-15">брошюровка на пластиковую пружину</h1>
+            <p class="text-wrap text-gray">Сброшюруем твой документ быстро, доступные форматы: А5, А4, А3 </p>
         </div>
     )
 }
@@ -121,37 +121,13 @@ const RenderTable = () => {
                     <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
                     <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">20 ₽</td>
                 </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
                 <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
                     <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">30 ₽</td>
                 </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr>
                 <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
                     <td class="table-body-cell text-gray font-weight-400 flex justify-content-center align-items-center text-nowrap">10 ₽</td>
-                </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
                 </tr>
             </tbody>
         </table>
@@ -194,37 +170,13 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-gray font-weight-400">Разжатие пружины</td>
                         <td class="table-body-cell text-gray font-weight-400 text-nowrap">20 ₽</td>
                     </tr>
-                    <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr>
                     <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Вставка новых листов</td>
                         <td class="table-body-cell text-gray font-weight-400 text-nowrap">30 ₽</td>
                     </tr>
-                    <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr>
                     <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Вставка файла / чертежа</td>
                         <td class="table-body-cell text-gray font-weight-400 text-nowrap">10 ₽</td>
-                    </tr>
-                    <tr class="table-body-row__brochure">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
                     </tr>
                 </tbody>
             </table>

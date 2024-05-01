@@ -12,8 +12,8 @@ const RenderMessage = () => {
 const RenderTitle = () => {
     return (
         <div>
-            <h1 class="title_secondary pb-15">чертежи</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <h1 class="title_secondary pb-15">печать чертежи</h1>
+            <p class="text-wrap text-gray">Любые чертежи могут быть распечатаны в высоком качестве, все форматы от А4 до А0+, а также нестандартные форматы чертежей!</p>
         </div>
     )
 }
@@ -159,9 +159,11 @@ const RenderTable = () => {
                     </td>
                     <td class="table-body-cell__col-2">
                         <span class="text-nowrap">30 ₽</span>
+                        <span class="text-nowrap">30 ₽</span>
                         <span class="text-nowrap">36 ₽</span>
                     </td>
                     <td class="table-body-cell__col-2">
+                        <span class="text-nowrap">55 ₽</span>
                         <span class="text-nowrap">55 ₽</span>
                         <span class="text-nowrap">60 ₽</span>
                     </td>
@@ -193,7 +195,7 @@ const RenderTable = () => {
                     <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
+                    <td class="table-body-cell text-gray font-weight-400">А3*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                 </tr>
@@ -219,7 +221,7 @@ const RenderTable = () => {
                     <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                    <td class="table-body-cell text-gray font-weight-400">А2*3</td>
+                    <td class="table-body-cell text-gray font-weight-400">А3*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                     <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                 </tr>
@@ -322,14 +324,18 @@ const RenderTableMobile = () => {
                                             ref="tooltipHead"
                                             onmouseover={() => {
                                                 Ref.tooltipContent.classList.add("tooltip-content__active");
+                                                Ref.tooltipHead.classList.add("tooltip-head__active");
                                                 setTimeout(() => {
                                                     Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                    Ref.tooltipHead.classList.remove("tooltip-head__active");
                                                 }, 3000)
                                             }}
                                             ontouchstart={() => {
                                                 Ref.tooltipContent.classList.add("tooltip-content__active");
+                                                Ref.tooltipHead.classList.add("tooltip-head__active");
                                                 setTimeout(() => {
                                                     Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                    Ref.tooltipHead.classList.remove("tooltip-head__active");
                                                 }, 3000)
                                             }}
                                         >
@@ -352,9 +358,11 @@ const RenderTableMobile = () => {
                         </td>
                         <td class="table-body-cell__col-2">
                             <span class="text-nowrap">30 ₽</span>
+                            <span class="text-nowrap">30 ₽</span>
                             <span class="text-nowrap">36 ₽</span>
                         </td>
                         <td class="table-body-cell__col-2">
+                            <span class="text-nowrap">55 ₽</span>
                             <span class="text-nowrap">55 ₽</span>
                             <span class="text-nowrap">60 ₽</span>
                         </td>
@@ -386,7 +394,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell font-weight-600">Черно-белая печать нестандартных чертежей</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
+                        <td class="table-body-cell text-gray font-weight-400">А3*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                     </tr>
@@ -412,7 +420,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell font-weight-600">Цветная печать чертежей</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А4*4</td>
-                        <td class="table-body-cell text-gray font-weight-400">А2*3</td>
+                        <td class="table-body-cell text-gray font-weight-400">А3*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А2*3</td>
                         <td class="table-body-cell text-gray font-weight-400">А1*3</td>
                     </tr>

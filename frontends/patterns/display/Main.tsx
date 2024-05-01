@@ -13,7 +13,7 @@ const RenderTitle = () => {
     return (
         <div>
             <h1 class="title_secondary pb-15">печать лекал и выкроек</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <p class="text-wrap text-gray">Распечатаем лекала и выкройки любой длины, даже свыше 3-х метров и в реальном размере (да-да, мы умеем это делать).</p>
         </div>
     )
 }
@@ -130,7 +130,10 @@ const RenderTableMobile = () => {
                 </thead>
                 <tbody class="table-body">
                     <tr class="table-body-row__patterns table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">на обычной бумаге (белая, 80 г.)</td>
+                        <td class="table-body-cell text-gray font-weight-400 flex flex-col">
+                            <span>на обычной бумаге</span>
+                            <span class="text-nowrap">(белая, 80 г.)</span>
+                        </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">0,9</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">Без вырезания</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">140 ₽</td>

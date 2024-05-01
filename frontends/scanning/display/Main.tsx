@@ -13,7 +13,7 @@ const RenderTitle = () => {
     return (
         <div>
             <h1 class="title_secondary pb-15">сканирование документов</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть отсканированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <p class="text-wrap text-gray">Любые документы могут быть отсканированы как в ч/б варианте, так и в цвете! </p>
         </div>
     )
 }
@@ -109,15 +109,15 @@ const RenderTable = () => {
                     <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
                     <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                 </tr>
-                <tr class="table-body-row__brochure table-border-bottom">
+                {/* <tr class="table-body-row__brochure table-border-bottom">
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
-                </tr>
-                <tr class="table-body-row__both table-border-bottom">
+                </tr> */}
+                {/* <tr class="table-body-row__both table-border-bottom">
                     <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
                     <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
                 </tr>
@@ -128,7 +128,7 @@ const RenderTable = () => {
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
                     <td class="table-body-cell"> </td>
-                </tr>
+                </tr> */}
             </tbody>
         </table>
     )
@@ -158,15 +158,15 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                     </tr>
-                    <tr class="table-body-row__brochure table-border-bottom">
+                    {/* <tr class="table-body-row__brochure table-border-bottom">
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
-                    </tr>
-                    <tr class="table-body-row__both table-border-bottom">
+                    </tr> */}
+                    {/* <tr class="table-body-row__both table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
                         <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
                     </tr>
@@ -177,7 +177,7 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </div>

@@ -13,7 +13,7 @@ const RenderTitle = () => {
     return (
         <div>
             <h1 class="title_secondary pb-15">печать презентаций</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть отсканированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <p class="text-wrap text-gray">Если тебе нужна презентация, распечатанная в хорошем качестве, то ты по адресу. </p>
         </div>
     )
 }
@@ -215,24 +215,24 @@ const RenderTableMobile = () => {
                             <p class="font-weight-600">презентация</p>
                         </th>
                         <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А4</th>
-                        <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center">А3</th>
+                        <th class="table-body-cell text-gray font-weight-400 font-size-base flex justify-content-center align-items-center table-border-right">А3</th>
                     </tr>
                 </thead>
                 <tbody class="table-body">
                     <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">1-100 страниц</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">10 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">22 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">22 ₽</td>
                     </tr>
                     <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">22 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">18 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">18 ₽</td>
                     </tr>
                     <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell"> </td>
                         <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
+                        <td class="table-body-cell table-border-right"> </td>
                     </tr>
                     <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell flex flex-col">
@@ -240,9 +240,9 @@ const RenderTableMobile = () => {
                             <p class="font-weight-600">презентаций</p>
                         </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">А4</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">А3</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">А3</td>
                     </tr>
-                    <tr class="table-body-row__presa">
+                    <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap">
                             1-100 страниц
                             <div class="flex align-items-center">
@@ -255,22 +255,26 @@ const RenderTableMobile = () => {
                                         class="tooltip-head"
                                         ref="tooltipHead"
                                         onmouseover={() => {
-                                            Ref.tooltipContentPc.classList.add("tooltip-content__active");
+                                            Ref.tooltipContent.classList.add("tooltip-content__active");
+                                            Ref.tooltipHead.classList.add("tooltip-head__active");
                                             setTimeout(() => {
-                                                Ref.tooltipContentPc.classList.remove("tooltip-content__active");
+                                                Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                Ref.tooltipHead.classList.remove("tooltip-head__active");
                                             }, 3000)
                                         }}
                                         ontouchstart={() => {
-                                            Ref.tooltipContentPc.classList.add("tooltip-content__active");
+                                            Ref.tooltipContent.classList.add("tooltip-content__active");
+                                            Ref.tooltipHead.classList.add("tooltip-head__active");
                                             setTimeout(() => {
-                                                Ref.tooltipContentPc.classList.remove("tooltip-content__active");
+                                                Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                Ref.tooltipHead.classList.remove("tooltip-head__active");
                                             }, 3000)
                                         }}
                                     >
                                         ?
                                     </div>
 
-                                    <div class="tooltip-content" ref="tooltipContentPc">
+                                    <div class="tooltip-content" ref="tooltipContent">
                                         <p class="tooltip-content_text">
                                             Процент заполнения цвета в документе
                                         </p>
@@ -280,16 +284,16 @@ const RenderTableMobile = () => {
 
                         </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">30 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">55 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">55 ₽</td>
                     </tr>
-                    <tr class="table-body-row__presa">
+                    <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
                             {`( > 50 %)`}
                         </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">36 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">60 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">60 ₽</td>
                     </tr>
-                    <tr class="table-body-row__presa">
+                    <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
                             101-300 страниц
                             <div class="flex align-items-center">
@@ -298,14 +302,14 @@ const RenderTableMobile = () => {
 
                         </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">30 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">55 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">55 ₽</td>
                     </tr>
-                    <tr class="table-body-row__presa">
+                    <tr class="table-body-row__presa table-border-bottom">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__percent">
                             {`( > 50 %)`}
                         </td>
                         <td class="table-body-cell flex justify-content-center align-items-center">36 ₽</td>
-                        <td class="table-body-cell flex justify-content-center align-items-center">60 ₽</td>
+                        <td class="table-body-cell flex justify-content-center align-items-center table-border-right">60 ₽</td>
                     </tr>
                 </tbody>
             </table>
