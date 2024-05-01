@@ -1,4 +1,5 @@
 import { Cemjsx, Func, Static } from "cemjs-all"
+import arrowDoneBlack from '@svg/icons/arrowDoneBlack.svg'
 import blueCovers from '@json/coversBlue'
 import redCovers from '@json/coversRed'
 import logos from '@json/logos'
@@ -51,7 +52,7 @@ const SecondStep = function({ covers }){
                 
                 >обложка</span>
             </div>
-            <div class="order-covers mt-25">
+            <div class="order-covers">
                 {
                     covers.map((item) => {
                         return(
@@ -64,8 +65,8 @@ const SecondStep = function({ covers }){
                                 <div class="order-covers__item-img">
                                     <img src={item.image} alt="Обложка диплома" />
                                 </div>
-                                <p>{item.title}</p>
-                                <span>{item.price}</span>
+                                <p class="order-covers__item-title">{item.title}</p>
+                                <span class="order-covers__item-price">{item.price}</span>
                             </div>
                         )
                     })
@@ -101,10 +102,10 @@ const ThreeStep = function(){
                                         item.image ? <img src={item.image} alt="Обложка диплома" /> : null
                                     }
                                 </div>
-                                <p>{item.title}</p>
+                                <p class="order-logos__item-title">{item.title}</p>
                                 {
                                     item.price ? 
-                                    <span>{item.price}</span> : null
+                                    <span class="order-logos__item-price">{item.price}</span> : null
                                 }
                             </div>
                         )

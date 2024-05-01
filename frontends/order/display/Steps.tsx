@@ -6,7 +6,12 @@ export default function () {
             {
                 Static.steps.map((item, index) => {
                     return(
-                        <div class="order-steps__item">
+                        <div 
+                            class={[
+                                "order-steps__item",
+                                item.active ? "order-steps__item_active" : null
+                            ]}
+                        >
                             <span 
                                 class={[
                                     "order-steps__circle",
@@ -16,9 +21,9 @@ export default function () {
                             >
                                 {index+1}
                             </span>
-                            <div class="order-steps__item-desc">
-                                <span>{item.title}</span>
-                                <p>{item.desc}</p>
+                            <div class="order-steps__item-info">
+                                <span class="order-steps__item-title">{item.title}</span>
+                                <p class="order-steps__item-desc">{item.desc}</p>
                             </div>
                         </div>
                     )
