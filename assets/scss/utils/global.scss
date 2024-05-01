@@ -363,16 +363,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
 
-    &:hover {
+    &__active{
       color: var(--white);
       background: var(--blue200);
     }
 
-    // &:hover .tooltip-content {
-    //   visibility: visible;
-    //   opacity: 1;
-    // }
   }
 
 
@@ -384,10 +381,9 @@ section {
       display: none;
     }
 
-    // &:hover .tooltip-content {
-    //   visibility: visible;
-    //   opacity: 1;
-    // }
+    &:hover {
+      background: transparent;
+    }
   }
 
   &-content {

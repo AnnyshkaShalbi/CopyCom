@@ -13,7 +13,7 @@ const RenderTitle = () => {
     return (
         <div>
             <h1 class="title_secondary pb-15">печать документов</h1>
-            <p class="text-wrap text-gray">Любые документы могут быть откопированы в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете</p>
+            <p class="text-wrap text-gray">Любые документы могут быть распечатаны в высоком качестве прямо у вас на глазах как в ч/б-варианте, так и в цвете.</p>
         </div>
     )
 }
@@ -116,7 +116,7 @@ const RenderTable = () => {
                 <tr class="table-body-row">
                     <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
                     <td class="table-body-cell text-nowrap">8 ₽</td>
-                    <td class="border-right-none table-body-cell text-nowrap">18 ₽</td>
+                    <td class="table-body-cell text-nowrap">18 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -184,7 +184,7 @@ const RenderTable = () => {
                         </span>
                     </td>
                     <td class="table-body-cell text-nowrap">25 ₽</td>
-                    <td class="table-body-cell border-right-none text-nowrap">50 ₽</td>
+                    <td class="table-body-cell text-nowrap">50 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -194,7 +194,7 @@ const RenderTable = () => {
                         {`( > 50 %)`}
                     </td>
                     <td class="table-body-cell text-nowrap">30 ₽</td>
-                    <td class="table-body-cell border-right-none text-nowrap">55 ₽</td>
+                    <td class="table-body-cell text-nowrap">55 ₽</td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
                     <td class="table-body-cell border-right-none"></td>
@@ -237,9 +237,9 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell text-nowrap">130 ₽</td>
                     </tr>
                     <tr class="table-body-row">
-                        <td class="table-body-cell text-gray font-weight-400">101-300 страниц</td>
+                        <td class="table-body-cell text-gray font-weight-400 text-nowrap">101-300 страниц</td>
                         <td class="table-body-cell text-nowrap">8 ₽</td>
-                        <td class="border-right-none table-body-cell text-nowrap">18 ₽</td>
+                        <td class="table-body-cell text-nowrap">18 ₽</td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
@@ -277,14 +277,18 @@ const RenderTableMobile = () => {
                                         ref="tooltipHead"
                                         onmouseover={() => {
                                             Ref.tooltipContent.classList.add("tooltip-content__active");
+                                            Ref.tooltipHead.classList.add("tooltip-head__active");
                                             setTimeout(() => {
                                                 Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                Ref.tooltipHead.classList.remove("tooltip-head__active");
                                             }, 3000)
                                         }}
                                         ontouchstart={() => {
                                             Ref.tooltipContent.classList.add("tooltip-content__active");
+                                            Ref.tooltipHead.classList.add("tooltip-head__active");
                                             setTimeout(() => {
                                                 Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                Ref.tooltipHead.classList.remove("tooltip-head__active");
                                             }, 3000)
                                         }}
                                     >
@@ -318,13 +322,13 @@ const RenderTableMobile = () => {
                     </tr>
                     <tr class="table-body-row">
                         <td class="table-body-cell text-gray font-weight-400 table-body-cell__wrap table-body-cell__percent">
-                            1-300 страниц
+                            <span class="text-nowrap">1-300 страниц</span>
                             <span class="flex align-items-center">
                                 {`( < 50 %)`}
                             </span>
                         </td>
                         <td class="table-body-cell text-nowrap">25 ₽</td>
-                        <td class="table-body-cell border-right-none text-nowrap">50 ₽</td>
+                        <td class="table-body-cell text-nowrap">50 ₽</td>
                         <td class="table-body-cell border-right-none text-nowrap"></td>
                         <td class="table-body-cell border-right-none text-nowrap"></td>
                         <td class="table-body-cell border-right-none text-nowrap"></td>
@@ -334,7 +338,7 @@ const RenderTableMobile = () => {
                             {`( > 50 %)`}
                         </td>
                         <td class="table-body-cell text-nowrap">30 ₽</td>
-                        <td class="table-body-cell border-right-none text-nowrap">55 ₽</td>
+                        <td class="table-body-cell text-nowrap">55 ₽</td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
                         <td class="table-body-cell border-right-none"></td>
