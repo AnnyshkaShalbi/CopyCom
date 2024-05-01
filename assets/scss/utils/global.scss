@@ -139,6 +139,9 @@ section {
     &-center {
       text-align: center;
     }
+    &-left{
+      text-align: left!important;
+    }
   }
 
   &-wrap {
@@ -489,6 +492,10 @@ section {
 
 .justify-content-end {
   justify-content: end;
+}
+
+.justify-content-start {
+  justify-content: start!important;
 }
 
 .align-items-center {

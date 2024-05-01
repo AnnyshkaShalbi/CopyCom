@@ -245,15 +245,33 @@ const RenderTableMobile = () => {
                                 <span class="table-body-cell__unick-center font-size-sm">на обычной бумаге (80 г.)</span>
                                 <div class="h100 flex align-items-center">
                                     <div
-                                        class="tooltip mX-10"
-                                        onmouseover={() => {
-                                            Ref.tooltipContentPc.classList.add("tooltip-content__active");
-                                        }}
-                                        onmouseleave={() => {
-                                            Ref.tooltipContentPc.classList.remove("tooltip-content__active");
-                                        }}
+                                        ref="tooltip"
+                                        class="tooltip tooltip-mobile mX-10"
                                     >
-                                        <div class="tooltip-content" ref="tooltipContentPc">
+                                        <div
+                                            class="tooltip-head"
+                                            ref="tooltipHead"
+                                            onmouseover={() => {
+                                                Ref.tooltipContent.classList.add("tooltip-content__active");
+                                                Ref.tooltipHead.classList.add("tooltip-head__active");
+                                                setTimeout(() => {
+                                                    Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                    Ref.tooltipHead.classList.remove("tooltip-head__active");
+                                                }, 3000)
+                                            }}
+                                            ontouchstart={() => {
+                                                Ref.tooltipContent.classList.add("tooltip-content__active");
+                                                Ref.tooltipHead.classList.add("tooltip-head__active");
+                                                setTimeout(() => {
+                                                    Ref.tooltipContent.classList.remove("tooltip-content__active");
+                                                    Ref.tooltipHead.classList.remove("tooltip-head__active");
+                                                }, 3000)
+                                            }}
+                                        >
+                                            ?
+                                        </div>
+
+                                        <div class="tooltip-content" ref="tooltipContent">
                                             <p class="tooltip-content_text">
                                                 Процент заполнения цвета в документе
                                             </p>
@@ -301,7 +319,7 @@ const RenderTableMobile = () => {
                     </tr>
                     <tr class="table-body-row__projectdoc-both">
                         <td class="table-body-cell">Фальцовка (за 1 лист)</td>
-                        <td class="table-body-cell">10 ₽</td>
+                        <td class="table-body-cell justify-content-start">10 ₽</td>
                     </tr>
                 </tbody>
             </table>
