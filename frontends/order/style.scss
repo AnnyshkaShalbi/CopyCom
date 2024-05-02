@@ -267,6 +267,24 @@
   }
 }
 
+.cover{
+  &-finish{
+    background: var(--light);
+    display: flex;
+
+    &-img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+
+      img{
+        height: 100%;
+      }
+    }
+  }
+}
+
 .updateFile{
   display: grid;
   grid-template-columns: 60% 35%;

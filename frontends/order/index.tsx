@@ -62,14 +62,22 @@ front.func.checkForm = function () {
 
 front.loader = () => {
     Static.currentStep = 1
-    Static.coverColor = false
 
     Static.stepFirstValue = "Выбери понравившийся вариант и цвет обложки"
     Static.stepSecondValue = ""
     Static.stepThreeValue = ""
 
-    Static.activeCover 
-    Static.activeLogo 
+    Static.activeCover = false
+    Static.activeLogo = false
+
+    Static.cover = {
+        color: false,
+        image: false,
+        titleCover: false,
+        priceCover: false,
+        priceLogo: false,
+        titleLogo: false,
+    }
 
     Static.steps = [
         {
