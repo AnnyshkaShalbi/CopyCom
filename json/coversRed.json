@@ -1,32 +1,52 @@
 [
   {
     "id": 0,
-    "price": "480 ₽",
+    "price": 480,
     "title": "Без тиснения",
-    "image": "/contents/covers/red/withoutEmblems/empty.png"
+    "image": "/contents/covers/red/withoutEmblems/empty.png",
+    "diplomWork": false,
+    "diplomProject": false,
+    "finalWork": false,
+    "masterThesis": false
   },
   {
     "id": 1,
-    "price": "560 ₽",
+    "price": 560,
     "title": "С тиснением ВКР",
-    "image": "/contents/covers/red/withoutEmblems/finalWork.png"
+    "image": "/contents/covers/red/withoutEmblems/finalWork.png",
+    "diplomWork": false,
+    "diplomProject": false,
+    "finalWork": true,
+    "masterThesis": false
   },
   {
     "id": 2,
-    "price": "560 ₽",
+    "price": 560,
     "title": "С тиснением ДР",
-    "image": "/contents/covers/red/withoutEmblems/diplomWork.png"
+    "image": "/contents/covers/red/withoutEmblems/diplomWork.png",
+    "diplomWork": true,
+    "diplomProject": false,
+    "finalWork": false,
+    "masterThesis": false
   },
   {
     "id": 3,
-    "price": "560 ₽",
+    "price": 560,
     "title": "С тиснением ДП",
-    "image": "/contents/covers/red/withoutEmblems/diplomProject.png"
+    "image": "/contents/covers/red/withoutEmblems/diplomProject.png",
+    "diplomWork": false,
+    "diplomProject": true,
+    "finalWork": false,
+    "masterThesis": false
   },
   {
     "id": 4,
-    "price": "560 ₽",
+    "price": 560,
     "title": "С тиснением МД",
-    "image": "/contents/covers/red/withoutEmblems/masterThesis.png"
+    "image": "/contents/covers/red/withoutEmblems/masterThesis.png",
+    "diplomWork": false,
+    "diplomProject": false,
+    "finalWork": false,
+    "masterThesis": true
   }
 ]

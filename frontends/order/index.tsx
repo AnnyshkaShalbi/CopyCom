@@ -56,16 +56,307 @@ front.func.myDrop = function (e: any) {
 // upload file
 
 front.func.checkForm = function () {
-    Static.form.phone.valid ? Static.form.isValid = true : Static.form.isValid = false
+
+    if(Static.currentStep == 2){
+        Static.steps[0].active = false
+        Static.steps[0].valid = true
+        Static.steps[Static.currentStep - 1].active = true
+        Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
+    }
+
     return;
 };
 
+front.func.checkImageFinish = function() {
+    // 1. Цвет false - синий, true - красный
+    if(Static.cover.color){
+        // red
+        // проверка на тип работы и логотип МАДИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/red/madi/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/red/madi/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/red/madi/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/red/madi/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип МАИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mai/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mai/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mai/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mai/masterThesis.png"
+            return
+        }
+
+         // проверка на тип работы и логотип Финашка
+         if(Static.cover.diplomWork && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/red/fin/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/red/fin/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/red/fin/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/red/fin/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип Бауманка
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/red/mgtu/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/red/mgtu/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/red/mgtu/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/red/mgtu/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип МЭИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mei/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mei/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mei/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/red/mei/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и без эмблемы
+        if(Static.cover.diplomWork && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/masterThesis.png"
+            return
+        }
+
+        Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/empty.png"
+        return
+    } else{
+        // blue
+        // проверка на тип работы и логотип МАДИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/madi/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/madi/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/madi/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МАДИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/madi/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип МАИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mai/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mai/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mai/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МАИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mai/masterThesis.png"
+            return
+        }
+
+            // проверка на тип работы и логотип Финашка
+            if(Static.cover.diplomWork && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/blue/fin/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/blue/fin/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/blue/fin/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Финашка"){
+            Static.cover.imageFinish = "/contents/covers/blue/fin/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип Бауманка
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/blue/mgtu/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/blue/mgtu/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/blue/mgtu/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Бауманка"){
+            Static.cover.imageFinish = "/contents/covers/blue/mgtu/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и логотип МЭИ
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mei/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mei/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mei/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "МЭИ"){
+            Static.cover.imageFinish = "/contents/covers/blue/mei/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и без эмблемы
+        if(Static.cover.diplomWork && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и без эмблемы
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/masterThesis.png"
+            return
+        }
+
+        Static.cover.imageFinish = "/contents/covers/blue/withoutEmblems/empty.png"
+        return
+    }
+
+    return
+}
+
 front.loader = () => {
     Static.currentStep = 1
-
-    Static.stepFirstValue = "Выбери понравившийся вариант и цвет обложки"
-    Static.stepSecondValue = ""
-    Static.stepThreeValue = ""
 
     Static.activeCover = false
     Static.activeLogo = false
@@ -74,27 +365,32 @@ front.loader = () => {
         color: false,
         image: false,
         titleCover: false,
-        priceCover: false,
-        priceLogo: false,
+        priceCover: 480,
+        priceLogo: 0,
         titleLogo: false,
+        diplomWork: false,
+        diplomProject: false,
+        finalWork: false,
+        masterThesis: false,
+        imageFinish: false
     }
 
     Static.steps = [
         {
             title: "выбери обложку",
-            desc: Static.stepFirstValue,
+            desc: "Выбери понравившийся вариант и цвет обложки",
             active: true,
             valid: false,
         },
         {
             title: "загрузи файл",
-            desc: Static.stepSecondValue,
+            desc: "",
             active: false,
             valid: false,
         },
         {
             title: "оформи заказ",
-            desc: Static.stepThreeValue,
+            desc: "",
             active: false,
             valid: false,
         }

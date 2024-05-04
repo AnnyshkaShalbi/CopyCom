@@ -1,5 +1,8 @@
 import { Cemjsx, Static } from "cemjs-all"
 
+
+
+
 export default function () {
     return (
         <div class="order-steps">
@@ -16,7 +19,7 @@ export default function () {
                                 class={[
                                     "order-steps__circle",
                                     item.active ? "order-steps__circle_active" : null,
-                                    item.valid ? "order-steps__circle_active" : null
+                                    item.valid ? "order-steps__circle_valid" : null
                                 ]}
                             >
                                 {index+1}

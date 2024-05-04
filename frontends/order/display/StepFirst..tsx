@@ -1,5 +1,6 @@
 import { Cemjsx, Func, Static } from "cemjs-all"
-import emptyCover from '@images/empty.png'
+import emptyCoverBlue from '@images/emptyBlue.png'
+import emptyCoverRed from '@images/emptyRed.png'
 import arrowDoneBlack from '@svg/icons/arrowDoneBlack.svg'
 import blueCovers from '@json/coversBlue'
 import redCovers from '@json/coversRed'
@@ -26,6 +27,7 @@ const FirstStep = function(){
                     ]}
                     onclick={()=>{
                         Static.cover.color = !Static.cover.color
+                        Func.checkImageFinish()
                     }}
                 ></div>
                 <div 
@@ -36,6 +38,7 @@ const FirstStep = function(){
                     ]}
                     onclick={()=>{
                         Static.cover.color = !Static.cover.color
+                        Func.checkImageFinish()
                     }}
                 ></div>
             </div>
@@ -64,13 +67,18 @@ const SecondStep = function({ covers }){
                                     Static.cover.titleCover = item.title
                                     Static.cover.priceCover = item.price
                                     Static.cover.image = item.image
+                                    Static.cover.diplomWork = item.diplomWork
+                                    Static.cover.diplomProject = item.diplomProject
+                                    Static.cover.masterThesis = item.masterThesis
+                                    Static.cover.finalWork = item.finalWork
+                                    Func.checkImageFinish()
                                 }}
                             >
                                 <div class="order-covers__item-img">
                                     <img src={item.image} alt="Обложка диплома" />
                                 </div>
                                 <p class="order-covers__item-title">{item.title}</p>
-                                <span class="order-covers__item-price">{item.price}</span>
+                                <span class="order-covers__item-price">{item.price} ₽</span>
                             </div>
                         )
                     })
@@ -101,6 +109,7 @@ const ThreeStep = function(){
                                     Static.activeLogo = item.id
                                     Static.cover.titleLogo = item.title
                                     Static.cover.priceLogo = item.price
+                                    Func.checkImageFinish()
                                 }}
                             >
                                 <div class="order-logos__item-img">
@@ -111,7 +120,7 @@ const ThreeStep = function(){
                                 <p class="order-logos__item-title">{item.title}</p>
                                 {
                                     item.price ? 
-                                    <span class="order-logos__item-price">{item.price}</span> : null
+                                    <span class="order-logos__item-price">{item.price} ₽</span> : null
                                 }
                             </div>
                         )
@@ -136,13 +145,30 @@ const FinishStep = function(){
             </div>
             <div class="cover-finish mt-25">
                 <div class="cover-finish-img">
-                    <img src={Static.cover.image ? Static.cover.image : emptyCover} alt="КОПИКОМ | копицентр для студентов" />
+                    <img 
+                        src={
+                            Static.cover.imageFinish ? 
+                            Static.cover.imageFinish : emptyCoverBlue} 
+                        alt="КОПИКОМ | копицентр для студентов" 
+                    />
                 </div>
-                <div>
-                    <p>{Static.cover.color ? "Красная" : "Синяя"} обложка</p>
-                    <p>{Static.cover.titleCover ? Static.cover.titleCover : "Без тиснения"}</p>
-                    <p>{Static.cover.titleLogo ? Static.cover.titleLogo : "Без эмблемы"}</p>
-                    <p>{Static.cover.priceCover + Static.cover.priceLogo}</p>
+                <div class="cover-finish-info w100">
+                    <div>
+                        <p class="cover-finish-text">{Static.cover.color ? "Красная" : "Синяя"} обложка</p>
+                        <p class="cover-finish-text">{Static.cover.titleCover ? Static.cover.titleCover : "Без тиснения"}</p>
+                        <p class="cover-finish-text">{Static.cover.titleLogo ? Static.cover.titleLogo : "Без эмблемы"}</p>
+                        <p class="cover-finish-price">{Static.cover.priceCover + Static.cover.priceLogo} ₽</p>
+                    </div>
+                    <button 
+                        class="btn btn_blue w100"
+                        onclick={()=>{
+                            Static.currentStep++
+                            Func.checkForm()
+                        }}
+                    >
+                        Продолжить
+                        <i class="i i-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -154,17 +180,9 @@ export default function () {
     return (
         <div class="order-item">
             <FirstStep />
-            <SecondStep covers={ Static.coverColor ? redCovers : blueCovers } />
+            <SecondStep covers={ Static.cover.color ? redCovers : blueCovers } />
             <ThreeStep />
             <FinishStep />
-            {/* { Static.activeColor && Static.activeLogo ? <FinishStep /> : null } */}
-            {/* <button 
-                class="btn btn_blue"
-                onclick={()=>{ 
-                  Static.currentStep++
-                  console.log('=6f526a=', Static.currentStep)
-                }}
-            >Продолжить</button> */}
         </div>
     )
 }
