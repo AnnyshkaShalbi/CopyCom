@@ -62,6 +62,7 @@ front.func.checkForm = function () {
         Static.steps[0].valid = true
         Static.steps[Static.currentStep - 1].active = true
         Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
+        window.scrollTo(0, 0);
     }
 
     return;
@@ -193,6 +194,27 @@ front.func.checkImageFinish = function() {
         }
 
         if(Static.cover.masterThesis && !Static.cover.titleLogo){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/masterThesis.png"
+            return
+        }
+
+        // проверка на тип работы и без эмблемы
+        if(Static.cover.diplomWork && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/diplomWork.png"
+            return
+        }
+
+        if(Static.cover.diplomProject && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/diplomProject.png"
+            return
+        }
+
+        if(Static.cover.finalWork && Static.cover.titleLogo == "Без эмблемы"){
+            Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/finalWork.png"
+            return
+        }
+
+        if(Static.cover.masterThesis && Static.cover.titleLogo == "Без эмблемы"){
             Static.cover.imageFinish = "/contents/covers/red/withoutEmblems/masterThesis.png"
             return
         }
@@ -362,6 +384,7 @@ front.loader = () => {
     Static.activeLogo = false
 
     Static.cover = {
+        // color false - синий
         color: false,
         image: false,
         titleCover: false,
@@ -372,7 +395,27 @@ front.loader = () => {
         diplomProject: false,
         finalWork: false,
         masterThesis: false,
-        imageFinish: false
+        imageFinish: false,
+        // цвет печати false - ч/б
+        printColor: false,
+        // дополнительно
+        additionally: [
+            {
+                text: "Вклеить карман для рецензии",
+                active: false,
+                price: 50
+            },
+            {
+                text: "Вклеить карман для CD диска",
+                active: false,
+                price: 50
+            },
+            {
+                text: "Добавить пластиковый файл",
+                active: false,
+                price: 50
+            },
+        ]
     }
 
     Static.steps = [

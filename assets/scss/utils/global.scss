@@ -29,6 +29,12 @@ section {
   background-color: var(--blue200);
 }
 
+.cursor{
+  &-pointer{
+    cursor: pointer;
+  }
+}
+
 .title {
   font-family: 'TenorSans-Regular';
 
@@ -457,6 +463,45 @@ section {
       &::before {
         right: 60%;
       }
+    }
+  }
+}
+
+.checkbox{
+  width: 22px;
+  height: 22px;
+  background-color: var(--checkbox);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+    &::before{
+      content: '';
+      position: absolute;
+      transition: var(--tran03);
+      height: 100%;
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  &_active{
+    background-color: var(--blue200);
+
+    &::before{
+      visibility: visible;
+      opacity: 1;
+      background-image: url('svg/icons/doneWhite.svg');
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      background-size: contain;
+      width: 14px;
+      height: 9px;
     }
   }
 }

@@ -152,24 +152,24 @@ const FinishStep = function(){
                         alt="КОПИКОМ | копицентр для студентов" 
                     />
                 </div>
-                <div class="cover-finish-info w100">
-                    <div>
-                        <p class="cover-finish-text">{Static.cover.color ? "Красная" : "Синяя"} обложка</p>
-                        <p class="cover-finish-text">{Static.cover.titleCover ? Static.cover.titleCover : "Без тиснения"}</p>
-                        <p class="cover-finish-text">{Static.cover.titleLogo ? Static.cover.titleLogo : "Без эмблемы"}</p>
-                        <p class="cover-finish-price">{Static.cover.priceCover + Static.cover.priceLogo} ₽</p>
-                    </div>
-                    <button 
-                        class="btn btn_blue w100"
-                        onclick={()=>{
-                            Static.currentStep++
-                            Func.checkForm()
-                        }}
-                    >
-                        Продолжить
-                        <i class="i i-arrow-right"></i>
-                    </button>
+                
+                <div class="cover-finish-desc">
+                    <p class="cover-finish-text">{Static.cover.color ? "Красная" : "Синяя"} обложка</p>
+                    <p class="cover-finish-text">{Static.cover.titleCover ? Static.cover.titleCover : "Без тиснения"}</p>
+                    <p class="cover-finish-text">{Static.cover.titleLogo ? Static.cover.titleLogo : "Без эмблемы"}</p>
+                    <p class="cover-finish-price">{Static.cover.priceCover + Static.cover.priceLogo} ₽</p>
                 </div>
+                <button 
+                    class="btn btn_blue w100 cover-finish-btn"
+                    onclick={()=>{
+                        Static.currentStep++
+                        Func.checkForm()
+                    }}
+                >
+                    Продолжить
+                    <i class="i i-arrow-right"></i>
+                </button>
+                
             </div>
         </div>
     )
