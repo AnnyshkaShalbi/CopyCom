@@ -62,7 +62,7 @@ front.func.checkForm = function () {
         Static.steps[0].valid = true
         Static.steps[Static.currentStep - 1].active = true
         Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
-        window.scrollTo(0, 0);
+        setTimeout(() => { window.scrollTo(0, 0); }, 100);
     }
 
     return;

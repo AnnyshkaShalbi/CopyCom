@@ -57,9 +57,12 @@ const HeaderMobileMenu = function () {
 
       <a
         class="header-mobileMenu_title mb-30 pb-5"
-        onclick={() => {
-          Fn.initOne("modalSoon", {})
-        }}>
+        onclick={function() {
+          front.Variable.openSidebar = false
+          Fn.linkChange("/order")
+          Fn.initAll()
+        }}
+      >
         печать диплома
       </a>
       <a

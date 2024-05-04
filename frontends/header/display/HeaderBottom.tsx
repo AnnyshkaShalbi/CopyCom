@@ -6,13 +6,12 @@ export default function () {
     <div class="wrapper headerBottom" ref="headerBottom">
       <ul class="header-list pY-18">
         <li class="header-list__item">
-          <span
-            onclick={() => {
-              Fn.initOne("modalSoon", {})
-            }}
+          <a
+            href="/order"
+            onclick={Fn.link}
           >
             Печать диплома
-          </span>
+          </a>
         </li>
         <li class="header-list__item">
           <a href="/projectdoc" onclick={Fn.link}>
