@@ -1,0 +1,8 @@
+{
+    "url": "/personal-data",
+    "front": [
+        "header",
+        "personalData",
+        "footer"
+    ]
+}

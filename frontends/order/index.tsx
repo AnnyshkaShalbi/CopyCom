@@ -68,6 +68,18 @@ front.func.checkForm = function () {
     return;
 };
 
+front.func.getCountPages = function(){
+    let file = Ref.updateFileInput.files[0]
+    let fileReader = new FileReader();  
+
+    fileReader.onload = function(){
+        //Step 4:turn array buffer into typed array
+        let typedarray = new Uint8Array()
+    }
+
+    return
+}
+
 front.func.checkImageFinish = function() {
     // 1. Цвет false - синий, true - красный
     if(Static.cover.color){

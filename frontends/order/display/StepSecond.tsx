@@ -1,4 +1,4 @@
-import { Cemjsx, Static, front, Func, Fn } from "cemjs-all"
+import { Cemjsx, Static, front, Func, Fn, Ref } from "cemjs-all"
 import imgPdf from '@svg/icons/filePdf.svg'
 
 const RenderUpdateFileForm = () => {
@@ -13,18 +13,28 @@ const RenderUpdateFileForm = () => {
     >
       <input 
         type="file" 
-        ref="updateFileWrapInput"
+        accept=".pdf"
+        ref="updateFileInput"
         id="updateFileInput"
         class="updateFile-form__input"
+
       />
 
       <label for="updateFileInput" class="updateFile-form__label">
         <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
         <p>Загрузите файл в формате PDF</p>
-        <p>Макс. размером 100 мб</p>
+        {/* <p>Макс. размером 100 мб</p> */}
       </label>
 
-      <button class="btn btn_blue">Загрузить файл</button>
+      <button 
+        class="btn btn_blue"
+        onclick={()=>{
+          Ref.updateFileInput.click()
+          // Func.getCountPages()
+        }}
+      >
+        Загрузить файл
+      </button>
     </div>
   )
 }
@@ -38,7 +48,7 @@ const RenderUpdateFileOption = () => {
         <div 
           class="flex align-items-center cursor-pointer"
           onclick={()=>{
-            Static.cover.printColor = !Static.cover.printColor
+            Static.cover.printColor = false
           }}
         >
           <div 
@@ -54,7 +64,7 @@ const RenderUpdateFileOption = () => {
         <div 
           class="flex align-items-center cursor-pointer"
           onclick={()=>{
-            Static.cover.printColor = !Static.cover.color
+            Static.cover.printColor = true
           }}
         >
           <div 
@@ -100,11 +110,65 @@ const RenderUpdateFileOption = () => {
   )
 }
 
+const RenderReadiness = () => {
+  return(
+    <div class="readiness">
+      <h6 class="readiness-title">Готовность 15.05.2024</h6>
+
+      <div class="readiness-content">
+        <div class="readiness-order">
+          <div class="readiness-order-item flex align-items-center justify-content-between">
+            <p class="readiness-order-item_title">Обложка</p>
+            <span class="readiness-order-item_price">1200 руб</span>
+          </div>
+          <div class="readiness-order-item flex align-items-center justify-content-between">
+            <p class="readiness-order-item_title">Страницы 109 х 10 ₽</p>
+            <span class="readiness-order-item_price">1090 руб</span>
+          </div>
+          <div class="readiness-order-item flex align-items-center justify-content-between">
+            <p class="readiness-order-item_title">Карман для рецензии</p>
+            <span class="readiness-order-item_price">50 руб</span>
+          </div>
+          <div class="readiness-order-item flex align-items-center justify-content-between">
+            <p class="readiness-order-item_title">Карман для CD диска</p>
+            <span class="readiness-order-item_price">50 руб</span>
+          </div>
+          <div class="readiness-order-item flex align-items-center justify-content-between">
+            <p class="readiness-order-item_title">Файл перед титулом 4 х 20 ₽</p>
+            <span class="readiness-order-item_price">80 руб</span>
+          </div>
+        </div>
+
+        <div class="readiness-sum">
+          <span class="readiness-sum-price">
+            1200 
+            <span class="readiness-sum-price_index">руб</span>
+          </span>
+          <button 
+            class="btn btn_blue"
+            onclick={()=>{
+              Static.currentStep++
+              Func.checkForm()
+            }}
+          >
+            Продолжить
+            <i class="i i-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function () {
     return (
+      <div>
         <div class="updateFile">
           <RenderUpdateFileForm />
           <RenderUpdateFileOption />
         </div>
+        <RenderReadiness />
+      </div>
+        
     )
 }
