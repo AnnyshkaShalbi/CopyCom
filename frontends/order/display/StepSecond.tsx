@@ -17,10 +17,12 @@ const RenderUpdateFileForm = () => {
         ref="updateFileInput"
         id="updateFileInput"
         class="updateFile-form__input"
-
+        oninput={(e)=>{
+         Func.uploadFile(e.currentTarget)
+        }}
       />
 
-      <label for="updateFileInput" class="updateFile-form__label">
+      <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
         <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
         <p>Загрузите файл в формате PDF</p>
         {/* <p>Макс. размером 100 мб</p> */}

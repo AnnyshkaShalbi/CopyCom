@@ -17,10 +17,25 @@ export default function () {
                         >
                             <span 
                                 class={[
-                                    "order-steps__circle",
+                                    "order-steps__circle",  
                                     item.active ? "order-steps__circle_active" : null,
                                     item.valid ? "order-steps__circle_valid" : null
                                 ]}
+                                onclick={()=>{
+                                    if(item.valid){
+                                        Static.currentStep = index + 1
+
+                                        Static.steps.forEach((el)=>{
+                                            el.active = false
+                                            el.valid = false
+                                        })
+
+                                        item.valid = false
+                                        item.active = true
+                                        return
+                                    }
+                                    return
+                                }}
                             >
                                 {index+1}
                             </span>

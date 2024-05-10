@@ -1,7 +1,6 @@
 import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
-
 front.listener.finish = () => {
     return
 }
@@ -53,6 +52,49 @@ front.func.myDrop = function (e: any) {
     })
 }
 
+front.func.uploadFile = function(input){
+    let file = input.files[0];
+    let fileName = file.name;
+    if(file){
+        Ref.updateFileContent.innerHTML = ''
+        let image = document.createElement('img')
+        image.src = '/contents/icons/fileDone.svg'
+        let fileNameEl = document.createElement('p')
+        fileNameEl.innerHTML = `${fileName}`
+        fileNameEl.style.color = '#0B0B0C'
+        Ref.updateFileContent.appendChild(image)
+        Ref.updateFileContent.appendChild(fileNameEl)
+
+        let reader = new FileReader()
+        reader.readAsBinaryString(file);
+        reader.onloadend = () => {
+            const count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            let fileTotalCount = document.createElement('p')
+            let fileSize = document.createElement('p')
+            fileTotalCount.innerHTML = `Количество страниц — ${count}`
+            fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
+            Ref.updateFileContent.appendChild(fileTotalCount)
+            Ref.updateFileContent.appendChild(fileSize)
+        }
+    }
+
+    
+    return
+}
+
+front.func.formatBytes = function(bytes, decimals = 2){
+    if (bytes === 0) {
+		return '0';
+	} else {
+		var k = 1024;
+		var dm = decimals < 0 ? 0 : decimals;
+		var sizes = ['байт', 'КБ', 'МБ', 'ГБ', 'ТБ'];
+		var i = Math.floor(Math.log(bytes) / Math.log(k));
+		return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+	}
+}
+
+
 // upload file
 
 front.func.checkForm = function () {
@@ -68,17 +110,6 @@ front.func.checkForm = function () {
     return;
 };
 
-front.func.getCountPages = function(){
-    let file = Ref.updateFileInput.files[0]
-    let fileReader = new FileReader();  
-
-    fileReader.onload = function(){
-        //Step 4:turn array buffer into typed array
-        let typedarray = new Uint8Array()
-    }
-
-    return
-}
 
 front.func.checkImageFinish = function() {
     // 1. Цвет false - синий, true - красный
@@ -388,6 +419,8 @@ front.func.checkImageFinish = function() {
 
     return
 }
+
+
 
 front.loader = () => {
     Static.currentStep = 1
