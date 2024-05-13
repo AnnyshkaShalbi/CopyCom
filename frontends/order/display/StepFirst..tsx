@@ -114,7 +114,7 @@ const ThreeStep = function(){
                             >
                                 <div class="order-logos__item-img">
                                     {
-                                        item.image ? <img src={item.image} alt="Обложка диплома" /> : null
+                                        item.image ? <img src={item.image} alt="Обложка диплома" class={[item.title == "МЭИ" ? "w100 h-auto" : null ]} /> : null
                                     }
                                 </div>
                                 <p class="order-logos__item-title">{item.title}</p>

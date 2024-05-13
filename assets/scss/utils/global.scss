@@ -16,6 +16,12 @@ section {
   display: none;
 }
 
+.h{
+  &-auto{
+    height: auto!important;
+  }
+}
+
 .overflow {
   &-hidden {
     overflow: hidden;
