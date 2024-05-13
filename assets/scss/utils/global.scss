@@ -86,6 +86,16 @@ section {
   width: fit-content;
   cursor: pointer;
 
+  &-outline{
+    border: 1px solid var(--blue200);
+    color: var(--blue200);
+
+    &:hover{
+      background-color: var(--blue100);
+      color: var(--white);
+    }
+  }
+
 
   &_blue {
     background-color: var(--blue100);

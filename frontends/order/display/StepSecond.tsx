@@ -46,9 +46,9 @@ const RenderUpdateFileOption = () => {
     <div class="updateFile-options">
 
       <div class="updateFile-options__item">
-        <h3 class="updateFile-options-title">Печатать</h3>
+        <h3 class="updateFile-options-title mb-10">Печатать</h3>
         <div 
-          class="flex align-items-center cursor-pointer"
+          class="flex align-items-center cursor-pointer mb-10"
           onclick={()=>{
             Static.cover.printColor = false
           }}
@@ -78,6 +78,34 @@ const RenderUpdateFileOption = () => {
           ></div>
           <span class="updateFile-options-text">Цветная</span>
         </div>
+
+        {
+          Static.cover.printColor ? 
+          <div>
+            {
+              Static.form.countPages ?
+              <div>
+                <div class="countPages">
+                  {
+                    Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
+                      return(
+                        <div 
+                          class="countPages-item"
+                          onclick={(e)=>{
+                            e.currentTarget.classList.toggle("countPages-item_active")
+                          }}
+                        >
+                            {index + 1}
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+              : null
+            }
+          </div> : null
+        }
       </div>
 
       <div class="updateFile-options__item">
@@ -85,23 +113,36 @@ const RenderUpdateFileOption = () => {
         {
           Static.cover.additionally.map((item)=>{
             return(
-              <div 
-                class="flex align-items-center justify-content-between cursor-pointer dashed"
-                onclick={(e)=>{
-                  item.active = !item.active
-                }}
-              >
-                <div class="flex align-items-center">
-                  <div
-                    class={[
-                      "checkbox",
-                      item.active ? "checkbox_active" : null
-                    ]}
-                  >
+              <div>
+                <div 
+                  class="flex align-items-center justify-content-between cursor-pointer dashed mt-10"
+                  onclick={(e)=>{
+                    item.active = !item.active
+                  }}
+                >
+                  <div class="flex align-items-center">
+                    <div
+                      class={[
+                        "checkbox",
+                        item.active ? "checkbox_active" : null
+                      ]}
+                    >
+                    </div>
+                    <span class="updateFile-options-text pl-10 pr-3">{item.text}</span>
                   </div>
-                  <span class="updateFile-options-text pl-10 pr-3">{item.text}</span>
+                  <span class="updateFile-options-price pl-3">{item.price} ₽</span>
                 </div>
-                <span class="updateFile-options-price pl-3">{item.price} ₽</span>
+                {
+                  item.active ? 
+                    <div>
+                      {
+                        item.checked ? 
+                        <div>
+                          add
+                        </div> : null
+                      }
+                    </div> : null
+                }
               </div>
             )
           })
@@ -146,16 +187,37 @@ const RenderReadiness = () => {
             1200 
             <span class="readiness-sum-price_index">руб</span>
           </span>
-          <button 
-            class="btn btn_blue"
-            onclick={()=>{
-              Static.currentStep++
-              Func.checkForm()
-            }}
-          >
-            Продолжить
-            <i class="i i-arrow-right"></i>
-          </button>
+          <div class="flex">
+            <button 
+              class="btn btn-outline"
+              onclick={()=>{
+                Static.currentStep--
+
+                Static.steps.forEach((item)=>{
+                  item.active = false
+                  item.valid = false
+                })
+
+                Static.steps[0].active = true
+
+                Func.checkForm()
+              }}
+            >
+              <i class="i i-arrow-left"></i>
+              Назад
+            </button>
+            <button 
+              class="btn btn_blue ml-25"
+              onclick={()=>{
+                Static.currentStep++
+                Func.checkForm()
+              }}
+            >
+              Продолжить
+              <i class="i i-arrow-right"></i>
+            </button>
+          </div>
+          
         </div>
       </div>
     </div>

@@ -68,10 +68,10 @@ front.func.uploadFile = function(input){
         let reader = new FileReader()
         reader.readAsBinaryString(file);
         reader.onloadend = () => {
-            const count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            Static.form.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
             let fileTotalCount = document.createElement('p')
             let fileSize = document.createElement('p')
-            fileTotalCount.innerHTML = `Количество страниц — ${count}`
+            fileTotalCount.innerHTML = `Количество страниц — ${Static.form.countPages}`
             fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
@@ -458,7 +458,8 @@ front.loader = () => {
             {
                 text: "Добавить пластиковый файл",
                 active: false,
-                price: 50
+                price: 50,
+                checked: true
             },
         ]
     }
@@ -517,6 +518,8 @@ front.loader = () => {
             view: false,
             disable: false
         },
+        countPages: false,
+        colorPages: false,
         isValid: false,
     }
 
