@@ -163,6 +163,7 @@ const FinishStep = function(){
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
                         Static.currentStep++
+                        window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                         Func.checkForm()
                     }}
                 >

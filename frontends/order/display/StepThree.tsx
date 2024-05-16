@@ -5,7 +5,24 @@ const FormOrder  = function (){
     <div class="order-form">
       
       <div class="g-equal-2">
-        
+        <div class="field">
+          <label for="phone" class="field__label">{Static.form.phone.placeholder}</label>
+          <input 
+            type="text"
+            id="phone"
+            autocomplete="off"
+            placeholder="+7 (980) 324 - 12 - 32"
+            class={[
+              "field__input",
+              Static.form.phone.error ? "field__input_error" : null
+            ]}
+            oninput={(e)=>{
+              Static.form.phone.value = e.currentTarget.value
+              front.Services.functions.formPhone(Static.phone.name)
+              Func.checkForm()
+            }} 
+          />
+        </div>
         <div class="field">
           <label for="name" class="field__label">{Static.form.name.placeholder}</label>
           <input 
@@ -62,6 +79,25 @@ const FormOrder  = function (){
 
       <div class="g-equal-2">
         <button 
+          class="btn btn-outline w100"
+          onclick={()=>{
+            Static.currentStep--
+            window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+
+            Static.steps.forEach((item)=>{
+              item.active = false
+              item.valid = false
+            })
+
+            Static.steps[1].active = true
+
+            Func.checkForm()
+          }}
+        >
+          <i class="i i-arrow-left"></i>
+          Назад
+        </button>
+        <button 
           class={[
             "btn",
             "btn_blue",
@@ -91,16 +127,15 @@ const FormOrder  = function (){
           Оформить заказ
           <i class="i i-arrow-right"></i>
         </button>
-        <p class="order-form_desc">Нажимая кнопку «Оформить заказ», ты даёшь своё согласие на обработку <a href="#" class="link">персональных данных</a>
-        </p>
       </div>
+      <p class="order-form_desc">Нажимая кнопку «Оформить заказ», ты даёшь своё согласие на обработку <a href="/privacy" class="link" onclick={Fn.link}>персональных данных</a></p>
     </div>
   )
 }
 
 export default function () {
     return (
-        <section class="order-line__item order-finish">
+        <section class="order-finish">
             <div>
               <FormOrder />
               

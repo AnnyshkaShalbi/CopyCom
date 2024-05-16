@@ -137,8 +137,53 @@ const RenderUpdateFileOption = () => {
                     <div>
                       {
                         item.checked ? 
-                        <div>
-                          add
+                        <div class="ml-20">
+                          {
+                            item.options.map((el)=>{
+                              return(
+                                <div 
+                                  class="flex align-items-center mt-10 cursor-pointer"
+                                  onclick={()=>{
+                                    item.options.forEach((file)=>{
+                                      file.active = false
+                                    })
+                                    el.active = true
+                                  }}
+                                >
+                                  <div
+                                    class={[
+                                      "checkbox", 
+                                      el.active ? "checkbox_active" : null
+                                    ]}
+                                  >
+                                  </div>
+                                  <span class="updateFile-options-text pl-10 pr-3">{el.text}</span>
+                                </div>
+                              )
+                            })
+                          }
+                          <div>
+                            <p class="updateFile-options-text mt-10">Выбери количество</p>
+                            <div class="updateFile-countFile">
+                              {
+                                item.countFiles.map((el)=>{
+                                  return(
+                                    <div 
+                                      class={["updateFile-countFile_item", el.active ? "updateFile-countFile_item_active" : null]}
+                                      onclick={()=>{
+                                        item.countFiles.forEach(el => {
+                                          el.active = false
+                                        })
+                                        el.active = true
+                                      }}
+                                    >
+                                      {el.id}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
                         </div> : null
                       }
                     </div> : null
@@ -187,11 +232,12 @@ const RenderReadiness = () => {
             1200 
             <span class="readiness-sum-price_index">руб</span>
           </span>
-          <div class="flex">
+          <div class="readiness-btns">
             <button 
               class="btn btn-outline"
               onclick={()=>{
                 Static.currentStep--
+                window.localStorage.setItem('currentStep', `${Static.currentStep}`)
 
                 Static.steps.forEach((item)=>{
                   item.active = false
@@ -207,9 +253,10 @@ const RenderReadiness = () => {
               Назад
             </button>
             <button 
-              class="btn btn_blue ml-25"
+              class="btn btn_blue"
               onclick={()=>{
                 Static.currentStep++
+                window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                 Func.checkForm()
               }}
             >

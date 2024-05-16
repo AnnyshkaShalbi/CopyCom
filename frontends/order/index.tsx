@@ -107,6 +107,14 @@ front.func.checkForm = function () {
         setTimeout(() => { window.scrollTo(0, 0); }, 100);
     }
 
+    if(Static.currentStep == 3){
+        Static.steps[1].active = false
+        Static.steps[1].valid = true
+        Static.steps[Static.currentStep - 1].active = true
+        Static.steps[Static.currentStep - 1].desc = "В несколько кликов"
+        setTimeout(() => { window.scrollTo(0, 0); }, 100);
+    }
+
     return;
 };
 
@@ -424,6 +432,7 @@ front.func.checkImageFinish = function() {
 
 front.loader = () => {
     Static.currentStep = 1
+    Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
     Static.activeLogo = false
@@ -459,7 +468,63 @@ front.loader = () => {
                 text: "Добавить пластиковый файл",
                 active: false,
                 price: 50,
-                checked: true
+                checked: true,
+                options: [
+                    {
+                        text: 'Перед титулом',
+                        active: false,
+                    },
+                    {
+                        text: 'После титулом',
+                        active: false,
+                    },
+                    {
+                        text: 'В конце работы',
+                        active: true,
+                    },
+                ],
+                countFiles: [
+                    {
+                        id: 1,
+                        active: false
+                    },
+                    {
+                        id: 2,
+                        active: true
+                    },
+                    {
+                        id: 3,
+                        active: false
+                    },
+                    {
+                        id: 4,
+                        active: false
+                    },
+                    {
+                        id: 5,
+                        active: false
+                    },
+                    {
+                        id: 6,
+                        active: false
+                    },
+                    {
+                        id: 7,
+                        active: false
+                    },
+                    {
+                        id: 8,
+                        active: false
+                    },
+                    {
+                        id: 9,
+                        active: false
+                    },
+                    {
+                        id: 10,
+                        active: false
+                    },
+                ]
             },
         ]
     }
