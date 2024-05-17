@@ -25,14 +25,12 @@ const RenderUpdateFileForm = () => {
       <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
         <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
         <p>Загрузите файл в формате PDF</p>
-        {/* <p>Макс. размером 100 мб</p> */}
       </label>
 
       <button 
         class="btn btn_blue"
         onclick={()=>{
           Ref.updateFileInput.click()
-          // Func.getCountPages()
         }}
       >
         Загрузить файл
@@ -84,7 +82,7 @@ const RenderUpdateFileOption = () => {
           <div>
             {
               Static.form.countPages ?
-              <div>
+              <div class="countPages-wrap">
                 <div class="countPages">
                   {
                     Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
@@ -92,7 +90,13 @@ const RenderUpdateFileOption = () => {
                         <div 
                           class="countPages-item"
                           onclick={(e)=>{
-                            e.currentTarget.classList.toggle("countPages-item_active")
+                            if (Static.cover.coloredPages?.includes(index + 1)) {
+                              Static.cover.coloredPages?.splice( Static.cover.coloredPages?.indexOf(index + 1), 1);
+                              e.currentTarget.classList.remove("countPages-item_active")
+                            } else {
+                              Static.cover.coloredPages?.push(index + 1);
+                              e.currentTarget.classList.add("countPages-item_active")
+                            }
                           }}
                         >
                             {index + 1}
@@ -118,6 +122,14 @@ const RenderUpdateFileOption = () => {
                   class="flex align-items-center justify-content-between cursor-pointer dashed mt-10"
                   onclick={(e)=>{
                     item.active = !item.active
+                    Static.cover.additionally.forEach(el => {
+                      if(el.active){
+                        Static.totalPrice = Static.totalPrice + el.price
+                      } else{
+                        Static.totalPrice = Static.totalPrice - el.price
+                      }
+                    })
+
                   }}
                 >
                   <div class="flex align-items-center">
@@ -207,29 +219,47 @@ const RenderReadiness = () => {
         <div class="readiness-order">
           <div class="readiness-order-item flex align-items-center justify-content-between">
             <p class="readiness-order-item_title">Обложка</p>
-            <span class="readiness-order-item_price">1200 руб</span>
+            <span class="readiness-order-item_price">{Static.cover.priceCover + Static.cover.priceLogo} руб</span>
           </div>
-          <div class="readiness-order-item flex align-items-center justify-content-between">
-            <p class="readiness-order-item_title">Страницы 109 х 10 ₽</p>
-            <span class="readiness-order-item_price">1090 руб</span>
-          </div>
-          <div class="readiness-order-item flex align-items-center justify-content-between">
-            <p class="readiness-order-item_title">Карман для рецензии</p>
-            <span class="readiness-order-item_price">50 руб</span>
-          </div>
-          <div class="readiness-order-item flex align-items-center justify-content-between">
-            <p class="readiness-order-item_title">Карман для CD диска</p>
-            <span class="readiness-order-item_price">50 руб</span>
-          </div>
-          <div class="readiness-order-item flex align-items-center justify-content-between">
-            <p class="readiness-order-item_title">Файл перед титулом 4 х 20 ₽</p>
-            <span class="readiness-order-item_price">80 руб</span>
-          </div>
+
+          {
+            Static.form.countPages ? 
+            <div class="readiness-order-item flex align-items-center justify-content-between">
+              <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages} х 10 ₽`}</p>
+              <span class="readiness-order-item_price">{`${Static.form.countPages * 10} руб`}</span>
+            </div> : null
+          }
+          
+          {
+            Static.cover.additionally[0].active ? 
+            <div class="readiness-order-item flex align-items-center justify-content-between">
+              <p class="readiness-order-item_title">Карман для рецензии</p>
+              <span class="readiness-order-item_price">50 руб</span>
+            </div> : null
+          }
+
+          {
+            Static.cover.additionally[1].active ? 
+            <div class="readiness-order-item flex align-items-center justify-content-between">
+              <p class="readiness-order-item_title">Карман для CD диска</p>
+              <span class="readiness-order-item_price">50 руб</span>
+            </div> : null
+          }
+
+          {/* {
+            Static.cover.additionally[2].active ? 
+            <div class="readiness-order-item flex align-items-center justify-content-between">
+              <p class="readiness-order-item_title">Файл перед титулом 4 х 20 ₽</p>
+              <span class="readiness-order-item_price">80 руб</span>
+            </div> : null
+          } */}
+
         </div>
 
         <div class="readiness-sum">
           <span class="readiness-sum-price">
-            1200 
+            {/* 1200  */}
+            { Static.totalPrice }
             <span class="readiness-sum-price_index">руб</span>
           </span>
           <div class="readiness-btns">

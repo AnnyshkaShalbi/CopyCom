@@ -353,7 +353,7 @@
     &__item{
       border: 1px solid var(--grey-light); 
       padding: .9375rem 1.25rem;
-      height: fit-content;
+      height: 100%;
       display: flex;
       flex-direction: column;
       // gap: 1rem;
@@ -391,6 +391,8 @@
     margin-top: 10px;
     margin-bottom: 5px;
     padding-bottom: 10px;
+    width: 275px;
+    min-width: 275px;
 
     &_item{
       border: 1px solid var(--light);
@@ -456,7 +458,7 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 10px;
 
     &-item{
@@ -539,14 +541,23 @@
 
 .countPages{
   display: flex;
-  overflow-x: scroll;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  white-space:nowrap;
   gap: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
-  padding-bottom: 10px;
+  min-width: 275px;
+  width: 275px;
+
+  
+  &-wrap{
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
 
   &-item{
     border: 1px solid var(--light);

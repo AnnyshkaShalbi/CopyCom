@@ -94,7 +94,6 @@ front.func.formatBytes = function(bytes, decimals = 2){
 	}
 }
 
-
 // upload file
 
 front.func.checkForm = function () {
@@ -104,6 +103,7 @@ front.func.checkForm = function () {
         Static.steps[0].valid = true
         Static.steps[Static.currentStep - 1].active = true
         Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
+        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         setTimeout(() => { window.scrollTo(0, 0); }, 100);
     }
 
@@ -430,8 +430,10 @@ front.func.checkImageFinish = function() {
 
 
 
+
 front.loader = () => {
     Static.currentStep = 1
+    Static.totalPrice 
     // Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
@@ -444,6 +446,7 @@ front.loader = () => {
         titleCover: false,
         priceCover: 480,
         priceLogo: 0,
+
         titleLogo: false,
         diplomWork: false,
         diplomProject: false,
@@ -526,8 +529,9 @@ front.loader = () => {
                     },
                 ]
             },
-        ]
-    }
+        ],
+        coloredPages: []
+    } 
 
     Static.steps = [
         {
