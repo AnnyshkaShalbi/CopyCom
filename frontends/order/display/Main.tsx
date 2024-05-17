@@ -8,7 +8,7 @@ export default function () {
     return (
         <section class="order-line">
 
-            {
+            {/* {
                 Static.localStep ? 
                 Static.localStep == 1 ? <StepFirst /> :
                 Static.localStep == 2 ? <StepSecond /> :
@@ -17,13 +17,13 @@ export default function () {
                 Static.currentStep == 1 ? <StepFirst /> :
                 Static.currentStep == 2 ? <StepSecond /> :
                 Static.currentStep == 3 ? <StepThree /> : <p>Loading...</p>
-            }
+            } */}
             
-            {/* {
+            {
                 Static.currentStep == 1 ? <StepFirst /> :
                 Static.currentStep == 2 ? <StepSecond /> :
                 Static.currentStep == 3 ? <StepThree /> : <p>Loading...</p>
-            } */}
+            }
         </section>
     )
 }

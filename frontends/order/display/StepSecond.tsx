@@ -237,7 +237,7 @@ const RenderReadiness = () => {
               class="btn btn-outline"
               onclick={()=>{
                 Static.currentStep--
-                window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+                // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
 
                 Static.steps.forEach((item)=>{
                   item.active = false
@@ -256,7 +256,7 @@ const RenderReadiness = () => {
               class="btn btn_blue"
               onclick={()=>{
                 Static.currentStep++
-                window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+                // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                 Func.checkForm()
               }}
             >

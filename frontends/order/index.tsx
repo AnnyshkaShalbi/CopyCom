@@ -432,7 +432,7 @@ front.func.checkImageFinish = function() {
 
 front.loader = () => {
     Static.currentStep = 1
-    Static.localStep = window.localStorage.getItem('currentStep')
+    // Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
     Static.activeLogo = false

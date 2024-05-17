@@ -24,7 +24,7 @@ export default function () {
                                 onclick={()=>{
                                     if(item.valid){
                                         Static.currentStep = index + 1
-                                        window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+                                        // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
 
                                         Static.steps.forEach((el)=>{
                                             el.active = false

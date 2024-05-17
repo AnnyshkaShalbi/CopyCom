@@ -82,7 +82,7 @@ const FormOrder  = function (){
           class="btn btn-outline w100"
           onclick={()=>{
             Static.currentStep--
-            window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+            // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
 
             Static.steps.forEach((item)=>{
               item.active = false
