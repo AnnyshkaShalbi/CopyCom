@@ -56,6 +56,7 @@ front.func.uploadFile = function(input){
     let file = input.files[0];
     let fileName = file.name;
     if(file){
+        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
@@ -75,6 +76,7 @@ front.func.uploadFile = function(input){
             fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
+            Func.checkPrice(true)
         }
     }
 
@@ -428,7 +430,19 @@ front.func.checkImageFinish = function() {
     return
 }
 
+front.func.checkPrice = function(updateFile){
+    if(Static.currentStep == 1){
+        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+    }
 
+    // ввести какой-либо вспомогательный параметр
+
+    if(Static.currentStep == 2){
+        if(updateFile){
+            Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
+        }
+    }
+}
 
 
 front.loader = () => {
@@ -465,7 +479,7 @@ front.loader = () => {
             {
                 text: "Вклеить карман для CD диска",
                 active: false,
-                price: 50
+                price: 50,
             },
             {
                 text: "Добавить пластиковый файл",
@@ -476,14 +490,17 @@ front.loader = () => {
                     {
                         text: 'Перед титулом',
                         active: false,
+                        quantity: 2
                     },
                     {
-                        text: 'После титулом',
+                        text: 'После титула',
                         active: false,
+                        quantity: 2
                     },
                     {
                         text: 'В конце работы',
                         active: true,
+                        quantity: 2
                     },
                 ],
                 countFiles: [

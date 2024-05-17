@@ -101,7 +101,7 @@ const RenderUpdateFileOption = () => {
                               }
                             }}
                           >
-                              {index + 1}
+                            <span>{index + 1}</span>
                           </div>
                         )
                       })
@@ -126,14 +126,17 @@ const RenderUpdateFileOption = () => {
                   class="flex align-items-center justify-content-between cursor-pointer dashed mt-10"
                   onclick={(e)=>{
                     item.active = !item.active
-                    Static.cover.additionally.forEach(el => {
-                      if(el.active){
-                        Static.totalPrice = Static.totalPrice + el.price
-                      } else{
-                        Static.totalPrice = Static.totalPrice - el.price
-                      }
-                    })
-
+                    Func.checkPrice()
+                    // Static.cover.additionally.forEach(el => {
+                    //   console.log('=el=', el)
+                    //   if(el.active){
+                    //     console.log('=db5fa3=')
+                    //     Static.totalPrice = Static.totalPrice - item.price
+                    //   } else{
+                    //     Static.totalPrice = Static.totalPrice + item.price
+                    //   }
+                    // })
+                    // console.log('=item=',item)
                   }}
                 >
                   <div class="flex align-items-center">
@@ -157,51 +160,62 @@ const RenderUpdateFileOption = () => {
                           {
                             item.options.map((el)=>{
                               return(
-                                <div 
-                                  class="flex align-items-center mt-10 cursor-pointer"
-                                  onclick={()=>{
-                                    item.options.forEach((file)=>{
-                                      file.active = false
-                                    })
-                                    el.active = true
-                                  }}
-                                >
-                                  <div
-                                    class={[
-                                      "checkbox", 
-                                      el.active ? "checkbox_active" : null
-                                    ]}
+                                <div>
+                                  <div 
+                                    class="flex align-items-center mt-10 cursor-pointer"
+                                    onclick={()=>{
+                                      // item.options.forEach((file)=>{
+                                      //   file.active = false
+                                      // })
+                                      // el.active = true
+                                      el.active = !el.active
+                                    }}
                                   >
+                                    <div
+                                      class={[
+                                        "checkbox", 
+                                        el.active ? "checkbox_active" : null
+                                      ]}
+                                    >
+                                    </div>
+                                    <span class="updateFile-options-text pl-10 pr-3">{el.text}</span>
                                   </div>
-                                  <span class="updateFile-options-text pl-10 pr-3">{el.text}</span>
+                                  {
+                                    el.active ?
+                                    <div>
+                                      <p class="updateFile-options-text mt-10">Выбери количество</p>
+                                      <div class="updateFile-countFile-wrap">
+                                        <div class="updateFile-countFile">
+                                          {
+                                            item.countFiles.map((count, i)=>{
+                                              return(
+                                                <div 
+                                                  class={["updateFile-countFile_item", count.active ? "updateFile-countFile_item_active" : null]}
+                                                  onclick={()=>{
+                                                    item.countFiles.forEach(el => {
+                                                      el.active = false
+                                                    })
+                                                    count.active = true
+                                                    el.quantity = count.id
+                                                    // item.options.forEach((opt, ind)=>{
+                                                    //   if
+                                                    // })
+                                                  }}
+                                                >
+                                                  {count.id}
+                                                </div>
+                                              )
+                                            })
+                                          }
+                                        </div>
+                                      </div>
+                                    </div> : null
+                                  }
                                 </div>
+                                
                               )
                             })
                           }
-                          <div>
-                            <p class="updateFile-options-text mt-10">Выбери количество</p>
-                            <div class="updateFile-countFile-wrap">
-                              <div class="updateFile-countFile">
-                                {
-                                  item.countFiles.map((el)=>{
-                                    return(
-                                      <div 
-                                        class={["updateFile-countFile_item", el.active ? "updateFile-countFile_item_active" : null]}
-                                        onclick={()=>{
-                                          item.countFiles.forEach(el => {
-                                            el.active = false
-                                          })
-                                          el.active = true
-                                        }}
-                                      >
-                                        {el.id}
-                                      </div>
-                                    )
-                                  })
-                                }
-                              </div>
-                            </div>
-                          </div>
                         </div> : null
                       }
                     </div> : null
@@ -230,9 +244,30 @@ const RenderReadiness = () => {
 
           {
             Static.form.countPages ? 
-            <div class="readiness-order-item flex align-items-center justify-content-between">
-              <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages} х 10 ₽`}</p>
-              <span class="readiness-order-item_price">{`${Static.form.countPages * 10} руб`}</span>
+            <div>
+              {
+                Static.cover.printColor ? 
+                <div>
+                  <div class="readiness-order-item flex align-items-center justify-content-between">
+                    <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages - Static.cover.coloredPages.length} х 10 ₽`}</p>
+                    <span class="readiness-order-item_price">{`${(Static.form.countPages - Static.cover.coloredPages.length) * 10} руб`}</span>
+                  </div>
+                  {
+                    Static.cover.coloredPages.length > 0 ? 
+                    <div>
+                      
+                      <div class="readiness-order-item flex align-items-center justify-content-between">
+                        <p class="readiness-order-item_title">{`Цветные страницы ${Static.cover.coloredPages.length} х 30 ₽`}</p>
+                        <span class="readiness-order-item_price">{`${Static.cover.coloredPages.length * 30} руб`}</span>
+                      </div>
+                    </div> : null
+                  }
+                </div> : 
+                <div class="readiness-order-item flex align-items-center justify-content-between">
+                  <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages} х 10 ₽`}</p>
+                  <span class="readiness-order-item_price">{`${Static.form.countPages * 10} руб`}</span>
+                </div>
+              }
             </div> : null
           }
           
@@ -252,13 +287,62 @@ const RenderReadiness = () => {
             </div> : null
           }
 
-          {/* {
+          {
             Static.cover.additionally[2].active ? 
-            <div class="readiness-order-item flex align-items-center justify-content-between">
-              <p class="readiness-order-item_title">Файл перед титулом 4 х 20 ₽</p>
-              <span class="readiness-order-item_price">80 руб</span>
+            <div>
+              {
+                Static.cover.additionally[2].options[0].active ? 
+                <div>
+                  <div class="readiness-order-item flex align-items-center justify-content-between">
+                    <p class="readiness-order-item_title">
+                      {`Файл перед титулом ${Static.cover.additionally[2].options[0].quantity} х 20 ₽`}
+                    </p>
+                    <span class="readiness-order-item_price">
+                      {`${Static.cover.additionally[2].options[0].quantity * 20} руб`}
+                    </span>
+                  </div>
+                </div> : null
+              }
             </div> : null
-          } */}
+          }
+
+          {
+            Static.cover.additionally[2].active ? 
+            <div>
+              {
+                Static.cover.additionally[2].options[1].active ? 
+                <div>
+                  <div class="readiness-order-item flex align-items-center justify-content-between">
+                    <p class="readiness-order-item_title">
+                      {`Файл после титула ${Static.cover.additionally[2].options[1].quantity} х 20 ₽`}
+                    </p>
+                    <span class="readiness-order-item_price">
+                      {`${Static.cover.additionally[2].options[1].quantity * 20} руб`}
+                    </span>
+                  </div>
+                </div> : null
+              }
+            </div> : null
+          }
+
+          {
+            Static.cover.additionally[2].active ? 
+            <div>
+              {
+                Static.cover.additionally[2].options[2].active ? 
+                <div>
+                  <div class="readiness-order-item flex align-items-center justify-content-between">
+                    <p class="readiness-order-item_title">
+                      {`Файл в конце работы ${Static.cover.additionally[2].options[2].quantity} х 20 ₽`}
+                    </p>
+                    <span class="readiness-order-item_price">
+                      {`${Static.cover.additionally[2].options[2].quantity * 20} руб`}
+                    </span>
+                  </div>
+                </div> : null
+              }
+            </div> : null
+          }
 
         </div>
 

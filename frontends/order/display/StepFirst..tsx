@@ -71,6 +71,7 @@ const SecondStep = function({ covers }){
                                     Static.cover.diplomProject = item.diplomProject
                                     Static.cover.masterThesis = item.masterThesis
                                     Static.cover.finalWork = item.finalWork
+                                    Func.checkPrice()
                                     Func.checkImageFinish()
                                 }}
                             >
@@ -109,6 +110,7 @@ const ThreeStep = function(){
                                     Static.activeLogo = item.id
                                     Static.cover.titleLogo = item.title
                                     Static.cover.priceLogo = item.price
+                                    Func.checkPrice()
                                     Func.checkImageFinish()
                                 }}
                             >
@@ -163,6 +165,7 @@ const FinishStep = function(){
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
                         Static.currentStep++
+                        Func.checkPrice()
                         // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                         Func.checkForm()
                     }}

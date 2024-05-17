@@ -629,6 +629,21 @@
     }
   }
 
+  .countPages{
+    &-item{
+      &:hover{
+        // background-color: var(--light);
+        background-color: var(--white);
+        color: var(--dark);
+      }
+
+      &_active{
+        background-color: var(--blue200)!important;
+        color: var(--white)!important;
+      }
+    }
+  }
+
 }
 
 @media (max-width: 900px){
