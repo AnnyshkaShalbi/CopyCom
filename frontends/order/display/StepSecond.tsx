@@ -82,30 +82,34 @@ const RenderUpdateFileOption = () => {
           <div>
             {
               Static.form.countPages ?
-              <div class="countPages-wrap">
-                <div class="countPages">
-                  {
-                    Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
-                      return(
-                        <div 
-                          class="countPages-item"
-                          onclick={(e)=>{
-                            if (Static.cover.coloredPages?.includes(index + 1)) {
-                              Static.cover.coloredPages?.splice( Static.cover.coloredPages?.indexOf(index + 1), 1);
-                              e.currentTarget.classList.remove("countPages-item_active")
-                            } else {
-                              Static.cover.coloredPages?.push(index + 1);
-                              e.currentTarget.classList.add("countPages-item_active")
-                            }
-                          }}
-                        >
-                            {index + 1}
-                        </div>
-                      )
-                    })
-                  }
+              <div>
+                <p class="updateFile-options-text mt-10">Выберите номер цветных страниц</p>
+                <div class="countPages-wrap">
+                  <div class="countPages">
+                    {
+                      Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
+                        return(
+                          <div 
+                            class="countPages-item"
+                            onclick={(e)=>{
+                              if (Static.cover.coloredPages?.includes(index + 1)) {
+                                Static.cover.coloredPages?.splice( Static.cover.coloredPages?.indexOf(index + 1), 1);
+                                e.currentTarget.classList.remove("countPages-item_active")
+                              } else {
+                                Static.cover.coloredPages?.push(index + 1);
+                                e.currentTarget.classList.add("countPages-item_active")
+                              }
+                            }}
+                          >
+                              {index + 1}
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
                 </div>
               </div>
+              
               : null
             }
           </div> : null
@@ -176,24 +180,26 @@ const RenderUpdateFileOption = () => {
                           }
                           <div>
                             <p class="updateFile-options-text mt-10">Выбери количество</p>
-                            <div class="updateFile-countFile">
-                              {
-                                item.countFiles.map((el)=>{
-                                  return(
-                                    <div 
-                                      class={["updateFile-countFile_item", el.active ? "updateFile-countFile_item_active" : null]}
-                                      onclick={()=>{
-                                        item.countFiles.forEach(el => {
-                                          el.active = false
-                                        })
-                                        el.active = true
-                                      }}
-                                    >
-                                      {el.id}
-                                    </div>
-                                  )
-                                })
-                              }
+                            <div class="updateFile-countFile-wrap">
+                              <div class="updateFile-countFile">
+                                {
+                                  item.countFiles.map((el)=>{
+                                    return(
+                                      <div 
+                                        class={["updateFile-countFile_item", el.active ? "updateFile-countFile_item_active" : null]}
+                                        onclick={()=>{
+                                          item.countFiles.forEach(el => {
+                                            el.active = false
+                                          })
+                                          el.active = true
+                                        }}
+                                      >
+                                        {el.id}
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </div>
                             </div>
                           </div>
                         </div> : null

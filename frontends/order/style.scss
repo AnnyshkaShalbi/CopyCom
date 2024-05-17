@@ -386,13 +386,18 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    overflow-x: scroll;
     gap: 10px;
     margin-top: 10px;
     margin-bottom: 5px;
-    padding-bottom: 10px;
-    width: 275px;
-    min-width: 275px;
+    width: 250px;
+    min-width: 250px;
+
+    &-wrap{
+      overflow: hidden;
+      overflow-x: scroll;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
 
     &_item{
       border: 1px solid var(--light);
@@ -623,6 +628,7 @@
       }
     }
   }
+
 }
 
 @media (max-width: 900px){
@@ -767,6 +773,7 @@
       }
     }
   }
+
 }
 
 @media (max-width: 450px){

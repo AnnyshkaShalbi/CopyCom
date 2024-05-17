@@ -32,9 +32,7 @@ const RenderMain = () => {
                         <p class="text-nowrap">закажи <span class="home-main-title_blue">печать</span></p>
                         <p class="text-nowrap"><span class="home-main-title_blue">диплома</span> у нас</p>
                     </div>
-                    <a class="home-circle" onclick={() => {
-                        Fn.initOne("modalSoon", {})
-                    }}>
+                    <a class="home-circle" href="/order" onclick={Fn.link}>
                         <div class="home-circle_inner">
                             <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
                             <span class="home-circle-text">закажи</span>
@@ -67,9 +65,7 @@ const RenderMain = () => {
                         </div>
                     </div>
 
-                    <a class="home-circle home-circle__mobile" onclick={() => {
-                        Fn.initOne("modalSoon", {})
-                    }}>
+                    <a class="home-circle home-circle__mobile" href="/order" onclick={Fn.link}>
                         <div class="home-circle_inner">
                             <img src={arrowTopRight} alt="Заказать печать диплома | Копиком" class="mb-10" />
                             <span class="home-circle-text">закажи</span>
