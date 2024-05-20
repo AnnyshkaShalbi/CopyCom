@@ -1,5 +1,6 @@
 import { Cemjsx, Static, front, Func, Fn, Ref } from "cemjs-all"
 import imgPdf from '@svg/icons/filePdf.svg'
+import pdfDone from '@svg/icons/fileDone.svg'
 
 const RenderUpdateFileForm = () => {
   return(
@@ -22,10 +23,18 @@ const RenderUpdateFileForm = () => {
         }}
       />
 
-      <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
-        <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
-        <p>Загрузите файл в формате PDF</p>
-      </label>
+      {
+        front.Variable.countPages ? 
+        <div class="updateFile-form__label">
+          <img src={pdfDone} alt="Файл в формате pdf" />
+          <p>{`Количество страниц — ${front.Variable.countPages}`}</p>
+          <p>{`Размер файла — ${Static.formatBytes}`}</p>
+        </div> : 
+        <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
+          <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
+          <p>Загрузите файл в формате PDF</p>
+        </label>
+      }
 
       <button 
         class="btn btn_blue"
@@ -49,6 +58,7 @@ const RenderUpdateFileOption = () => {
           class="flex align-items-center cursor-pointer mb-10"
           onclick={()=>{
             Static.cover.printColor = false
+            Func.checkPrice()
           }}
         >
           <div 
@@ -65,6 +75,7 @@ const RenderUpdateFileOption = () => {
           class="flex align-items-center cursor-pointer"
           onclick={()=>{
             Static.cover.printColor = true
+            Func.checkPrice()
           }}
         >
           <div 
@@ -81,16 +92,19 @@ const RenderUpdateFileOption = () => {
           Static.cover.printColor ? 
           <div>
             {
-              Static.form.countPages ?
+              front.Variable.countPages ?
               <div>
                 <p class="updateFile-options-text mt-10">Выберите номер цветных страниц</p>
                 <div class="countPages-wrap">
                   <div class="countPages">
                     {
-                      Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
+                      Array.from(Array(front.Variable.countPages).keys()).map((item, index) => {
                         return(
                           <div 
-                            class="countPages-item"
+                            class={[
+                              "countPages-item", 
+                              Static.cover.coloredPages?.includes(index + 1) ? "countPages-item_active" : null
+                            ]}
                             onclick={(e)=>{
                               if (Static.cover.coloredPages?.includes(index + 1)) {
                                 Static.cover.coloredPages?.splice( Static.cover.coloredPages?.indexOf(index + 1), 1);
@@ -99,6 +113,7 @@ const RenderUpdateFileOption = () => {
                                 Static.cover.coloredPages?.push(index + 1);
                                 e.currentTarget.classList.add("countPages-item_active")
                               }
+                              Func.checkPrice()
                             }}
                           >
                             <span>{index + 1}</span>
@@ -127,16 +142,7 @@ const RenderUpdateFileOption = () => {
                   onclick={(e)=>{
                     item.active = !item.active
                     Func.checkPrice()
-                    // Static.cover.additionally.forEach(el => {
-                    //   console.log('=el=', el)
-                    //   if(el.active){
-                    //     console.log('=db5fa3=')
-                    //     Static.totalPrice = Static.totalPrice - item.price
-                    //   } else{
-                    //     Static.totalPrice = Static.totalPrice + item.price
-                    //   }
-                    // })
-                    // console.log('=item=',item)
+                    
                   }}
                 >
                   <div class="flex align-items-center">
@@ -164,10 +170,6 @@ const RenderUpdateFileOption = () => {
                                   <div 
                                     class="flex align-items-center mt-10 cursor-pointer"
                                     onclick={()=>{
-                                      // item.options.forEach((file)=>{
-                                      //   file.active = false
-                                      // })
-                                      // el.active = true
                                       el.active = !el.active
                                     }}
                                   >
@@ -187,19 +189,15 @@ const RenderUpdateFileOption = () => {
                                       <div class="updateFile-countFile-wrap">
                                         <div class="updateFile-countFile">
                                           {
-                                            item.countFiles.map((count, i)=>{
+                                            el.countFiles.map((count, i)=>{
                                               return(
                                                 <div 
                                                   class={["updateFile-countFile_item", count.active ? "updateFile-countFile_item_active" : null]}
                                                   onclick={()=>{
-                                                    item.countFiles.forEach(el => {
-                                                      el.active = false
+                                                    el.countFiles.forEach(identificator => {
+                                                      identificator.active = false
                                                     })
                                                     count.active = true
-                                                    el.quantity = count.id
-                                                    // item.options.forEach((opt, ind)=>{
-                                                    //   if
-                                                    // })
                                                   }}
                                                 >
                                                   {count.id}
@@ -243,14 +241,14 @@ const RenderReadiness = () => {
           </div>
 
           {
-            Static.form.countPages ? 
+            front.Variable.countPages ? 
             <div>
               {
                 Static.cover.printColor ? 
                 <div>
                   <div class="readiness-order-item flex align-items-center justify-content-between">
-                    <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages - Static.cover.coloredPages.length} х 10 ₽`}</p>
-                    <span class="readiness-order-item_price">{`${(Static.form.countPages - Static.cover.coloredPages.length) * 10} руб`}</span>
+                    <p class="readiness-order-item_title">{`Страницы ${front.Variable.countPages - Static.cover.coloredPages.length} х 10 ₽`}</p>
+                    <span class="readiness-order-item_price">{`${(front.Variable.countPages - Static.cover.coloredPages.length) * 10} руб`}</span>
                   </div>
                   {
                     Static.cover.coloredPages.length > 0 ? 
@@ -264,8 +262,8 @@ const RenderReadiness = () => {
                   }
                 </div> : 
                 <div class="readiness-order-item flex align-items-center justify-content-between">
-                  <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages} х 10 ₽`}</p>
-                  <span class="readiness-order-item_price">{`${Static.form.countPages * 10} руб`}</span>
+                  <p class="readiness-order-item_title">{`Страницы ${front.Variable.countPages} х 10 ₽`}</p>
+                  <span class="readiness-order-item_price">{`${front.Variable.countPages * 10} руб`}</span>
                 </div>
               }
             </div> : null
@@ -349,7 +347,8 @@ const RenderReadiness = () => {
         <div class="readiness-sum">
           <span class="readiness-sum-price">
             {/* 1200  */}
-            { Static.totalPrice }
+            {/* <p ref="totalPrice"></p> */}
+            { front.Variable.totalPrice }
             <span class="readiness-sum-price_index">руб</span>
           </span>
           <div class="readiness-btns">
@@ -377,6 +376,7 @@ const RenderReadiness = () => {
               onclick={()=>{
                 Static.currentStep++
                 // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
+                Func.checkPrice()
                 Func.checkForm()
               }}
             >

@@ -2,6 +2,7 @@ import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
 front.listener.finish = () => {
+    console.log('=количество страниц=', front.Variable.countPages)
     return
 }
 
@@ -56,7 +57,7 @@ front.func.uploadFile = function(input){
     let file = input.files[0];
     let fileName = file.name;
     if(file){
-        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+        front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
@@ -69,14 +70,15 @@ front.func.uploadFile = function(input){
         let reader = new FileReader()
         reader.readAsBinaryString(file);
         reader.onloadend = () => {
-            Static.form.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            front.Variable.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
             let fileTotalCount = document.createElement('p')
             let fileSize = document.createElement('p')
-            fileTotalCount.innerHTML = `Количество страниц — ${Static.form.countPages}`
+            fileTotalCount.innerHTML = `Количество страниц — ${front.Variable.countPages}`
             fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
-            Func.checkPrice(true)
+            Func.checkPrice()
+            Fn.initAll()
         }
     }
 
@@ -92,7 +94,8 @@ front.func.formatBytes = function(bytes, decimals = 2){
 		var dm = decimals < 0 ? 0 : decimals;
 		var sizes = ['байт', 'КБ', 'МБ', 'ГБ', 'ТБ'];
 		var i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        Static.formatBytes = parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
+		return Static.formatBytes;
 	}
 }
 
@@ -105,7 +108,7 @@ front.func.checkForm = function () {
         Static.steps[0].valid = true
         Static.steps[Static.currentStep - 1].active = true
         Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
-        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+        front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         setTimeout(() => { window.scrollTo(0, 0); }, 100);
     }
 
@@ -430,24 +433,59 @@ front.func.checkImageFinish = function() {
     return
 }
 
-front.func.checkPrice = function(updateFile){
-    if(Static.currentStep == 1){
-        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
-    }
+front.func.checkPrice = function(){
+    // console.log('=printColor=', Static.cover.printColor)
+    front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
 
-    // ввести какой-либо вспомогательный параметр
-
-    if(Static.currentStep == 2){
-        if(updateFile){
-            Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
+    if(front.Variable.countPages){
+        if(Static.cover.printColor){
+            if(Static.cover.coloredPages.length > 0){
+                console.log('=coloredPages=', Static.cover.coloredPages)
+                console.log('=count coloredPage=', Static.cover.coloredPages.length * 30)
+                front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+            }
+        } else{
+            front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
         }
     }
+
+    console.log('=9e639a=', front.Variable.totalPrice)
+    Fn.initAll()
+    // if(Static.cover.printColor && Static.cover.coloredPages.length > 0){
+    //     front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+    //     console.log('=67d119=', front.Variable.totalPrice)
+    // } else{
+    //     front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
+    // }
+
+    // if(Static.cover.coloredPages.length){
+    //     front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+        
+    //     if(Ref.totalPrice){
+    //         Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    //     }
+    // } else{
+    //     front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
+
+    //     if(Ref.totalPrice){
+    //         Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    //     }
+    // }
+
+    // if(Ref.totalPrice){
+    //     Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    // }
+
+    
+
+    
 }
 
 
 front.loader = () => {
     Static.currentStep = 1
-    Static.totalPrice 
+    front.Variable.totalPrice 
+    front.Variable.countPages
     // Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
@@ -490,17 +528,143 @@ front.loader = () => {
                     {
                         text: 'Перед титулом',
                         active: false,
-                        quantity: 2
+                        quantity: 2,
+                        countFiles: [
+                            {
+                                id: 1,
+                                active: false
+                            },
+                            {
+                                id: 2,
+                                active: true
+                            },
+                            {
+                                id: 3,
+                                active: false
+                            },
+                            {
+                                id: 4,
+                                active: false
+                            },
+                            {
+                                id: 5,
+                                active: false
+                            },
+                            {
+                                id: 6,
+                                active: false
+                            },
+                            {
+                                id: 7,
+                                active: false
+                            },
+                            {
+                                id: 8,
+                                active: false
+                            },
+                            {
+                                id: 9,
+                                active: false
+                            },
+                            {
+                                id: 10,
+                                active: false
+                            },
+                        ]
                     },
                     {
                         text: 'После титула',
                         active: false,
-                        quantity: 2
+                        quantity: 2,
+                        countFiles: [
+                            {
+                                id: 1,
+                                active: false
+                            },
+                            {
+                                id: 2,
+                                active: true
+                            },
+                            {
+                                id: 3,
+                                active: false
+                            },
+                            {
+                                id: 4,
+                                active: false
+                            },
+                            {
+                                id: 5,
+                                active: false
+                            },
+                            {
+                                id: 6,
+                                active: false
+                            },
+                            {
+                                id: 7,
+                                active: false
+                            },
+                            {
+                                id: 8,
+                                active: false
+                            },
+                            {
+                                id: 9,
+                                active: false
+                            },
+                            {
+                                id: 10,
+                                active: false
+                            },
+                        ]
                     },
                     {
                         text: 'В конце работы',
                         active: true,
-                        quantity: 2
+                        quantity: 2,
+                        countFiles: [
+                            {
+                                id: 1,
+                                active: false
+                            },
+                            {
+                                id: 2,
+                                active: true
+                            },
+                            {
+                                id: 3,
+                                active: false
+                            },
+                            {
+                                id: 4,
+                                active: false
+                            },
+                            {
+                                id: 5,
+                                active: false
+                            },
+                            {
+                                id: 6,
+                                active: false
+                            },
+                            {
+                                id: 7,
+                                active: false
+                            },
+                            {
+                                id: 8,
+                                active: false
+                            },
+                            {
+                                id: 9,
+                                active: false
+                            },
+                            {
+                                id: 10,
+                                active: false
+                            },
+                        ]
                     },
                 ],
                 countFiles: [
