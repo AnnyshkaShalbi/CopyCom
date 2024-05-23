@@ -346,9 +346,7 @@ const RenderReadiness = () => {
 
         <div class="readiness-sum">
           <span class="readiness-sum-price">
-            {/* 1200  */}
-            {/* <p ref="totalPrice"></p> */}
-            { front.Variable.totalPrice }
+            {Static.totalPrice}
             <span class="readiness-sum-price_index">руб</span>
           </span>
           <div class="readiness-btns">

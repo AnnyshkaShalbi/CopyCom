@@ -2,7 +2,7 @@ import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
 front.listener.finish = () => {
-    console.log('=количество страниц=', front.Variable.countPages)
+    console.log('=countPages=', front.Variable.countPages)
     return
 }
 
@@ -57,7 +57,7 @@ front.func.uploadFile = function(input){
     let file = input.files[0];
     let fileName = file.name;
     if(file){
-        front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+        // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
@@ -71,6 +71,7 @@ front.func.uploadFile = function(input){
         reader.readAsBinaryString(file);
         reader.onloadend = () => {
             front.Variable.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            Fn.initAll()
             let fileTotalCount = document.createElement('p')
             let fileSize = document.createElement('p')
             fileTotalCount.innerHTML = `Количество страниц — ${front.Variable.countPages}`
@@ -78,7 +79,6 @@ front.func.uploadFile = function(input){
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
             Func.checkPrice()
-            Fn.initAll()
         }
     }
 
@@ -108,7 +108,7 @@ front.func.checkForm = function () {
         Static.steps[0].valid = true
         Static.steps[Static.currentStep - 1].active = true
         Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
-        front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         setTimeout(() => { window.scrollTo(0, 0); }, 100);
     }
 
@@ -434,46 +434,41 @@ front.func.checkImageFinish = function() {
 }
 
 front.func.checkPrice = function(){
-    // console.log('=printColor=', Static.cover.printColor)
-    front.Variable.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+    Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
 
     if(front.Variable.countPages){
+        Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
         if(Static.cover.printColor){
             if(Static.cover.coloredPages.length > 0){
-                console.log('=coloredPages=', Static.cover.coloredPages)
-                console.log('=count coloredPage=', Static.cover.coloredPages.length * 30)
-                front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+                Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
             }
-        } else{
-            front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
-        }
+        } 
     }
-
-    console.log('=9e639a=', front.Variable.totalPrice)
-    Fn.initAll()
+    console.log('=Static.totalPrice after fn=', Static.totalPrice)
+    return 
     // if(Static.cover.printColor && Static.cover.coloredPages.length > 0){
-    //     front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
-    //     console.log('=67d119=', front.Variable.totalPrice)
+    //     Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+    //     console.log('=67d119=', Static.totalPrice)
     // } else{
-    //     front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
+    //     Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
     // }
 
     // if(Static.cover.coloredPages.length){
-    //     front.Variable.totalPrice = front.Variable.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+    //     Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
         
     //     if(Ref.totalPrice){
-    //         Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    //         Ref.totalPrice.innerHTML = `${Static.totalPrice}`
     //     }
     // } else{
-    //     front.Variable.totalPrice = front.Variable.totalPrice + (front.Variable.countPages * 10)
+    //     Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
 
     //     if(Ref.totalPrice){
-    //         Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    //         Ref.totalPrice.innerHTML = `${Static.totalPrice}`
     //     }
     // }
 
     // if(Ref.totalPrice){
-    //     Ref.totalPrice.innerHTML = `${front.Variable.totalPrice}`
+    //     Ref.totalPrice.innerHTML = `${Static.totalPrice}`
     // }
 
     
@@ -484,7 +479,7 @@ front.func.checkPrice = function(){
 
 front.loader = () => {
     Static.currentStep = 1
-    front.Variable.totalPrice 
+    Static.totalPrice 
     front.Variable.countPages
     // Static.localStep = window.localStorage.getItem('currentStep')
 
