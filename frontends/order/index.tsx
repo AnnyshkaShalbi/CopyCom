@@ -439,8 +439,10 @@ front.func.checkPrice = function(){
     if(front.Variable.countPages){
         Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
         if(Static.cover.printColor){
+            console.log('=цветная печать=', Static.cover.printColor)
             if(Static.cover.coloredPages.length > 0){
                 Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+                console.log('=totalPrice=', Static.totalPrice)
             }
         } 
     }
