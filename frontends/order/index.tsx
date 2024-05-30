@@ -2,7 +2,6 @@ import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
 import Navigation from "./navigation"
 
 front.listener.finish = () => {
-    console.log('=countPages=', front.Variable.countPages)
     return
 }
 
@@ -70,11 +69,11 @@ front.func.uploadFile = function(input){
         let reader = new FileReader()
         reader.readAsBinaryString(file);
         reader.onloadend = () => {
-            front.Variable.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            Static.form.countPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
             Fn.initAll()
             let fileTotalCount = document.createElement('p')
             let fileSize = document.createElement('p')
-            fileTotalCount.innerHTML = `Количество страниц — ${front.Variable.countPages}`
+            fileTotalCount.innerHTML = `Количество страниц — ${Static.form.countPages}`
             fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
@@ -436,53 +435,53 @@ front.func.checkImageFinish = function() {
 front.func.checkPrice = function(){
     Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
 
-    if(front.Variable.countPages){
-        Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
+    if(Static.form.countPages){
+        Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
         if(Static.cover.printColor){
             console.log('=цветная печать=', Static.cover.printColor)
             if(Static.cover.coloredPages.length > 0){
-                Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
+                Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((Static.form.countPages - Static.cover.coloredPages.length) * 10)
                 console.log('=totalPrice=', Static.totalPrice)
             }
         } 
     }
+
+    if(Static.cover.additionally[0].active){
+        Static.totalPrice = Static.totalPrice + Static.cover.additionally[0].price
+    }
+
+    if(Static.cover.additionally[1].active){
+        Static.totalPrice = Static.totalPrice + Static.cover.additionally[1].price
+    }
+
+    if(Static.cover.additionally[2].active){
+        // Перед титулом
+        if(Static.cover.additionally[2].options[0].active){
+            Static.totalPrice = Static.totalPrice + (Static.cover.additionally[2].price * Static.cover.additionally[2].options[0].quantity)
+        }
+
+        // После титулом
+        if(Static.cover.additionally[2].options[1].active){
+            Static.totalPrice = Static.totalPrice + (Static.cover.additionally[2].price * Static.cover.additionally[2].options[1].quantity)
+        }
+
+        // В конце работы
+        if(Static.cover.additionally[2].options[2].active){
+            Static.totalPrice = Static.totalPrice + (Static.cover.additionally[2].price * Static.cover.additionally[2].options[2].quantity)
+        }
+
+    }
+
+
     console.log('=Static.totalPrice after fn=', Static.totalPrice)
     return 
-    // if(Static.cover.printColor && Static.cover.coloredPages.length > 0){
-    //     Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
-    //     console.log('=67d119=', Static.totalPrice)
-    // } else{
-    //     Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
-    // }
-
-    // if(Static.cover.coloredPages.length){
-    //     Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((front.Variable.countPages - Static.cover.coloredPages.length) * 10)
-        
-    //     if(Ref.totalPrice){
-    //         Ref.totalPrice.innerHTML = `${Static.totalPrice}`
-    //     }
-    // } else{
-    //     Static.totalPrice = Static.totalPrice + (front.Variable.countPages * 10)
-
-    //     if(Ref.totalPrice){
-    //         Ref.totalPrice.innerHTML = `${Static.totalPrice}`
-    //     }
-    // }
-
-    // if(Ref.totalPrice){
-    //     Ref.totalPrice.innerHTML = `${Static.totalPrice}`
-    // }
-
-    
-
-    
+   
 }
 
 
 front.loader = () => {
     Static.currentStep = 1
     Static.totalPrice 
-    front.Variable.countPages
     // Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
@@ -493,7 +492,7 @@ front.loader = () => {
         color: false,
         image: false,
         titleCover: false,
-        priceCover: 480,
+        priceCover: 500,
         priceLogo: 0,
 
         titleLogo: false,
@@ -509,17 +508,17 @@ front.loader = () => {
             {
                 text: "Вклеить карман для рецензии",
                 active: false,
-                price: 50
+                price: 70
             },
             {
                 text: "Вклеить карман для CD диска",
                 active: false,
-                price: 50,
+                price: 70,
             },
             {
                 text: "Добавить пластиковый файл",
                 active: false,
-                price: 50,
+                price: 15,
                 checked: true,
                 options: [
                     {

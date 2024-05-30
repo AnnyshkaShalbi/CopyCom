@@ -165,10 +165,21 @@ const FinishStep = function(){
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
                         Static.currentStep++
-                        Func.uploadFile()
-                        Func.checkPrice()
+                        
+                        if(Static.form.countPages){
+                            Func.uploadFile()
+                            Func.checkPrice()
+                            Func.checkForm()
+                            return
+                        }else{
+                            Func.checkPrice()
+                            Func.checkForm()
+                            return
+                        }
+
+
+                        
                         // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
-                        Func.checkForm()
                     }}
                 >
                     Продолжить

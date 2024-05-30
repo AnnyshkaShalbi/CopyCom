@@ -24,10 +24,10 @@ const RenderUpdateFileForm = () => {
       />
 
       {
-        front.Variable.countPages ? 
+        Static.form.countPages ? 
         <div class="updateFile-form__label">
           <img src={pdfDone} alt="Файл в формате pdf" />
-          <p>{`Количество страниц — ${front.Variable.countPages}`}</p>
+          <p>{`Количество страниц — ${Static.form.countPages}`}</p>
           <p>{`Размер файла — ${Static.formatBytes}`}</p>
         </div> : 
         <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
@@ -92,13 +92,13 @@ const RenderUpdateFileOption = () => {
           Static.cover.printColor ? 
           <div>
             {
-              front.Variable.countPages ?
+              Static.form.countPages ?
               <div>
                 <p class="updateFile-options-text mt-10">Выберите номер цветных страниц</p>
                 <div class="countPages-wrap">
                   <div class="countPages">
                     {
-                      Array.from(Array(front.Variable.countPages).keys()).map((item, index) => {
+                      Array.from(Array(Static.form.countPages).keys()).map((item, index) => {
                         return(
                           <div 
                             class={[
@@ -196,8 +196,10 @@ const RenderUpdateFileOption = () => {
                                                   onclick={()=>{
                                                     el.countFiles.forEach(identificator => {
                                                       identificator.active = false
+                                                      console.log('=552367=')
                                                     })
                                                     count.active = true
+                                                    Func.checkPrice()
                                                   }}
                                                 >
                                                   {count.id}
@@ -241,14 +243,14 @@ const RenderReadiness = () => {
           </div>
 
           {
-            front.Variable.countPages ? 
+            Static.form.countPages ? 
             <div>
               {
                 Static.cover.printColor ? 
                 <div>
                   <div class="readiness-order-item flex align-items-center justify-content-between">
-                    <p class="readiness-order-item_title">{`Страницы ${front.Variable.countPages - Static.cover.coloredPages.length} х 10 ₽`}</p>
-                    <span class="readiness-order-item_price">{`${(front.Variable.countPages - Static.cover.coloredPages.length) * 10} руб`}</span>
+                    <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages - Static.cover.coloredPages.length} х 10 ₽`}</p>
+                    <span class="readiness-order-item_price">{`${(Static.form.countPages - Static.cover.coloredPages.length) * 10} руб`}</span>
                   </div>
                   {
                     Static.cover.coloredPages.length > 0 ? 
@@ -262,8 +264,8 @@ const RenderReadiness = () => {
                   }
                 </div> : 
                 <div class="readiness-order-item flex align-items-center justify-content-between">
-                  <p class="readiness-order-item_title">{`Страницы ${front.Variable.countPages} х 10 ₽`}</p>
-                  <span class="readiness-order-item_price">{`${front.Variable.countPages * 10} руб`}</span>
+                  <p class="readiness-order-item_title">{`Страницы ${Static.form.countPages} х 10 ₽`}</p>
+                  <span class="readiness-order-item_price">{`${Static.form.countPages * 10} руб`}</span>
                 </div>
               }
             </div> : null
@@ -273,7 +275,7 @@ const RenderReadiness = () => {
             Static.cover.additionally[0].active ? 
             <div class="readiness-order-item flex align-items-center justify-content-between">
               <p class="readiness-order-item_title">Карман для рецензии</p>
-              <span class="readiness-order-item_price">50 руб</span>
+              <span class="readiness-order-item_price">{`${Static.cover.additionally[0].price} руб`}</span>
             </div> : null
           }
 
@@ -281,7 +283,7 @@ const RenderReadiness = () => {
             Static.cover.additionally[1].active ? 
             <div class="readiness-order-item flex align-items-center justify-content-between">
               <p class="readiness-order-item_title">Карман для CD диска</p>
-              <span class="readiness-order-item_price">50 руб</span>
+              <span class="readiness-order-item_price">{`${Static.cover.additionally[1].price} руб`}</span>
             </div> : null
           }
 
@@ -293,10 +295,10 @@ const RenderReadiness = () => {
                 <div>
                   <div class="readiness-order-item flex align-items-center justify-content-between">
                     <p class="readiness-order-item_title">
-                      {`Файл перед титулом ${Static.cover.additionally[2].options[0].quantity} х 20 ₽`}
+                      {`Файл перед титулом ${Static.cover.additionally[2].options[0].quantity} х ${Static.cover.additionally[2].price} ₽`}
                     </p>
                     <span class="readiness-order-item_price">
-                      {`${Static.cover.additionally[2].options[0].quantity * 20} руб`}
+                      {`${Static.cover.additionally[2].options[0].quantity * Static.cover.additionally[2].price} руб`}
                     </span>
                   </div>
                 </div> : null
@@ -312,10 +314,10 @@ const RenderReadiness = () => {
                 <div>
                   <div class="readiness-order-item flex align-items-center justify-content-between">
                     <p class="readiness-order-item_title">
-                      {`Файл после титула ${Static.cover.additionally[2].options[1].quantity} х 20 ₽`}
+                      {`Файл после титула ${Static.cover.additionally[2].options[1].quantity} х ${Static.cover.additionally[2].price} ₽`}
                     </p>
                     <span class="readiness-order-item_price">
-                      {`${Static.cover.additionally[2].options[1].quantity * 20} руб`}
+                      {`${Static.cover.additionally[2].options[1].quantity * Static.cover.additionally[2].price} руб`}
                     </span>
                   </div>
                 </div> : null
@@ -331,10 +333,10 @@ const RenderReadiness = () => {
                 <div>
                   <div class="readiness-order-item flex align-items-center justify-content-between">
                     <p class="readiness-order-item_title">
-                      {`Файл в конце работы ${Static.cover.additionally[2].options[2].quantity} х 20 ₽`}
+                      {`Файл в конце работы ${Static.cover.additionally[2].options[2].quantity} х ${Static.cover.additionally[2].price} ₽`}
                     </p>
                     <span class="readiness-order-item_price">
-                      {`${Static.cover.additionally[2].options[2].quantity * 20} руб`}
+                      {`${Static.cover.additionally[2].options[2].quantity * Static.cover.additionally[2].price} руб`}
                     </span>
                   </div>
                 </div> : null
