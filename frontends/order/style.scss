@@ -685,8 +685,17 @@
     }
 
     &-form{
+      gap: 1rem;
+
       .g-equal-2{
-        grid-template-columns: 1fr;
+        // grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &:first-child{
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }

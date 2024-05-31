@@ -373,10 +373,12 @@ const RenderReadiness = () => {
               Назад
             </button> */}
             <button 
-              class="btn btn_blue"
+              class={[
+                "btn btn_blue",
+                Static.form.countPages ? null : "btn_passive"
+              ]}
               onclick={()=>{
                 Static.currentStep++
-                // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                 Func.checkPrice()
                 Func.checkForm()
               }}

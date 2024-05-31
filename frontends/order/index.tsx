@@ -5,53 +5,6 @@ front.listener.finish = () => {
     return
 }
 
-// upload file 
-
-front.func.dragEnter = function (e: any) {
-    e.preventDefault()
-    e.stopPropagation()
-    Ref.imagesUpload.classList.add("updateFile-form_active")
-}
-
-front.func.dragLeave = function (e: any) {
-    e.preventDefault()
-    e.stopPropagation()
-    Ref.imagesUpload.classList.remove("updateFile-form_active")
-}
-
-front.func.dragOver = function (e: any) {
-    e.preventDefault()
-    e.stopPropagation()
-    Ref.imagesUpload.classList.add("updateFile-form_active")
-}
-
-front.func.myDrop = function (e: any) {
-    e.preventDefault()
-    e.stopPropagation()
-    Ref.imagesUpload.classList.remove("updateFile-form_active")
-    let draggetData = e.dataTransfer
-    let files = draggetData.files
-    Ref.letterImages.innerHTML = ""
-    Array.from(files).map(async (file: any) => {
-        let answ = await Func.uploadFile(file)
-        if (answ.error) {
-            alert(answ.error)
-            return
-        }
-        console.log('=66b921=', answ)
-        let typeDocument = "photo"
-
-        if (answ.mimetype.startsWith("video")) {
-            typeDocument = "video"
-
-        } else if (answ.mimetype.startsWith("audio")) {
-            typeDocument = "audio"
-        }
-        Static.form[typeDocument].value = answ.name;
-        Fn.init()
-    })
-}
-
 front.func.uploadFile = function(input){
     let file = input.files[0];
     let fileName = file.name;
@@ -97,8 +50,6 @@ front.func.formatBytes = function(bytes, decimals = 2){
 		return Static.formatBytes;
 	}
 }
-
-// upload file
 
 front.func.checkForm = function () {
 
@@ -485,11 +436,9 @@ front.func.checkPrice = function(){
    
 }
 
-
 front.loader = () => {
     Static.currentStep = 1
     Static.totalPrice 
-    // Static.localStep = window.localStorage.getItem('currentStep')
 
     Static.activeCover = false
     Static.activeLogo = false
