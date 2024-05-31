@@ -78,7 +78,7 @@ const FormOrder  = function (){
       </div>
 
       <div class="g-equal-2">
-        <button 
+        {/* <button 
           class="btn btn-outline w100"
           onclick={()=>{
             Static.currentStep--
@@ -96,7 +96,7 @@ const FormOrder  = function (){
         >
           <i class="i i-arrow-left"></i>
           Назад
-        </button>
+        </button> */}
         <button 
           class={[
             "btn",
@@ -127,8 +127,11 @@ const FormOrder  = function (){
           Оформить заказ
           <i class="i i-arrow-right"></i>
         </button>
+        <div>
+          <p class="order-form_desc">Нажимая кнопку «Оформить заказ», ты даёшь своё согласие на обработку <a href="/privacy" class="link" onclick={Fn.link}>персональных данных</a></p>
+        </div>
       </div>
-      <p class="order-form_desc">Нажимая кнопку «Оформить заказ», ты даёшь своё согласие на обработку <a href="/privacy" class="link" onclick={Fn.link}>персональных данных</a></p>
+      
     </div>
   )
 }

@@ -436,14 +436,21 @@ front.func.checkPrice = function(){
     Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
 
     if(Static.form.countPages){
-        Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
+        
         if(Static.cover.printColor){
-            console.log('=цветная печать=', Static.cover.printColor)
             if(Static.cover.coloredPages.length > 0){
-                Static.totalPrice = Static.totalPrice + (Static.cover.coloredPages.length * 30) + ((Static.form.countPages - Static.cover.coloredPages.length) * 10)
+                let currentBlackPages = (Static.form.countPages - Static.cover.coloredPages.length) * 10
+
+                let currentColorPages = Static.cover.coloredPages.length * 30
+
+                Static.totalPrice = Static.totalPrice + currentColorPages + currentBlackPages
                 console.log('=totalPrice=', Static.totalPrice)
+            } else{
+                Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
             }
-        } 
+        } else{
+            Static.totalPrice = Static.totalPrice + (Static.form.countPages * 10)
+        }
     }
 
     if(Static.cover.additionally[0].active){

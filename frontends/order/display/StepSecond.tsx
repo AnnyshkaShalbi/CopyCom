@@ -171,6 +171,7 @@ const RenderUpdateFileOption = () => {
                                     class="flex align-items-center mt-10 cursor-pointer"
                                     onclick={()=>{
                                       el.active = !el.active
+                                      Func.checkPrice()
                                     }}
                                   >
                                     <div
@@ -196,9 +197,9 @@ const RenderUpdateFileOption = () => {
                                                   onclick={()=>{
                                                     el.countFiles.forEach(identificator => {
                                                       identificator.active = false
-                                                      console.log('=552367=')
                                                     })
                                                     count.active = true
+                                                    el.quantity = count.id
                                                     Func.checkPrice()
                                                   }}
                                                 >
@@ -352,7 +353,7 @@ const RenderReadiness = () => {
             <span class="readiness-sum-price_index">руб</span>
           </span>
           <div class="readiness-btns">
-            <button 
+            {/* <button 
               class="btn btn-outline"
               onclick={()=>{
                 Static.currentStep--
@@ -370,7 +371,7 @@ const RenderReadiness = () => {
             >
               <i class="i i-arrow-left"></i>
               Назад
-            </button>
+            </button> */}
             <button 
               class="btn btn_blue"
               onclick={()=>{
