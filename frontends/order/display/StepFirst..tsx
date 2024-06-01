@@ -1,4 +1,4 @@
-import { Cemjsx, Func, Static } from "cemjs-all"
+import { Cemjsx, Func, Static, Ref } from "cemjs-all"
 import emptyCoverBlue from '@images/emptyBlue.png'
 import emptyCoverRed from '@images/emptyRed.png'
 import arrowDoneBlack from '@svg/icons/arrowDoneBlack.svg'
@@ -28,6 +28,7 @@ const FirstStep = function(){
                     onclick={()=>{
                         Static.cover.color = !Static.cover.color
                         Func.checkImageFinish()
+                        console.log('=imageFinish=', Static.cover.imageFinish)
                     }}
                 ></div>
                 <div 
@@ -164,20 +165,20 @@ const FinishStep = function(){
                 <button 
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
-                        Static.currentStep++
+                        // Static.currentStep++
+                        Ref.fileImage.click()
+                        // if(Static.form.countPages){
+                        //     Func.uploadFile()
+                        //     Func.checkPrice()
+                        //     Func.checkForm()
+                        //     return
+                        // }else{
+                        //     Func.checkPrice()
+                        //     Func.checkForm()
+                        //     return
+                        // }
+
                         
-                        if(Static.form.countPages){
-                            Func.uploadFile()
-                            Func.checkPrice()
-                            Func.checkForm()
-                            return
-                        }else{
-                            Func.checkPrice()
-                            Func.checkForm()
-                            return
-                        }
-
-
                         
                         // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                     }}
@@ -185,7 +186,16 @@ const FinishStep = function(){
                     Продолжить
                     <i class="i i-arrow-right"></i>
                 </button>
-                
+                <input 
+                    ref="fileImage" 
+                    type="file" 
+                    class="hidden" 
+                    id="fileImage" 
+                    name="fileImage" 
+                    onchange={()=>{
+                        Func.fileImage(Ref.fileImage)
+                    }}
+                />
             </div>
         </div>
     )

@@ -102,10 +102,10 @@ const FormOrder  = function (){
             "btn",
             "btn_blue",
             "w100",
-            Static.form.isValid ? null : "btn_passive"
+            // Static.form.isValid ? null : "btn_passive"
           ]}
           onclick={async ()=>{
-            if(!Static.form.isValid) return
+            // if(!Static.form.isValid) return
 
             let data = {
               name: Static.form.name.value,
@@ -121,7 +121,25 @@ const FormOrder  = function (){
               return
             }
 
-            Fn.linkChange("/thanks")
+            Fn.log("===answer api===", answer)
+
+            // ================
+
+            // let dataImage = {
+            //   image: Static.cover.imageFinish
+
+            // }
+
+            // let answerImage = await front.Services.functions.sendApi("/api/Image", dataImage)
+
+            // if (answerImage.error) {
+            //   console.log('=772754=', answerImage.error)  
+            //   return
+            // }
+
+            // Fn.log("===answerImage api===", answerImage)
+
+            // Fn.linkChange("/thanks")
           }}
         >
           Оформить заказ

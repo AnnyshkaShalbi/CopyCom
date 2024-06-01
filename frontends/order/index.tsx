@@ -5,6 +5,50 @@ front.listener.finish = () => {
     return
 }
 
+front.func.fileImage = async function(input){
+    console.log('=тут=')
+    const formData = new FormData(input.files[0])
+    formData.append("CustomField", "This is some extra data");
+
+    let answer = await front.Services.functions.sendImage("/api/Image", formData)
+
+    if (answer.error) {
+        console.log('=772754=', answer.error)  
+        return
+    }
+
+      event.preventDefault();
+
+// ========RACIB==========
+    // let input = document.createElement('input')
+    // input.type = 'file'
+    // input.onchange = async (_this) => {
+    //     let filesArray = [...input?.files]
+    //     const result = filesArray[0]
+    //     const formData = new FormData()
+    //     formData.append('media', result)
+    //     const options = {
+    //         method: 'POST',
+    //         body: formData
+    //     }
+
+    //     let imgPush = await fetch('/upload/copycom', options).then(res => res.json())
+    //     Static.fileName = imgPush?.name
+    //     const edit = {
+    //         "image": imgPush?.name,
+    //     }
+
+    //     let answer = await front.Services.functions.sendApi("/api/Image", edit)
+    //     if (answer.error) {
+    //         console.log('=772754=', answer.error)  
+    //         return
+    //       }
+
+    //     Fn.init()
+    // }
+    // input.click();
+}
+
 front.func.uploadFile = function(input){
     let file = input.files[0];
     let fileName = file.name;
@@ -457,6 +501,7 @@ front.loader = () => {
         finalWork: false,
         masterThesis: false,
         imageFinish: false,
+        // imageFile: false,
         // цвет печати false - ч/б
         printColor: false,
         // дополнительно
