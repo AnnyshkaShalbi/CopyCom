@@ -165,18 +165,18 @@ const FinishStep = function(){
                 <button 
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
-                        // Static.currentStep++
-                        Ref.fileImage.click()
-                        // if(Static.form.countPages){
-                        //     Func.uploadFile()
-                        //     Func.checkPrice()
-                        //     Func.checkForm()
-                        //     return
-                        // }else{
-                        //     Func.checkPrice()
-                        //     Func.checkForm()
-                        //     return
-                        // }
+                        Static.currentStep++
+                        // Ref.fileImage.click()
+                        if(Static.form.countPages){
+                            Func.uploadFile()
+                            Func.checkPrice()
+                            Func.checkForm()
+                            return
+                        }else{
+                            Func.checkPrice()
+                            Func.checkForm()
+                            return
+                        }
 
                         
                         

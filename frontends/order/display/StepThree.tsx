@@ -112,6 +112,11 @@ const FormOrder  = function (){
               phone: Static.form.phone.value,
               email: Static.form.email.value,
               comment: Static.form.comment.value,
+              color: Static.cover.color,
+              colorPages: Static.form.colorPages.length,
+              countPages: Static.form.countPages,
+              price: Static.totalPrice,
+              
             }
 
             let answer = await front.Services.functions.sendApi("/api/Message", data)
@@ -122,6 +127,11 @@ const FormOrder  = function (){
             }
 
             Fn.log("===answer api===", answer)
+            Fn.log("===Static.cover.input===", Static.cover.input)
+
+            setTimeout(()=>{
+              Func.uploadPdf(Static.cover.input)
+            }, 5000)
 
             // ================
 

@@ -1,3 +1,4 @@
+export * from './sendFile'
 export * from './sendApi'
 export * from './validator'
 export * from './validForms'

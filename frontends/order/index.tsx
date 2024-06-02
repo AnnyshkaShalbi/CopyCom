@@ -19,38 +19,11 @@ front.func.fileImage = async function(input){
 
       event.preventDefault();
 
-// ========RACIB==========
-    // let input = document.createElement('input')
-    // input.type = 'file'
-    // input.onchange = async (_this) => {
-    //     let filesArray = [...input?.files]
-    //     const result = filesArray[0]
-    //     const formData = new FormData()
-    //     formData.append('media', result)
-    //     const options = {
-    //         method: 'POST',
-    //         body: formData
-    //     }
-
-    //     let imgPush = await fetch('/upload/copycom', options).then(res => res.json())
-    //     Static.fileName = imgPush?.name
-    //     const edit = {
-    //         "image": imgPush?.name,
-    //     }
-
-    //     let answer = await front.Services.functions.sendApi("/api/Image", edit)
-    //     if (answer.error) {
-    //         console.log('=772754=', answer.error)  
-    //         return
-    //       }
-
-    //     Fn.init()
-    // }
-    // input.click();
 }
 
-front.func.uploadFile = function(input){
+front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
+    Static.cover.input = input
     let fileName = file.name;
     if(file){
         // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
@@ -76,10 +49,32 @@ front.func.uploadFile = function(input){
             Ref.updateFileContent.appendChild(fileSize)
             Func.checkPrice()
         }
+
+        // const formData = new FormData(input)
+        // Func.uploadPdf(input)
+
     }
 
     
     return
+}
+
+front.func.uploadPdf = async function(input){
+    // Получаем файл из input type="file" или другого источника
+    const file = input.files[0];
+
+    // Создаем FormData и добавляем файл
+    const formData = new FormData();
+    formData.append('file', file);
+
+    // Отправляем запрос на сервер
+    fetch('/api/upload/FileUpload', {
+    method: 'POST',
+    body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 }
 
 front.func.formatBytes = function(bytes, decimals = 2){
@@ -489,6 +484,7 @@ front.loader = () => {
 
     Static.cover = {
         // color false - синий
+        input: false,
         color: false,
         image: false,
         titleCover: false,
