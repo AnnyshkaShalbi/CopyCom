@@ -27,13 +27,14 @@ front.listener.finish = () => {
 front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.form.fileName = file.name
+    Static.form.file = input
     if(file){
         // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
         let fileNameEl = document.createElement('p')
-        fileNameEl.innerHTML = `${Static.cover.fileName}`
+        fileNameEl.innerHTML = `${file.fileName}`
         fileNameEl.style.color = '#0B0B0C'
         Ref.updateFileContent.appendChild(image)
         Ref.updateFileContent.appendChild(fileNameEl)
@@ -41,17 +42,19 @@ front.func.uploadFile = async function(input:HTMLFormElement){
         let reader = new FileReader()
         reader.readAsBinaryString(file);
         reader.onloadend = () => {
-            Static.form.fileCountPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            Static.form.totalPages = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
             Fn.initAll()
             let fileTotalCount = document.createElement('p')
             let fileSize = document.createElement('p')
-            fileTotalCount.innerHTML = `Количество страниц — ${Static.form.fileCountPages}`
+            fileTotalCount.innerHTML = `Количество страниц — ${Static.form.totalPages}`
             fileSize.innerHTML = `Размер файла — ${Func.formatBytes(file.size)}`
             Ref.updateFileContent.appendChild(fileTotalCount)
             Ref.updateFileContent.appendChild(fileSize)
-            Func.checkPrice()
         }
     }
+
+    
+
     return
 }
 
@@ -68,13 +71,35 @@ front.func.formatBytes = function(bytes, decimals = 2){
 	}
 }
 
+front.func.uploadPdf = async function(input){
+    // Получаем файл из input type="file" или другого источника
+    const file = input.files[0];
+
+    // Создаем FormData и добавляем файл
+    const formData = new FormData();
+    formData.append('file', file);
+
+    // Отправляем запрос на сервер
+    fetch('/api/upload/FileUpload', {
+    method: 'POST',
+    body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
+
 front.loader = () => {
     Static.tabsActive = true
 
     Static.form = {
         fileName: "",
         fileCountPages: 0,
-        fileSize: 0
+        fileSize: 0,
+        phone: {
+            value: false
+        },
+        file: false
     }
     return
 }
