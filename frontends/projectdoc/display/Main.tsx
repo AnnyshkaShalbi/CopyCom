@@ -24,6 +24,15 @@ const RenderFile = () => {
             class="copy-application">
             <h3 class="copy-title pb-15">оставь заявку</h3>
             <div class="copy-file">
+                <input 
+                    type="file" 
+                    accept=".pdf"
+                    class="hidden"
+                    ref="updateProjectDoc"
+                    oninput={(e)=>{
+                        Func.uploadFile(e.currentTarget)
+                    }}
+                />
                 <img src={filePdf} alt="Загрузите файл в pdf формате" />
                 <p class="text-align-center">Загрузите файл в формате PDF</p>
                 <p class="text-align-center">Макс. размером 100 мб</p>
