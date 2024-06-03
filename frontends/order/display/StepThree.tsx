@@ -113,11 +113,30 @@ const FormOrder  = function (){
               email: Static.form.email.value,
               comment: Static.form.comment.value,
               color: Static.cover.color,
-              colorPages: Static.form.colorPages.length,
-              countPages: Static.form.countPages,
+              titleCover: Static.cover.titleCover ? Static.cover.titleCover : "Без тиснения",
+              titleLogo: Static.cover.titleLogo ? Static.cover.titleLogo : "Без эмблемы",
+              totalPages: Static.form.countPages,
+              coloredPages: Static.cover.coloredPages,
+              countBlackPages: Static.form.countPages - Static.cover.coloredPages.length,
+              countColorPages: Static.cover.coloredPages.length,
               price: Static.totalPrice,
-              
+              pocketForReview: Static.cover.additionally[0].active,
+              pocketDiskCD: Static.cover.additionally[1].active,
+              plasticFileBefore: {
+                active: Static.cover.additionally[2].options[0].active,
+                quantity: Static.cover.additionally[2].options[0].active ? Static.cover.additionally[2].options[0].quantity : 0
+              },
+              plasticFileAfter: {
+                active: Static.cover.additionally[2].options[1].active,
+                quantity: Static.cover.additionally[2].options[1].active ? Static.cover.additionally[2].options[1].quantity : 0
+              },
+              plastikFileInTheEnd: {
+                active: Static.cover.additionally[2].options[2].active,
+                quantity: Static.cover.additionally[2].options[2].active ? Static.cover.additionally[2].options[1].quantity : 0
+              }
             }
+
+            console.log('=data Message=', data)
 
             let answer = await front.Services.functions.sendApi("/api/Message", data)
 
@@ -129,27 +148,17 @@ const FormOrder  = function (){
             Fn.log("===answer api===", answer)
             Fn.log("===Static.cover.input===", Static.cover.input)
 
+
+
             setTimeout(()=>{
-              Func.uploadPdf(Static.cover.input)
-            }, 5000)
+              console.log('=Static.cover.input=',Static.cover.input)
+              if(Static.cover.input){
+                Func.uploadPdf(Static.cover.input)
+                Fn.linkChange("/thanks")
+              }
+              return
+            }, 2000)
 
-            // ================
-
-            // let dataImage = {
-            //   image: Static.cover.imageFinish
-
-            // }
-
-            // let answerImage = await front.Services.functions.sendApi("/api/Image", dataImage)
-
-            // if (answerImage.error) {
-            //   console.log('=772754=', answerImage.error)  
-            //   return
-            // }
-
-            // Fn.log("===answerImage api===", answerImage)
-
-            // Fn.linkChange("/thanks")
           }}
         >
           Оформить заказ

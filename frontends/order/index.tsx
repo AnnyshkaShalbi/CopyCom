@@ -24,14 +24,14 @@ front.func.fileImage = async function(input){
 front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.cover.input = input
-    let fileName = file.name;
+    Static.cover.fileName = file.name
     if(file){
         // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
         let fileNameEl = document.createElement('p')
-        fileNameEl.innerHTML = `${fileName}`
+        fileNameEl.innerHTML = `${Static.cover.fileName}`
         fileNameEl.style.color = '#0B0B0C'
         Ref.updateFileContent.appendChild(image)
         Ref.updateFileContent.appendChild(fileNameEl)
@@ -477,12 +477,12 @@ front.func.checkPrice = function(){
 
 front.loader = () => {
     Static.currentStep = 1
-    Static.totalPrice 
-
+    Static.totalPrice
     Static.activeCover = false
     Static.activeLogo = false
 
     Static.cover = {
+        fileName: "",
         // color false - синий
         input: false,
         color: false,
@@ -614,7 +614,7 @@ front.loader = () => {
                     },
                     {
                         text: 'В конце работы',
-                        active: true,
+                        active: false,
                         quantity: 2,
                         countFiles: [
                             {

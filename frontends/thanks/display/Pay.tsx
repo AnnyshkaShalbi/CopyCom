@@ -12,9 +12,9 @@ export default function () {
               <img src={sberbank} alt="Сбербанк" />
               <img src={tinkoff} alt="Тинькофф" />
             </div>
-            <a href="/" class="btn btn_blue">
+            {/* <a href="/" class="btn btn_blue">
               Оплатить онлайн
-            </a>
+            </a> */}
         </div>
        </div>
     )
