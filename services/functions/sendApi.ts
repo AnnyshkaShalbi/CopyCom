@@ -1,7 +1,7 @@
 export const sendApi = async function (url: string, data: any) {
 
   if(window.location.hostname != "127.0.0.1"){
-    url += "https://apicopycom.cem.su"
+    url = "https://apicopycom.cem.su" + url
   }
 
   try {
