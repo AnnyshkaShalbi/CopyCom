@@ -2,7 +2,10 @@ export const sendApi = async function (url: string, data: any) {
 
   if(window.location.hostname != "127.0.0.1"){
     url = "https://apicopycom.cem.su" + url
+  } else{
+    url = "http://127.0.0.1:4000" + url
   }
+
 
   try {
     let answer = await fetch(url, {

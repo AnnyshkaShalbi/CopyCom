@@ -67,8 +67,15 @@ front.func.uploadPdf = async function(input){
     const formData = new FormData();
     formData.append('file', file);
 
+    let url;
+    if(window.location.hostname != "127.0.0.1"){
+        url = "https://apicopycom.cem.su" 
+    } else{
+        url = "http://127.0.0.1:4000" 
+    }
+
     // Отправляем запрос на сервер
-    fetch('https://apicopycom.cem.su/api/upload/FileUpload', {
+    fetch(`${url}/api/upload/FileUpload`, {
     method: 'POST',
     body: formData
     })
