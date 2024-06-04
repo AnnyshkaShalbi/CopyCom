@@ -80,7 +80,7 @@ front.func.uploadPdf = async function(input){
     formData.append('file', file);
 
     // Отправляем запрос на сервер
-    fetch('/api/upload/FileUpload', {
+    fetch('https://apicopycom.cem.su/api/upload/FileUpload', {
     method: 'POST',
     body: formData
     })
