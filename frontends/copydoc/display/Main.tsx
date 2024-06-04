@@ -1,5 +1,4 @@
 import { Cemjsx, Static, Func, front, Ref, Fn } from "cemjs-all"
-import filePdf from '@svg/icons/filePdf.svg'
 import imgPdf from '@svg/icons/filePdf.svg'
 import pdfDone from '@svg/icons/fileDone.svg'
 

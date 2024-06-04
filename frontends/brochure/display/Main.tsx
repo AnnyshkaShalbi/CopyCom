@@ -1,5 +1,6 @@
-import { Cemjsx, Static, Func, front, Ref } from "cemjs-all"
-import filePdf from '@svg/icons/filePdf.svg'
+import { Cemjsx, Static, Func, front, Ref, Fn } from "cemjs-all"
+import imgPdf from '@svg/icons/filePdf.svg'
+import pdfDone from '@svg/icons/fileDone.svg'
 
 const RenderMessage = () => {
     return (
@@ -24,10 +25,37 @@ const RenderFile = () => {
             class="copy-application">
             <h3 class="copy-title pb-15">оставь заявку</h3>
             <div class="copy-file">
-                <img src={filePdf} alt="Загрузите файл в pdf формате" />
-                <p class="text-align-center">Загрузите файл в формате PDF</p>
-                <p class="text-align-center">Макс. размером 100 мб</p>
-                <button class="btn btn_blue mt-15">Загрузить файл</button>
+                <input 
+                    type="file" 
+                    accept=".pdf"
+                    class="hidden"
+                    ref="updateBrochureDoc"
+                    oninput={(e)=>{
+                        Func.uploadFile(e.currentTarget)
+                    }}
+                />
+                {
+                    Static.form.totalPages ? 
+                    <div class="updateFile-form__label">
+                        <img src={pdfDone} alt="Файл в формате pdf" />
+                        <p>{`Количество страниц — ${Static.form.totalPages}`}</p>
+                        <p>{`Размер файла — ${Static.formatBytes}`}</p>
+                    </div> : 
+                    <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
+                        <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
+                        <p>Загрузите файл в формате PDF</p>
+                    </label>
+                }
+
+
+                <button 
+                    class="btn btn_blue mt-15"
+                    onclick={async ()=>{
+                        Ref.updateBrochureDoc.click()
+                      }}
+                >
+                    Загрузить файл
+                </button>
             </div>
             <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
             <div class="field mt-25">
@@ -41,10 +69,38 @@ const RenderFile = () => {
                         "field__input",
                     ]}
                     oninput={(e) => {
+                        Static.form.phone.value = e.currentTarget.value
                     }}
                 />
             </div>
-            <button class="btn btn_blue mt-25 w100">Оставить завку</button>
+            <button 
+                class="btn btn_blue mt-25 w100"
+                onclick={async()=>{
+                    let data = {
+                        name: Static.form.fileName,
+                        phone: Static.form.phone.value,
+                        totalPages: Static.form.totalPages,
+                        action: "brochure"
+                    }
+
+                    let answer = await front.Services.functions.sendApi("/api/UploadService", data)
+
+                    if (answer.error) {
+                        console.log('=error=', answer.error)  
+                        return
+                    }
+
+                    setTimeout(()=>{
+                        if(Static.form.file){
+                          Func.uploadPdf(Static.form.file)
+                          Fn.linkChange("/thanks")
+                        }
+                        return
+                      }, 2000)
+                }}
+            >
+                Оставить завку
+            </button>
         </div>
     )
 }
@@ -59,10 +115,37 @@ const RenderFileMobile = () => {
         >
             <h3 class="copy-title pb-15">оставь заявку</h3>
             <div class="copy-file">
-                <img src={filePdf} alt="Загрузите файл в pdf формате" />
-                <p class="text-align-center">Загрузите файл в формате PDF</p>
-                <p class="text-align-center">Макс. размером 100 мб</p>
-                <button class="btn btn_blue mt-15">Загрузить файл</button>
+                <input 
+                    type="file" 
+                    accept=".pdf"
+                    class="hidden"
+                    ref="updateBrochureDoc"
+                    oninput={(e)=>{
+                        Func.uploadFile(e.currentTarget)
+                    }}
+                />
+                {
+                    Static.form.totalPages ? 
+                    <div class="updateFile-form__label">
+                        <img src={pdfDone} alt="Файл в формате pdf" />
+                        <p>{`Количество страниц — ${Static.form.totalPages}`}</p>
+                        <p>{`Размер файла — ${Static.formatBytes}`}</p>
+                    </div> : 
+                    <label for="updateFileInput" class="updateFile-form__label" ref="updateFileContent">
+                        <img src={imgPdf} alt="Загрузить файл диплома в формате pdf"></img>
+                        <p>Загрузите файл в формате PDF</p>
+                    </label>
+                }
+
+
+                <button 
+                    class="btn btn_blue mt-15"
+                    onclick={async ()=>{
+                        Ref.updateBrochureDoc.click()
+                      }}
+                >
+                    Загрузить файл
+                </button>
             </div>
             <div class="copy-form">
                 <p class="mt-25">Менеджер свяжется с тобой по номеру для подтверждения заказа</p>
@@ -77,10 +160,38 @@ const RenderFileMobile = () => {
                             "field__input",
                         ]}
                         oninput={(e) => {
+                            Static.form.phone.value = e.currentTarget.value
                         }}
                     />
                 </div>
-                <button class="btn btn_blue mt-25 w100">Оставить завку</button>
+                <button 
+                    class="btn btn_blue mt-25 w100"
+                    onclick={async()=>{
+                        let data = {
+                            name: Static.form.fileName,
+                            phone: Static.form.phone.value,
+                            totalPages: Static.form.totalPages,
+                            action: "brochure"
+                        }
+    
+                        let answer = await front.Services.functions.sendApi("/api/UploadService", data)
+    
+                        if (answer.error) {
+                            console.log('=error=', answer.error)  
+                            return
+                        }
+    
+                        setTimeout(()=>{
+                            if(Static.form.file){
+                              Func.uploadPdf(Static.form.file)
+                              Fn.linkChange("/thanks")
+                            }
+                            return
+                          }, 2000)
+                    }}
+                >
+                    Оставить завку
+                </button>
             </div>
         </div>
     )
