@@ -69,12 +69,17 @@ const RenderFile = () => {
                     ]}
                     oninput={(e) => {
                         Static.form.phone.value = e.currentTarget.value
+                        Func.checkForm()
                     }}
                 />
             </div>
             <button 
                 class="btn btn_blue mt-25 w100"
                 onclick={async()=>{
+                    if(!Static.form.isValid){
+                        return
+                    }
+
                     let data = {
                         name: Static.form.fileName,
                         phone: Static.form.phone.value,

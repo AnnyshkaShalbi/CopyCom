@@ -96,6 +96,15 @@ front.func.uploadPdf = async function(input){
     .catch(error => console.error('Error:', error));
 }
 
+front.func.checkForm = function () {
+	if (Static.form.phone.valid && Static.form.name.valid) {
+		Static.form.isValid = true;
+	} else {
+		Static.form.isValid = false;
+	}
+	return;
+};
+
 front.loader = () => {
     Static.tabsActive = true
 
@@ -104,9 +113,15 @@ front.loader = () => {
         fileCountPages: 0,
         fileSize: 0,
         phone: {
-            value: false
+            value: "",
+            valid: false,
+            error: false,
+            placeholder: "Номер телефона",
+            view: false,
+            disable: false
         },
-        file: false
+        file: false,
+        isValid: false
     }
     return
 }

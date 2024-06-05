@@ -25,7 +25,7 @@ export const formName = function (form: Form) {
     form.valid = true
     return true
   } else {
-    form.error = "Введите имя"
+    form.error = "Некорректное имя!"
     form.valid = false
     return false
   }
@@ -43,7 +43,7 @@ export const formPhone = function (form: Form) {
     form.valid = true
     return true
   } else {
-    form.error = "Некорректный номер"
+    form.error = "Некорректный номер!"
     form.valid = false
     return false
   }

@@ -14,7 +14,7 @@ const FormOrder  = function (){
             placeholder="+7 (980) 324 - 12 - 32"
             class={[
               "field__input",
-              Static.form.phone.error ? "field__input_error" : null
+              Static.form.phone.error ? "field__input_error" : null,
             ]}
             oninput={(e)=>{
               Static.form.phone.value = e.currentTarget.value
@@ -22,6 +22,28 @@ const FormOrder  = function (){
               Func.checkForm()
             }} 
           />
+          {
+            Static.form.phone.error ? 
+              <span 
+                class={[
+                  "field-message",
+                  Static.form.phone.error ? "field-message_error" : null
+                ]}
+              >
+                {Static.form.phone.error}
+              </span> : null
+          }
+          {
+            Static.form.phone.valid ? 
+              <span 
+                class={[
+                  "field-message",
+                  Static.form.phone.valid ? "field-message_success" : null
+                ]}
+              >
+                Верно!
+              </span> : null
+          }
         </div>
         <div class="field">
           <label for="name" class="field__label">{Static.form.name.placeholder}</label>
@@ -40,9 +62,31 @@ const FormOrder  = function (){
               Func.checkForm()
             }} 
           />
+          {
+            Static.form.name.error ? 
+              <span 
+                class={[
+                  "field-message",
+                  Static.form.name.error ? "field-message_error" : null
+                ]}
+              >
+                {Static.form.name.error}
+              </span> : null
+          }
+          {
+            Static.form.name.valid ? 
+              <span 
+                class={[
+                  "field-message",
+                  Static.form.name.valid ? "field-message_success" : null
+                ]}
+              >
+                Верно!
+              </span> : null
+          }
         </div>
       </div>
-      <div class="field">
+      <div class="field mb-16">
         <label for="email" class="field__label">{Static.form.email.placeholder}</label>
         <input 
           type="text"
