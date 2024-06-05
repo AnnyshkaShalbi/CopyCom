@@ -18,7 +18,7 @@ const FormOrder  = function (){
             ]}
             oninput={(e)=>{
               Static.form.phone.value = e.currentTarget.value
-              front.Services.functions.formPhone(Static.phone.name)
+              front.Services.functions.formPhone(Static.form.phone)
               Func.checkForm()
             }} 
           />
@@ -102,10 +102,10 @@ const FormOrder  = function (){
             "btn",
             "btn_blue",
             "w100",
-            // Static.form.isValid ? null : "btn_passive"
+            Static.form.isValid ? null : "btn_passive"
           ]}
           onclick={async ()=>{
-            // if(!Static.form.isValid) return
+            if(!Static.form.isValid) return
 
             let data = {
               name: Static.form.name.value,

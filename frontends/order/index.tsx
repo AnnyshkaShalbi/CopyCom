@@ -98,27 +98,13 @@ front.func.formatBytes = function(bytes, decimals = 2){
 }
 
 front.func.checkForm = function () {
-
-    if(Static.currentStep == 2){
-        Static.steps[0].active = false
-        Static.steps[0].valid = true
-        Static.steps[Static.currentStep - 1].active = true
-        Static.steps[Static.currentStep - 1].desc = "Загрузите файл с работой в формате PDF"
-        Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
-        setTimeout(() => { window.scrollTo(0, 0); }, 100);
-    }
-
-    if(Static.currentStep == 3){
-        Static.steps[1].active = false
-        Static.steps[1].valid = true
-        Static.steps[Static.currentStep - 1].active = true
-        Static.steps[Static.currentStep - 1].desc = "В несколько кликов"
-        setTimeout(() => { window.scrollTo(0, 0); }, 100);
-    }
-
-    return;
+	if (Static.form.phone.valid && Static.form.name.valid) {
+		Static.form.isValid = true;
+	} else {
+		Static.form.isValid = false;
+	}
+	return;
 };
-
 
 front.func.checkImageFinish = function() {
     // 1. Цвет false - синий, true - красный
