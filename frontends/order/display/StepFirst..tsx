@@ -166,7 +166,7 @@ const FinishStep = function(){
                     class="btn btn_blue w100 cover-finish-btn"
                     onclick={()=>{
                         Static.currentStep++
-                        // Ref.fileImage.click()
+                        Func.checkReadinessDate()
                         if(Static.form.countPages){
                             Func.uploadFile()
                             Func.checkPrice()
@@ -178,24 +178,11 @@ const FinishStep = function(){
                             return
                         }
 
-                        
-                        
-                        // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
                     }}
                 >
                     Продолжить
                     <i class="i i-arrow-right"></i>
                 </button>
-                <input 
-                    ref="fileImage" 
-                    type="file" 
-                    class="hidden" 
-                    id="fileImage" 
-                    name="fileImage" 
-                    onchange={()=>{
-                        Func.fileImage(Ref.fileImage)
-                    }}
-                />
             </div>
         </div>
     )

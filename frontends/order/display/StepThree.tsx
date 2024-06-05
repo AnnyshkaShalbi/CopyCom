@@ -78,25 +78,6 @@ const FormOrder  = function (){
       </div>
 
       <div class="g-equal-2">
-        {/* <button 
-          class="btn btn-outline w100"
-          onclick={()=>{
-            Static.currentStep--
-            // window.localStorage.setItem('currentStep', `${Static.currentStep}`)
-
-            Static.steps.forEach((item)=>{
-              item.active = false
-              item.valid = false
-            })
-
-            Static.steps[1].active = true
-
-            Func.checkForm()
-          }}
-        >
-          <i class="i i-arrow-left"></i>
-          Назад
-        </button> */}
         <button 
           class={[
             "btn",
@@ -108,6 +89,13 @@ const FormOrder  = function (){
             if(!Static.form.isValid) return
 
             let data = {
+              date: {
+                currentDate: Static.cover.date.currentDate,
+                currentTime: Static.cover.date.currentTime,
+                readinessDate: Static.cover.date.readinessDate,
+                readinessTime: Static.cover.date.readinessTime 
+              }, 
+
               name: Static.form.name.value,
               phone: Static.form.phone.value,
               email: Static.form.email.value,
@@ -136,22 +124,14 @@ const FormOrder  = function (){
               }
             }
 
-            console.log('=data Message=', data)
-
             let answer = await front.Services.functions.sendApi("/api/Message", data)
 
             if (answer.error) {
-              console.log('=772754=', answer.error)  
+              console.log('=answer error=', answer.error)  
               return
             }
 
-            Fn.log("===answer api===", answer)
-            Fn.log("===Static.cover.input===", Static.cover.input)
-
-
-
             setTimeout(()=>{
-              console.log('=Static.cover.input=',Static.cover.input)
               if(Static.cover.input){
                 Func.uploadPdf(Static.cover.input)
                 Fn.linkChange("/thanks")

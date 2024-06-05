@@ -5,22 +5,6 @@ front.listener.finish = () => {
     return
 }
 
-front.func.fileImage = async function(input){
-    console.log('=тут=')
-    const formData = new FormData(input.files[0])
-    formData.append("CustomField", "This is some extra data");
-
-    let answer = await front.Services.functions.sendImage("/api/Image", formData)
-
-    if (answer.error) {
-        console.log('=772754=', answer.error)  
-        return
-    }
-
-      event.preventDefault();
-
-}
-
 front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.cover.input = input
@@ -463,9 +447,29 @@ front.func.checkPrice = function(){
     }
 
 
-    console.log('=Static.totalPrice after fn=', Static.totalPrice)
+
     return 
    
+}
+
+front.func.checkReadinessDate = function(){
+    let date = new Date()
+    Static.cover.date.currentDate =  date.getTime() // текущая полная дата в timestamp
+    Static.cover.date.currentTime = date.getHours()
+
+    let oneDay = 24 * 60 * 60 * 1000; // количество миллисекунд в одних сутках
+    if(Static.cover.date.currentTime < 16){
+        Static.cover.date.readinessDate = Static.cover.date.currentDate + oneDay
+        Static.cover.date.readinessTime = 10
+    } else{
+        Static.cover.date.readinessDate = Static.cover.date.currentDate + (oneDay * 2)
+        Static.cover.date.readinessTime = 10
+    }
+    
+    Static.cover.date.currentTime = `${date.getHours()} : ${date.getMinutes()}`
+    Static.cover.date.currentDate = front.Services.functions.timeStampToDate( Static.cover.date.currentDate ,".")
+    Static.cover.date.readinessDate = front.Services.functions.timeStampToDate( Static.cover.date.readinessDate ,".")
+    return 
 }
 
 front.loader = () => {
@@ -475,6 +479,12 @@ front.loader = () => {
     Static.activeLogo = false
 
     Static.cover = {
+        date: {
+            currentDate: false,
+            currentTime: false,
+            readinessDate: false,
+            readinessTime: false
+        }, 
         fileName: "",
         // color false - синий
         input: false,
@@ -490,7 +500,6 @@ front.loader = () => {
         finalWork: false,
         masterThesis: false,
         imageFinish: false,
-        // imageFile: false,
         // цвет печати false - ч/б
         printColor: false,
         // дополнительно

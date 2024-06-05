@@ -234,7 +234,7 @@ const RenderUpdateFileOption = () => {
 const RenderReadiness = () => {
   return(
     <div class="readiness">
-      <h6 class="readiness-title">Готовность 15.05.2024</h6>
+      <h6 class="readiness-title">Готовность {Static.cover.date.readinessDate} после {`${Static.cover.date.readinessTime}:00`}</h6>
 
       <div class="readiness-content">
         <div class="readiness-order">

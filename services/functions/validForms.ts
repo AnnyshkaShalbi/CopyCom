@@ -37,17 +37,14 @@ export const formPhone = function (form: Form) {
     form.valid = false
     return false
   }
-  console.log('=form phone here=')
   let check = validPhone(form.value)
   if (check) {
     form.error = false
     form.valid = true
-    console.log('=form.valid=',form.valid)
     return true
   } else {
     form.error = "Некорректный номер"
     form.valid = false
-    console.log('=form.valid=',form.valid)
     return false
   }
 }
