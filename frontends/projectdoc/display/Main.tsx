@@ -69,12 +69,37 @@ const RenderFile = () => {
                     ]}
                     oninput={(e) => {
                         Static.form.phone.value = e.currentTarget.value
+                        front.Services.functions.formPhone(Static.form.phone)
                         Func.checkForm()
                     }}
                 />
+                {
+                    Static.form.phone.error ? 
+                    <span 
+                        class={[
+                        "field-message",
+                        Static.form.phone.error ? "field-message_error" : null
+                        ]}
+                    >
+                        {Static.form.phone.error}
+                    </span> : null
+                }
+                {
+                    Static.form.phone.valid ? 
+                    <span 
+                        class={[
+                        "field-message",
+                        Static.form.phone.valid ? "field-message_success" : null
+                        ]}
+                    >
+                        Верно!
+                    </span> : null
+                }
             </div>
             <button 
-                class="btn btn_blue mt-25 w100"
+                class={[
+                    "btn btn_blue mt-25 w100", Static.form.isValid ? null : "btn_passive"
+                ]}
                 onclick={async()=>{
                     if(!Static.form.isValid){
                         return
