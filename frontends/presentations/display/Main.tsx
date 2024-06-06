@@ -159,6 +159,7 @@ const RenderFileMobile = () => {
                         ]}
                         oninput={(e) => {
                             Static.form.phone.value = e.currentTarget.value
+                            console.log('=88a62b=')
                         }}
                     />
                 </div>

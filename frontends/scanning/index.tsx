@@ -28,7 +28,10 @@ front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.form.fileName = file.name
     Static.form.file = input
+    
     if(file){
+        Static.form.fileValid = true
+        Func.checkForm()
         // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
@@ -79,8 +82,15 @@ front.func.uploadPdf = async function(input){
     const formData = new FormData();
     formData.append('file', file);
 
+    let url;
+    if(window.location.hostname != "127.0.0.1"){
+        url = "https://apicopycom.cem.su" 
+    } else{
+        url = "http://127.0.0.1:4000" 
+    }
+
     // Отправляем запрос на сервер
-    fetch('https://apicopycom.cem.su/api/upload/FileUpload', {
+    fetch(`${url}/api/upload/FileUpload`, {
     method: 'POST',
     body: formData
     })
@@ -88,6 +98,15 @@ front.func.uploadPdf = async function(input){
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
 }
+
+front.func.checkForm = function () {
+	if (Static.form.phone.valid && Static.form.fileValid) {
+		Static.form.isValid = true;
+	} else {
+		Static.form.isValid = false;
+	}
+	return;
+};
 
 front.loader = () => {
     Static.tabsActive = true
@@ -97,9 +116,16 @@ front.loader = () => {
         fileCountPages: 0,
         fileSize: 0,
         phone: {
-            value: false
+            value: "",
+            valid: false,
+            error: false,
+            placeholder: "Номер телефона",
+            view: false,
+            disable: false
         },
-        file: false
+        file: false,
+        fileValid: false,
+        isValid: false
     }
     return
 }

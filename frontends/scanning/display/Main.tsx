@@ -66,15 +66,46 @@ const RenderFile = () => {
                     placeholder="+7 (980) 324 - 12 - 32"
                     class={[
                         "field__input",
+                        Static.form.phone.error ? "field__input_error" : null,
                     ]}
                     oninput={(e) => {
                         Static.form.phone.value = e.currentTarget.value
+                        front.Services.functions.formPhone(Static.form.phone)
+                        Func.checkForm()
                     }}
                 />
+                {
+                    Static.form.phone.error ? 
+                    <span 
+                        class={[
+                        "field-message",
+                        Static.form.phone.error ? "field-message_error" : null
+                        ]}
+                    >
+                        {Static.form.phone.error}
+                    </span> : null
+                }
+                {
+                    Static.form.phone.valid ? 
+                    <span 
+                        class={[
+                        "field-message",
+                        Static.form.phone.valid ? "field-message_success" : null
+                        ]}
+                    >
+                        Верно!
+                    </span> : null
+                }
             </div>
             <button 
-                class="btn btn_blue mt-25 w100"
+                class={[
+                    "btn btn_blue mt-25 w100", Static.form.isValid ? null : "btn_passive"
+                ]}
                 onclick={async()=>{
+                    if(!Static.form.isValid){
+                        return
+                    }
+
                     let data = {
                         name: Static.form.fileName,
                         phone: Static.form.phone.value,
@@ -156,15 +187,46 @@ const RenderFileMobile = () => {
                         placeholder="+7 (980) 324 - 12 - 32"
                         class={[
                             "field__input",
+                            Static.form.phone.error ? "field__input_error" : null,
                         ]}
                         oninput={(e) => {
                             Static.form.phone.value = e.currentTarget.value
+                            front.Services.functions.formPhone(Static.form.phone)
+                            Func.checkForm()
                         }}
                     />
+                    {
+                        Static.form.phone.error ? 
+                        <span 
+                            class={[
+                            "field-message",
+                            Static.form.phone.error ? "field-message_error" : null
+                            ]}
+                        >
+                            {Static.form.phone.error}
+                        </span> : null
+                    }
+                    {
+                        Static.form.phone.valid ? 
+                        <span 
+                            class={[
+                            "field-message",
+                            Static.form.phone.valid ? "field-message_success" : null
+                            ]}
+                        >
+                            Верно!
+                        </span> : null
+                    }
                 </div>
                 <button 
-                    class="btn btn_blue mt-25 w100"
+                    class={[
+                        "btn btn_blue mt-25 w100", Static.form.isValid ? null : "btn_passive"
+                    ]}
                     onclick={async()=>{
+                        if(!Static.form.isValid){
+                            return
+                        }
+
                         let data = {
                             name: Static.form.fileName,
                             phone: Static.form.phone.value,
@@ -218,26 +280,6 @@ const RenderTable = () => {
                     <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
                     <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                 </tr>
-                {/* <tr class="table-body-row__brochure table-border-bottom">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr> */}
-                {/* <tr class="table-body-row__both table-border-bottom">
-                    <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
-                    <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
-                </tr>
-                <tr class="table-body-row__brochure">
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                    <td class="table-body-cell"> </td>
-                </tr> */}
             </tbody>
         </table>
     )
@@ -267,26 +309,6 @@ const RenderTableMobile = () => {
                         <td class="table-body-cell flex justify-content-center align-items-center">80 ₽</td>
                         <td class="table-body-cell flex justify-content-center align-items-center">130 ₽</td>
                     </tr>
-                    {/* <tr class="table-body-row__brochure table-border-bottom">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr> */}
-                    {/* <tr class="table-body-row__both table-border-bottom">
-                        <td class="table-body-cell text-gray font-weight-400">Двустороннее</td>
-                        <td class="table-body-cell font-weight-400 flex justify-content-center align-items-center">Коэффициент увеличения цены = 2,00</td>
-                    </tr>
-                    <tr class="table-body-row__brochure">
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                        <td class="table-body-cell"> </td>
-                    </tr> */}
                 </tbody>
             </table>
         </div>
