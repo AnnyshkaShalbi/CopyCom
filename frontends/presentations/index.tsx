@@ -3,9 +3,6 @@ import Navigation from "./navigation"
 
 
 front.listener.finish = () => {
-    //1. с помощью matchMedia проверяем что это мобильное устройство
-    //2. если всё ок, то вызываем таймайт, на 3сек появление блока
-    //3. смотри пример с академии
     if(window.matchMedia("(max-width: 992px)")){
         if(!Static.message){
             setTimeout(()=>{
@@ -28,8 +25,10 @@ front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.form.fileName = file.name
     Static.form.file = input
+    
     if(file){
-        // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
+        Static.form.fileValid = true
+        Func.checkForm()
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
         image.src = '/contents/icons/fileDone.svg'
@@ -52,9 +51,6 @@ front.func.uploadFile = async function(input:HTMLFormElement){
             Ref.updateFileContent.appendChild(fileSize)
         }
     }
-
-    
-
     return
 }
 
@@ -72,10 +68,7 @@ front.func.formatBytes = function(bytes, decimals = 2){
 }
 
 front.func.uploadPdf = async function(input){
-    // Получаем файл из input type="file" или другого источника
     const file = input.files[0];
-
-    // Создаем FormData и добавляем файл
     const formData = new FormData();
     formData.append('file', file);
 
@@ -86,7 +79,6 @@ front.func.uploadPdf = async function(input){
         url = "http://127.0.0.1:4000" 
     }
 
-    // Отправляем запрос на сервер
     fetch(`${url}/api/upload/FileUpload`, {
     method: 'POST',
     body: formData
@@ -96,6 +88,15 @@ front.func.uploadPdf = async function(input){
     .catch(error => console.error('Error:', error));
 }
 
+front.func.checkForm = function () {
+	if (Static.form.phone.valid && Static.form.fileValid) {
+		Static.form.isValid = true;
+	} else {
+		Static.form.isValid = false;
+	}
+	return;
+};
+
 front.loader = () => {
     Static.tabsActive = true
 
@@ -104,9 +105,16 @@ front.loader = () => {
         fileCountPages: 0,
         fileSize: 0,
         phone: {
-            value: false
+            value: "",
+            valid: false,
+            error: false,
+            placeholder: "Номер телефона",
+            view: false,
+            disable: false
         },
-        file: false
+        file: false,
+        fileValid: false,
+        isValid: false
     }
     return
 }

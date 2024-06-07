@@ -178,7 +178,7 @@ const FormOrder  = function (){
             setTimeout(()=>{
               if(Static.cover.input){
                 Func.uploadPdf(Static.cover.input)
-                Fn.linkChange("/thanks")
+                Fn.linkChange("/thanks", { phone: Static.form.phone.value })
               }
               return
             }, 2000)

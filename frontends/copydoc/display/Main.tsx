@@ -124,7 +124,7 @@ const RenderFile = () => {
                     setTimeout(()=>{
                         if(Static.form.file){
                           Func.uploadPdf(Static.form.file)
-                          Fn.linkChange("/thanks")
+                          Fn.linkChange("/thanks", { phone: Static.form.phone.value })
                         }
                         return
                       }, 2000)
@@ -250,7 +250,7 @@ const RenderFileMobile = () => {
                         setTimeout(()=>{
                             if(Static.form.file){
                               Func.uploadPdf(Static.form.file)
-                              Fn.linkChange("/thanks")
+                              Fn.linkChange("/thanks", { phone: Static.form.phone.value })
                             }
                             return
                           }, 2000)
