@@ -28,7 +28,10 @@ front.func.uploadFile = async function(input:HTMLFormElement){
     let file = input.files[0];
     Static.form.fileName = file.name
     Static.form.file = input
+    
     if(file){
+        Static.form.fileValid = true
+        Func.checkForm()
         // Static.totalPrice = Static.cover.priceCover + Static.cover.priceLogo
         Ref.updateFileContent.innerHTML = ''
         let image = document.createElement('img')
@@ -96,6 +99,15 @@ front.func.uploadPdf = async function(input){
     .catch(error => console.error('Error:', error));
 }
 
+front.func.checkForm = function () {
+	if (Static.form.phone.valid && Static.form.fileValid) {
+		Static.form.isValid = true;
+	} else {
+		Static.form.isValid = false;
+	}
+	return;
+};
+
 front.loader = () => {
     Static.tabsActive = true
 
@@ -104,9 +116,16 @@ front.loader = () => {
         fileCountPages: 0,
         fileSize: 0,
         phone: {
-            value: false
+            value: "",
+            valid: false,
+            error: false,
+            placeholder: "Номер телефона",
+            view: false,
+            disable: false
         },
-        file: false
+        file: false,
+        fileValid: false,
+        isValid: false
     }
     return
 }
